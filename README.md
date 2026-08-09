@@ -15,6 +15,7 @@ euroconsult_web2/
 ├── compromiso.html         Compromiso y principios del grupo
 ├── contacto.html           Contacto institucional
 ├── trabaja.html            Trabaja con nosotros (formulario de candidatura)
+├── legal.html              Aviso legal, privacidad y cookies (enlazada desde el footer)
 ├── .nojekyll               Evita el procesado Jekyll en GitHub Pages
 └── assets/
     ├── css/main.css        Paleta corporativa, rejillas y estilos compartidos
@@ -65,3 +66,4 @@ Todas las rutas del sitio son relativas, así que funciona igual en un subdirect
 - **Datos editables** (ciudades, cifras, correo de contacto): marcados con `<!-- dato editable -->` en `index.html`.
 - **Proyectos**: para añadir un proyecto basta con añadir una entrada en `assets/js/projects-data.js` (con sus cuatro idiomas y, opcionalmente, `img`); aparecerá automáticamente en `proyectos.html` y tendrá su página de detalle en `proyecto.html?id=<id>`. Los proyectos sin `img` muestran un marcador de posición hexagonal.
 - **Navegación móvil**: por diseño, el menú de enlaces se oculta por debajo de 1024 px (la navegación se hace por scroll); el selector de idioma sigue visible.
+- **Página legal** (`legal.html`): los datos societarios (razón social, CIF, domicilio, datos registrales, plazo de conservación de candidaturas) están entre corchetes y marcados con `<!-- dato editable -->`. El texto es una base para el prototipo: conviene revisarlo con asesoría jurídica antes de la publicación definitiva. Su contenido está solo en español.

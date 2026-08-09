@@ -69,6 +69,9 @@ a:hover{color:var(--azul-oscuro)}
 .fcol>p{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin-bottom:6px}
 .fcol a{font-size:14px;color:rgba(255,255,255,.78)}
 .fcol a:hover{color:#fff;text-decoration:underline}
+.flegal{border-top:1px solid rgba(255,255,255,.22);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.flegal p,.flegal a{font-size:13px;color:rgba(255,255,255,.65)}
+.flegal a:hover{color:#fff;text-decoration:underline}
 
 /* Carrusel horizontal de proyectos */
 .projrow{display:grid;grid-auto-flow:column;grid-auto-columns:min(440px,82vw);gap:clamp(20px,2.5vw,32px);overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:14px;scrollbar-color:var(--azul) #E0E4EA;scrollbar-width:thin}
