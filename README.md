@@ -1,16 +1,19 @@
 # ECPI — Euroconsult Proyectos de Ingeniería · Sitio institucional
 
-Sitio web estático de una sola página (one-page) del grupo ECPI. Sin dependencias ni proceso de compilación: HTML + CSS + JavaScript planos, listo para GitHub Pages.
+Sitio web estático del grupo ECPI. Sin dependencias ni proceso de compilación: HTML + CSS + JavaScript planos, listo para GitHub Pages.
 
 ## Estructura
 
 ```
 euroconsult_web2/
 ├── index.html              Página principal (contenido en español por defecto)
+├── proyectos.html          Cuadrícula de proyectos del grupo
+├── proyecto.html           Detalle de proyecto (proyecto.html?id=<id>)
 ├── .nojekyll               Evita el procesado Jekyll en GitHub Pages
 └── assets/
     ├── css/main.css        Paleta corporativa, rejillas y estilos compartidos
     ├── js/main.js          Cambio de idioma (ES/EN/FR/PT) y animaciones de entrada
+    ├── js/projects-data.js Datos de proyectos (4 idiomas); alimenta cuadrícula y detalle
     └── img/
         ├── grupo-bg.webp       Fondo de la sección «El grupo» (puente)
         └── proj-popayan.webp   Foto del proyecto Torre de Control Popayán
@@ -54,4 +57,5 @@ Todas las rutas del sitio son relativas, así que funciona igual en un subdirect
 - **Idiomas**: los textos de los cuatro idiomas están en `assets/js/main.js` (objeto `dicts`). El HTML contiene la versión en español como contenido por defecto (visible también sin JavaScript). Si se cambia un texto, conviene cambiarlo en ambos sitios para el español.
 - **Logos**: los logotipos actuales son una recreación tipográfica provisional. Los puntos a sustituir por el SVG oficial están marcados con comentarios `<!-- LOGO ECPI -->` y `<!-- LOGO FILIAL -->` en `index.html`.
 - **Datos editables** (ciudades, cifras, correo de contacto): marcados con `<!-- dato editable -->` en `index.html`.
+- **Proyectos**: para añadir un proyecto basta con añadir una entrada en `assets/js/projects-data.js` (con sus cuatro idiomas y, opcionalmente, `img`); aparecerá automáticamente en `proyectos.html` y tendrá su página de detalle en `proyecto.html?id=<id>`. Los proyectos sin `img` muestran un marcador de posición hexagonal.
 - **Navegación móvil**: por diseño, el menú de enlaces se oculta por debajo de 1024 px (la navegación se hace por scroll); el selector de idioma sigue visible.

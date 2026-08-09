@@ -16,7 +16,9 @@
       p1_alt: "Torre de control del Aeropuerto Guillermo León Valencia, Popayán",
       lbl_ubi: "Ubicación", lbl_sector: "Sector", lbl_tipo: "Tipología",
       p1_ubi: "Popayán, Cauca", p1_sector: "Transporte", p1_tipo: "Aeroportuaria",
-      p_next: "Próximos proyectos",
+      p_next: "Próximos proyectos", view_p: "Ver proyecto", back_p: "Todos los proyectos",
+      reto_t: "El reto", sol_t: "La solución", imp_t: "El impacto",
+      t_proyectos: "Proyectos — ECPI",
       hero_kicker: "Euroconsult Proyectos de Ingeniería",
       hero_title: "La solidez de la ingeniería, proyectada hacia el futuro.",
       hero_sub: "ECPI es la matriz de un grupo internacional de consultoría e ingeniería. Reunimos disciplinas, sedes y equipos bajo un mismo criterio: precisión técnica e integración de servicios.",
@@ -68,7 +70,9 @@
       p1_alt: "Control tower at Guillermo León Valencia Airport, Popayán",
       lbl_ubi: "Location", lbl_sector: "Sector", lbl_tipo: "Typology",
       p1_ubi: "Popayán, Cauca", p1_sector: "Transport", p1_tipo: "Airport",
-      p_next: "Upcoming projects",
+      p_next: "Upcoming projects", view_p: "View project", back_p: "All projects",
+      reto_t: "The challenge", sol_t: "The solution", imp_t: "The impact",
+      t_proyectos: "Projects — ECPI",
       hero_kicker: "Euroconsult Proyectos de Ingeniería",
       hero_title: "Engineering that endures, projected into the future.",
       hero_sub: "ECPI is the parent company of an international engineering and consultancy group. We bring together disciplines, offices and teams under a single standard: technical precision and integrated services.",
@@ -120,7 +124,9 @@
       p1_alt: "Tour de contrôle de l'aéroport Guillermo León Valencia, Popayán",
       lbl_ubi: "Localisation", lbl_sector: "Secteur", lbl_tipo: "Typologie",
       p1_ubi: "Popayán, Cauca", p1_sector: "Transport", p1_tipo: "Aéroportuaire",
-      p_next: "Prochains projets",
+      p_next: "Prochains projets", view_p: "Voir le projet", back_p: "Tous les projets",
+      reto_t: "Le défi", sol_t: "La solution", imp_t: "L'impact",
+      t_proyectos: "Projets — ECPI",
       hero_kicker: "Euroconsult Proyectos de Ingeniería",
       hero_title: "La solidité de l'ingénierie, tournée vers l'avenir.",
       hero_sub: "ECPI est la maison mère d'un groupe international de conseil et d'ingénierie. Nous réunissons disciplines, implantations et équipes autour d'une même exigence : la précision technique et l'intégration des services.",
@@ -172,7 +178,9 @@
       p1_alt: "Torre de controlo do Aeroporto Guillermo León Valencia, Popayán",
       lbl_ubi: "Localização", lbl_sector: "Setor", lbl_tipo: "Tipologia",
       p1_ubi: "Popayán, Cauca", p1_sector: "Transportes", p1_tipo: "Aeroportuária",
-      p_next: "Próximos projetos",
+      p_next: "Próximos projetos", view_p: "Ver projeto", back_p: "Todos os projetos",
+      reto_t: "O desafio", sol_t: "A solução", imp_t: "O impacto",
+      t_proyectos: "Projetos — ECPI",
       hero_kicker: "Euroconsult Proyectos de Ingeniería",
       hero_title: "A solidez da engenharia, projetada para o futuro.",
       hero_sub: "A ECPI é a matriz de um grupo internacional de consultoria e engenharia. Reunimos disciplinas, sedes e equipas sob um mesmo critério: precisão técnica e integração de serviços.",
@@ -217,7 +225,9 @@
   function apply(lang) {
     var d = dicts[lang] || dicts.es;
     document.documentElement.lang = lang;
-    document.title = d.meta_title;
+    // Las páginas interiores declaran su título con <body data-title-key="...">
+    var tk = document.body ? document.body.getAttribute('data-title-key') : null;
+    document.title = (tk && d[tk]) ? d[tk] : d.meta_title;
     var m = document.querySelector('meta[name="description"]');
     if (!m) { m = document.createElement('meta'); m.setAttribute('name', 'description'); document.head.appendChild(m); }
     m.setAttribute('content', d.meta_desc);
@@ -237,6 +247,9 @@
       b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
     });
     try { localStorage.setItem('ecpi-lang', lang); } catch (e) {}
+    window.ECPI_LANG = lang;
+    // Aviso para scripts de página (proyectos.html, proyecto.html) que generan contenido
+    try { document.dispatchEvent(new CustomEvent('ecpi:lang', { detail: { lang: lang, dict: d } })); } catch (e) {}
   }
 
   function init() {

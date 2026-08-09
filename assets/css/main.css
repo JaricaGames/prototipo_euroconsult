@@ -20,6 +20,11 @@ a:hover{color:var(--azul-oscuro)}
 .navlinks{display:flex;gap:clamp(14px,2vw,28px);white-space:nowrap}
 .navlinks a{font-family:'Lato',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--grafito)}
 .navlinks a:hover{color:var(--azul)}
+.navlinks a{position:relative;padding-bottom:6px;transition:color .25s ease}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--azul);transform:scaleX(0);transform-origin:right;transition:transform .3s ease}
+.navlinks a:hover::after{transform:scaleX(1);transform-origin:left}
+.navlinks a[aria-current="page"]{color:var(--azul)}
+.navlinks a[aria-current="page"]::after{transform:scaleX(1)}
 @media(max-width:1024px){.navlinks{display:none}}
 
 /* Enlaces subrayados (CTA del hero, correo de contacto) */
@@ -45,6 +50,21 @@ a:hover{color:var(--azul-oscuro)}
 /* Carrusel horizontal de proyectos */
 .projrow{display:grid;grid-auto-flow:column;grid-auto-columns:min(440px,82vw);gap:clamp(20px,2.5vw,32px);overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:14px;scrollbar-color:var(--azul) #E0E4EA;scrollbar-width:thin}
 .projrow>article{scroll-snap-align:start}
+
+/* Cuadrícula de proyectos (proyectos.html) */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:clamp(24px,3vw,40px)}
+.pcard{background:var(--papel);border-top:3px solid var(--azul);display:flex;flex-direction:column;transition:box-shadow .25s ease,transform .25s ease}
+.pcard:hover{box-shadow:0 10px 28px rgba(38,82,142,.14);transform:translateY(-3px)}
+@media(prefers-reduced-motion:reduce){.pcard{transition:none}.pcard:hover{transform:none}}
+
+/* Detalle de proyecto (proyecto.html) */
+.rsi{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,44px)}
+@media(max-width:760px){.rsi{grid-template-columns:1fr}}
+.ficha{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+
+/* Marcador de posición para proyectos sin foto todavía */
+.imgph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#E9EDF2}
+.imgph svg{color:var(--azul);opacity:.16}
 
 /* Imágenes a sangre (antiguos image-slot del diseño) */
 .imgfill{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
