@@ -14,6 +14,7 @@ euroconsult_web2/
 ├── proyecto.html           Detalle de proyecto (proyecto.html?id=<id>)
 ├── compromiso.html         Compromiso y principios del grupo
 ├── contacto.html           Contacto institucional
+├── trabaja.html            Trabaja con nosotros (formulario de candidatura)
 ├── .nojekyll               Evita el procesado Jekyll en GitHub Pages
 └── assets/
     ├── css/main.css        Paleta corporativa, rejillas y estilos compartidos
