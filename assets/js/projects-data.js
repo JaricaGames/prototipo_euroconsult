@@ -6,6 +6,7 @@ window.ECPI_PROJECTS = [
   {
     id: "popayan", // <!-- dato editable -->
     img: "assets/img/proj-popayan.webp",
+    imgPos: "50% 23%", // encuadre de la foto (object-position), opcional
     es: { kicker: "Infraestructura aeroportuaria", title: "Torre de Control — Aeropuerto Guillermo León Valencia", ubi: "Popayán, Cauca (Colombia)", sector: "Transporte", tipo: "Aeroportuaria",
       reto: "Dotar al aeropuerto de una torre de control moderna, integrada en la operación diaria de un aeródromo en servicio.",
       sol: "Ingeniería y supervisión técnica del conjunto, coordinando disciplinas estructurales, de instalaciones y de navegación aérea.",

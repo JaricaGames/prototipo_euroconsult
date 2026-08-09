@@ -151,7 +151,7 @@
           <h2 data-i18n="sp_title" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(24px,2.8vw,36px);line-height:1.2;color:var(--grafito);margin-top:10px;max-width:680px;text-wrap:pretty">Cada obra explica el reto, la solución y el impacto.</h2>
         </div>
       </div>
-      <div class="projrow rv" tabindex="0" aria-label="Proyectos del grupo" data-i18n-aria="aria_proj">
+      <div id="projrow" class="projrow rv" tabindex="0" aria-label="Proyectos del grupo" data-i18n-aria="aria_proj">
         <article style="background:var(--papel);border-top:3px solid var(--azul);display:flex;flex-direction:column">
           <div style="position:relative;height:260px">
             <img class="imgfill" src="assets/img/proj-popayan.webp" alt="Torre de control del Aeropuerto Guillermo León Valencia, Popayán" data-i18n-alt="p1_alt" style="object-position:50% 23%" loading="lazy" decoding="async">
@@ -175,9 +175,6 @@
             </div>
             <p style="margin-top:22px"><a class="linkline" href="proyecto.html?id=popayan" style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:4px"><span data-i18n="view_p">Ver proyecto</span> →</a></p>
           </div>
-        </article>
-        <article aria-hidden="true" style="border:1px dashed #B9C1CC;display:flex;align-items:center;justify-content:center;min-height:200px">
-          <p data-i18n="p_next" style="font-weight:700;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:#9AA3AF;text-align:center;padding:24px">Próximos proyectos</p>
         </article>
       </div>
       <p class="rv" style="margin-top:28px"><a class="linkline" href="proyectos.html" style="font-size:13px;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:5px"><span data-i18n="morep">Todos los proyectos</span> →</a></p>
@@ -258,6 +255,41 @@
   </div>
 </footer>
 
+<script src="assets/js/projects-data.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+(function () {
+  'use strict';
+  var HEX = '<svg width="72" height="79" viewBox="0 0 100 110" aria-hidden="true"><polygon points="50,5 91,28.5 91,81.5 50,105 9,81.5 9,28.5" fill="none" stroke="currentColor" stroke-width="4"></polygon><polygon points="50,34 66,43.5 66,66.5 50,76 34,66.5 34,43.5" fill="currentColor"></polygon></svg>';
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function cell(label, value) {
+    return '<div><p style="font-weight:700;font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:#7A8390">' + esc(label) + '</p>'
+      + '<p style="font-size:14px;color:var(--grafito);margin-top:5px">' + esc(value) + '</p></div>';
+  }
+  function render(lang, d) {
+    var row = document.getElementById('projrow');
+    if (!row || !window.ECPI_PROJECTS) return;
+    row.innerHTML = window.ECPI_PROJECTS.map(function (p) {
+      var t = p[lang] || p.es;
+      var media = p.img
+        ? '<img class="imgfill" src="' + esc(p.img) + '" alt="' + esc(t.title) + '"' + (p.imgPos ? ' style="object-position:' + esc(p.imgPos) + '"' : '') + ' loading="lazy" decoding="async">'
+        : '<div class="imgph" aria-hidden="true">' + HEX + '</div>';
+      return '<article style="background:var(--papel);border-top:3px solid var(--azul);display:flex;flex-direction:column">'
+        + '<div style="position:relative;height:260px">' + media + '</div>'
+        + '<div style="display:flex;flex-direction:column;flex:1;padding:26px 28px 30px">'
+        + '<p style="font-weight:700;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:var(--azul)">' + esc(t.kicker) + '</p>'
+        + '<h3 style="font-family:\'Montserrat\',sans-serif;font-weight:700;font-size:21px;line-height:1.25;color:var(--grafito);margin-top:12px;text-wrap:pretty">' + esc(t.title) + '</h3>'
+        + '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;border-top:1px solid #E4E7EC;margin-top:22px;padding-top:16px">'
+        + cell(d.lbl_ubi, t.ubi) + cell(d.lbl_sector, t.sector) + cell(d.lbl_tipo, t.tipo)
+        + '</div>'
+        + '<p style="margin-top:auto;padding-top:22px"><a class="linkline" href="proyecto.html?id=' + encodeURIComponent(p.id) + '" style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:4px">' + esc(d.view_p) + ' →</a></p>'
+        + '</div></article>';
+    }).join('');
+  }
+  document.addEventListener('ecpi:lang', function (e) { render(e.detail.lang, e.detail.dict); });
+})();
+</script>
 </body>
 </html>
