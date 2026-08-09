@@ -37,7 +37,7 @@ a:hover{color:var(--azul-oscuro)}
 .gmv{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,48px)}
 @media(max-width:680px){.gmv{grid-template-columns:1fr}}
 .arearow{display:grid;grid-template-columns:72px 1fr 1.1fr;gap:clamp(16px,3vw,40px);align-items:baseline}
-@media(max-width:760px){.arearow{grid-template-columns:48px 1fr}.arearow p{grid-column:2}}
+@media(max-width:760px){.arearow{grid-template-columns:48px 1fr}.arearow p,.arearow .desc{grid-column:2}}
 .sedes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,56px)}
 @media(max-width:860px){.sedes{grid-template-columns:1fr;gap:40px}}
 .stats{display:flex;gap:clamp(36px,7vw,100px);flex-wrap:wrap}
@@ -61,6 +61,10 @@ a:hover{color:var(--azul-oscuro)}
 .rsi{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,44px)}
 @media(max-width:760px){.rsi{grid-template-columns:1fr}}
 .ficha{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+
+/* Principios (compromiso.html) */
+.pri{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,44px)}
+@media(max-width:760px){.pri{grid-template-columns:1fr}}
 
 /* Marcador de posición para proyectos sin foto todavía */
 .imgph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#E9EDF2}

@@ -7,8 +7,13 @@ Sitio web estático del grupo ECPI. Sin dependencias ni proceso de compilación:
 ```
 euroconsult_web2/
 ├── index.html              Página principal (contenido en español por defecto)
+├── grupo.html              El grupo: historia, trayectoria, misión y visión
+├── areas.html              Áreas de actuación con detalle por disciplina
+├── presencia.html          Presencia internacional: sedes y cifras
 ├── proyectos.html          Cuadrícula de proyectos del grupo
 ├── proyecto.html           Detalle de proyecto (proyecto.html?id=<id>)
+├── compromiso.html         Compromiso y principios del grupo
+├── contacto.html           Contacto institucional
 ├── .nojekyll               Evita el procesado Jekyll en GitHub Pages
 └── assets/
     ├── css/main.css        Paleta corporativa, rejillas y estilos compartidos
