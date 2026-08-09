@@ -1,0 +1,74 @@
+/* ECPI — Euroconsult Proyectos de Ingeniería
+   Paleta y estilos base del sitio institucional */
+:root{
+  --azul:#3067B2; --azul-claro:#437DCC; --azul-oscuro:#26528E;
+  --amarillo:#EECA1D; --amarillo-claro:#F2D64E; --amarillo-oscuro:#C7A70F;
+  --rojo:#E5234A; --rojo-claro:#EB5271; --rojo-oscuro:#BD1638;
+  --papel:#F5F6F8; --grafito:#2B2B2B; --blanco:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:'Lato',sans-serif;color:var(--grafito);background:var(--blanco);-webkit-font-smoothing:antialiased}
+a{color:var(--azul);text-decoration:none}
+a:hover{color:var(--azul-oscuro)}
+:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
+::selection{background:var(--azul);color:#fff}
+
+.wrap{max-width:1160px;margin:0 auto;padding-left:clamp(20px,4.5vw,48px);padding-right:clamp(20px,4.5vw,48px)}
+
+/* Navegación */
+.navlinks{display:flex;gap:clamp(14px,2vw,28px);white-space:nowrap}
+.navlinks a{font-family:'Lato',sans-serif;font-weight:700;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--grafito)}
+.navlinks a:hover{color:var(--azul)}
+@media(max-width:1024px){.navlinks{display:none}}
+
+/* Enlaces subrayados (CTA del hero, correo de contacto) */
+.linkline{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:700;color:var(--azul);border-bottom:2px solid var(--azul)}
+.linkline:hover{color:var(--azul-oscuro);border-bottom-color:var(--azul-oscuro)}
+
+/* Rejillas */
+.g2{display:grid;grid-template-columns:240px 1fr;gap:clamp(36px,5vw,80px)}
+@media(max-width:900px){.g2{grid-template-columns:1fr;gap:36px}}
+.gmv{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,48px)}
+@media(max-width:680px){.gmv{grid-template-columns:1fr}}
+.arearow{display:grid;grid-template-columns:72px 1fr 1.1fr;gap:clamp(16px,3vw,40px);align-items:baseline}
+@media(max-width:760px){.arearow{grid-template-columns:48px 1fr}.arearow p{grid-column:2}}
+.sedes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,56px)}
+@media(max-width:860px){.sedes{grid-template-columns:1fr;gap:40px}}
+.stats{display:flex;gap:clamp(36px,7vw,100px);flex-wrap:wrap}
+.comp{display:grid;grid-template-columns:300px 1fr;gap:clamp(40px,6vw,96px);align-items:center}
+@media(max-width:860px){.comp{grid-template-columns:1fr;gap:32px}}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,40px)}
+@media(max-width:760px){.cgrid{grid-template-columns:1fr}}
+.fgrid{display:flex;justify-content:space-between;align-items:flex-start;gap:48px;flex-wrap:wrap}
+
+/* Carrusel horizontal de proyectos */
+.projrow{display:grid;grid-auto-flow:column;grid-auto-columns:min(440px,82vw);gap:clamp(20px,2.5vw,32px);overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:14px;scrollbar-color:var(--azul) #E0E4EA;scrollbar-width:thin}
+.projrow>article{scroll-snap-align:start}
+
+/* Imágenes a sangre (antiguos image-slot del diseño) */
+.imgfill{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* Esquinas del recuadro del hero */
+.cb i{position:absolute;width:26px;height:26px;border:0 solid var(--cbc,var(--azul))}
+.cb .tl{top:0;left:0;border-top-width:2px;border-left-width:2px}
+.cb .tr{top:0;right:0;border-top-width:2px;border-right-width:2px}
+.cb .bl{bottom:0;left:0;border-bottom-width:2px;border-left-width:2px}
+.cb .br{bottom:0;right:0;border-bottom-width:2px;border-right-width:2px}
+
+/* Accesibilidad */
+.skip{position:absolute;left:12px;top:-52px;z-index:200;background:var(--azul);color:#fff;padding:10px 18px;font:700 14px 'Lato',sans-serif}
+.skip:focus{top:12px}
+
+/* Selector de idioma */
+.langbtn{background:none;border:none;cursor:pointer;font:700 12px/1 'Lato',sans-serif;letter-spacing:1.5px;color:#7A8390;padding:8px 5px;border-bottom:2px solid transparent}
+.langbtn:hover{color:var(--azul-oscuro)}
+.langbtn[aria-pressed="true"]{color:var(--azul);border-bottom-color:var(--azul)}
+
+/* Entradas discretas al hacer scroll */
+.js-anim .rv{opacity:0;transform:translateY(10px);transition:opacity .45s ease,transform .45s ease}
+.js-anim .rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js-anim .rv{opacity:1;transform:none;transition:none}
+}
