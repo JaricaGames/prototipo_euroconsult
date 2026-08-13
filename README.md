@@ -62,7 +62,7 @@ Todas las rutas del sitio son relativas, así que funciona igual en un subdirect
 ## Notas de edición
 
 - **Idiomas**: los textos de los cuatro idiomas están en `assets/js/main.js` (objeto `dicts`). El HTML contiene la versión en español como contenido por defecto (visible también sin JavaScript). Si se cambia un texto, conviene cambiarlo en ambos sitios para el español.
-- **Logos**: los logotipos actuales son una recreación tipográfica provisional. Los puntos a sustituir por el SVG oficial están marcados con comentarios `<!-- LOGO ECPI -->` y `<!-- LOGO FILIAL -->` en `index.html`.
+- **Logos**: logotipos oficiales en `assets/img` (`logo-ecpi.png`, `logo-ecpi-blanco.png` para el footer azul, `logo-euroconsult-america.png` y `logo-euroconsult-colombia.png`), generados a partir de los PNG maestros de `Web\Inicial\logos`. Los puntos de inserción siguen marcados con comentarios `<!-- LOGO ECPI -->` y `<!-- LOGO FILIAL -->`. El favicon (`assets/img/favicon.png` y `apple-touch-icon.png`) sale del sello `ECPi_Sello01.png`.
 - **Datos editables** (ciudades, cifras, correo de contacto): marcados con `<!-- dato editable -->` en `index.html`.
 - **Proyectos**: para añadir un proyecto basta con añadir una entrada en `assets/js/projects-data.js` (con sus cuatro idiomas y, opcionalmente, `img`); aparecerá automáticamente en `proyectos.html` y tendrá su página de detalle en `proyecto.html?id=<id>`. Los proyectos sin `img` muestran un marcador de posición hexagonal.
 - **Navegación móvil**: por diseño, el menú de enlaces se oculta por debajo de 1024 px (la navegación se hace por scroll); el selector de idioma sigue visible.
