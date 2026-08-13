@@ -141,14 +141,18 @@
 
   <section id="proyectos" style="background:var(--blanco);padding-top:clamp(48px,7vh,84px);padding-bottom:clamp(48px,7vh,84px)">
     <div class="wrap">
-      <div class="rv" style="display:flex;align-items:baseline;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,5vh,52px)">
+      <div class="rv" style="display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,5vh,52px)">
         <div>
           <p data-i18n="sp_kicker" style="font-weight:700;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--grafito)">Proyectos</p>
           <h2 data-i18n="sp_title" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(24px,2.8vw,36px);line-height:1.2;color:var(--grafito);margin-top:10px;max-width:680px;text-wrap:pretty">Cada obra explica el reto, la solución y el impacto.</h2>
         </div>
+        <div style="margin-left:auto;display:flex;gap:10px">
+          <button type="button" class="pnbtn" id="projprev" aria-label="Proyecto anterior" data-i18n-aria="aria_prev">←</button>
+          <button type="button" class="pnbtn" id="projnext" aria-label="Proyecto siguiente" data-i18n-aria="aria_next">→</button>
+        </div>
       </div>
       <div id="projrow" class="projrow rv" tabindex="0" aria-label="Proyectos del grupo" data-i18n-aria="aria_proj">
-        <article style="background:var(--papel);border-top:3px solid var(--azul);display:flex;flex-direction:column">
+        <article style="background:var(--papel);display:flex;flex-direction:column">
           <div style="position:relative;height:260px">
             <img class="imgfill" src="assets/img/proj-popayan.webp" alt="Torre de control del Aeropuerto Guillermo León Valencia, Popayán" data-i18n-alt="p1_alt" style="object-position:50% 23%" loading="lazy" decoding="async">
           </div>
@@ -173,6 +177,7 @@
           </div>
         </article>
       </div>
+      <div id="projdots" class="projdots rv"></div>
       <p class="rv" style="margin-top:28px"><a class="linkline" href="proyectos.html" style="font-size:13px;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:5px"><span data-i18n="morep">Todos los proyectos</span> →</a></p>
     </div>
   </section>
@@ -252,6 +257,9 @@
 (function () {
   'use strict';
   var HEX = '<svg width="72" height="79" viewBox="0 0 100 110" aria-hidden="true"><polygon points="50,5 91,28.5 91,81.5 50,105 9,81.5 9,28.5" fill="none" stroke="currentColor" stroke-width="4"></polygon><polygon points="50,34 66,43.5 66,66.5 50,76 34,66.5 34,43.5" fill="currentColor"></polygon></svg>';
+  var row = document.getElementById('projrow');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   function esc(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
@@ -259,15 +267,130 @@
     return '<div><p style="font-weight:700;font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:#7A8390">' + esc(label) + '</p>'
       + '<p style="font-size:14px;color:var(--grafito);margin-top:5px">' + esc(value) + '</p></div>';
   }
+  function cards() {
+    return row ? Array.prototype.slice.call(row.children) : [];
+  }
+  /* Punto focal: al inicio es el centro de la primera tarjeta (borde izquierdo),
+     al final el de la última (borde derecho) y entre medias el centro del visor */
+  function offsetFromCenter(el) {
+    var rr = row.getBoundingClientRect();
+    var er = el.getBoundingClientRect();
+    var max = row.scrollWidth - row.clientWidth;
+    var p = max > 0 ? Math.min(1, Math.max(0, row.scrollLeft / max)) : 0.5;
+    var w = el.offsetWidth;
+    var focal = w / 2 + p * (row.clientWidth - w);
+    return (er.left + er.width / 2 - rr.left) - focal;
+  }
+  function nearestIndex() {
+    var best = 0, bd = Infinity;
+    cards().forEach(function (el, i) {
+      var d = Math.abs(offsetFromCenter(el));
+      if (d < bd) { bd = d; best = i; }
+    });
+    return best;
+  }
+  /* Burbujas: cada tarjeta crece al acercarse al centro y se atenúa hacia los lados */
+  function update() {
+    var cs = cards();
+    if (!cs.length) return;
+    var step = cs.length > 1 ? Math.max(1, cs[1].offsetLeft - cs[0].offsetLeft) : cs[0].offsetWidth;
+    var best = 0, bd = Infinity;
+    cs.forEach(function (el, i) {
+      var d = Math.abs(offsetFromCenter(el)) / step;
+      if (d < bd) { bd = d; best = i; }
+      if (!reduce) {
+        var k = Math.min(d, 1.6);
+        el.style.setProperty('--s', (1 - 0.12 * k).toFixed(4));
+        el.style.setProperty('--o', (1 - 0.3 * Math.min(k, 1)).toFixed(3));
+      }
+    });
+    var dots = document.getElementById('projdots');
+    if (dots) Array.prototype.forEach.call(dots.children, function (b, i) {
+      b.classList.toggle('on', i === best);
+      b.classList.toggle('near', Math.abs(i - best) === 1);
+      if (i === best) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+    });
+  }
+  var raf = false;
+  function onScroll() {
+    if (raf) return;
+    raf = true;
+    requestAnimationFrame(function () { raf = false; update(); });
+  }
+  /* Asentado con animación propia, más lenta y suave que el smooth nativo.
+     El imán (scroll-snap) se apaga mientras dura y se reactiva al terminar. */
+  var settleRaf = null, snapTimer = null;
+  function snapOff() {
+    if (snapTimer) { clearTimeout(snapTimer); snapTimer = null; }
+    row.classList.add('dragging');
+  }
+  function snapBack() {
+    if (snapTimer) clearTimeout(snapTimer);
+    snapTimer = setTimeout(function () {
+      snapTimer = null;
+      row.classList.remove('dragging');
+    }, 80);
+  }
+  function cancelSettle() {
+    if (settleRaf) { cancelAnimationFrame(settleRaf); settleRaf = null; }
+  }
+  function animateTo(left) {
+    cancelSettle();
+    var max = row.scrollWidth - row.clientWidth;
+    left = Math.max(0, Math.min(max, left));
+    var from = row.scrollLeft, delta = left - from;
+    if (Math.abs(delta) < 1) { row.scrollLeft = left; snapBack(); return; }
+    snapOff();
+    var dur = Math.min(1200, Math.max(600, Math.abs(delta) * 1.1));
+    var t0 = null;
+    function frame(ts) {
+      if (t0 === null) t0 = ts;
+      var t = Math.min(1, (ts - t0) / dur);
+      row.scrollLeft = from + delta * (1 - Math.pow(1 - t, 3));
+      if (t < 1) { settleRaf = requestAnimationFrame(frame); }
+      else { settleRaf = null; snapBack(); }
+    }
+    settleRaf = requestAnimationFrame(frame);
+  }
+  function goTo(i) {
+    var cs = cards();
+    if (!cs.length) return;
+    i = Math.max(0, Math.min(cs.length - 1, i));
+    /* Centrar la tarjeta en el visor; en los topes el recorrido se agota
+       y la primera/última quedan alineadas a su borde */
+    var rr = row.getBoundingClientRect();
+    var er = cs[i].getBoundingClientRect();
+    var left = row.scrollLeft + (er.left + er.width / 2 - rr.left) - row.clientWidth / 2;
+    if (reduce) {
+      cancelSettle();
+      row.scrollLeft = Math.max(0, Math.min(row.scrollWidth - row.clientWidth, left));
+      snapBack();
+      return;
+    }
+    animateTo(left);
+  }
+  function buildDots() {
+    var wrap = document.getElementById('projdots');
+    if (!wrap) return;
+    wrap.innerHTML = '';
+    cards().forEach(function (el, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      var h = el.querySelector('h3');
+      b.setAttribute('aria-label', h ? h.textContent : String(i + 1));
+      b.addEventListener('click', function () { goTo(i); });
+      wrap.appendChild(b);
+    });
+  }
   function render(lang, d) {
-    var row = document.getElementById('projrow');
     if (!row || !window.ECPI_PROJECTS) return;
+    var keep = row.scrollLeft;
     row.innerHTML = window.ECPI_PROJECTS.map(function (p) {
       var t = p[lang] || p.es;
       var media = p.img
         ? '<img class="imgfill" src="' + esc(p.img) + '" alt="' + esc(t.title) + '"' + (p.imgPos ? ' style="object-position:' + esc(p.imgPos) + '"' : '') + ' loading="lazy" decoding="async">'
         : '<div class="imgph" aria-hidden="true">' + HEX + '</div>';
-      return '<article style="background:var(--papel);border-top:3px solid var(--azul);display:flex;flex-direction:column">'
+      return '<article style="background:var(--papel);display:flex;flex-direction:column">'
         + '<div style="position:relative;height:260px">' + media + '</div>'
         + '<div style="display:flex;flex-direction:column;flex:1;padding:26px 28px 30px">'
         + '<p style="font-weight:700;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:var(--azul)">' + esc(t.kicker) + '</p>'
@@ -278,6 +401,54 @@
         + '<p style="margin-top:auto;padding-top:22px"><a class="linkline" href="proyecto.html?id=' + encodeURIComponent(p.id) + '" style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:4px">' + esc(d.view_p) + ' →</a></p>'
         + '</div></article>';
     }).join('');
+    row.scrollLeft = keep;
+    buildDots();
+    update();
+  }
+  if (row) {
+    row.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    var prev = document.getElementById('projprev');
+    var next = document.getElementById('projnext');
+    if (prev) prev.addEventListener('click', function () { goTo(nearestIndex() - 1); });
+    if (next) next.addEventListener('click', function () { goTo(nearestIndex() + 1); });
+
+    /* Arrastre con el ratón (el táctil ya hace scroll nativo). Al soltar,
+       se asienta siempre con una tarjeta en el centro del visor. El imán
+       (scroll-snap) queda apagado mientras dura el arrastre y el asentado. */
+    var dragging = false, dragged = false, dragId = null, dragX = 0, dragScroll = 0;
+    row.addEventListener('pointerdown', function (e) {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      dragging = true; dragged = false; dragId = e.pointerId;
+      dragX = e.clientX; dragScroll = row.scrollLeft;
+      cancelSettle(); /* si seguía asentándose, se detiene donde está */
+      if (snapTimer) snapOff(); /* y el imán se mantiene apagado */
+    });
+    row.addEventListener('pointermove', function (e) {
+      if (!dragging || e.pointerId !== dragId) return;
+      var dx = e.clientX - dragX;
+      if (!dragged && Math.abs(dx) > 6) {
+        dragged = true;
+        snapOff();
+        try { row.setPointerCapture(dragId); } catch (err) {}
+      }
+      if (dragged) row.scrollLeft = dragScroll - dx;
+    });
+    function endDrag() {
+      if (!dragging) return;
+      dragging = false;
+      if (dragged || row.classList.contains('dragging')) {
+        goTo(nearestIndex());
+        if (dragged) setTimeout(function () { dragged = false; }, 0);
+      }
+    }
+    row.addEventListener('pointerup', endDrag);
+    row.addEventListener('pointercancel', endDrag);
+    row.addEventListener('click', function (e) { if (dragged) { e.preventDefault(); e.stopPropagation(); } }, true);
+    row.addEventListener('dragstart', function (e) { e.preventDefault(); });
+
+    buildDots();
+    update();
   }
   document.addEventListener('ecpi:lang', function (e) { render(e.detail.lang, e.detail.dict); });
 })();

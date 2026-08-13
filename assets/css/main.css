@@ -9,7 +9,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{font-family:'Lato',sans-serif;color:var(--grafito);background:var(--blanco);-webkit-font-smoothing:antialiased}
-a{color:var(--azul);text-decoration:none}
+a{color:var(--azul);text-decoration:none;transition:color .25s ease}
 a:hover{color:var(--azul-oscuro)}
 :focus-visible{outline:2px solid var(--azul);outline-offset:3px}
 ::selection{background:var(--azul);color:#fff}
@@ -27,15 +27,20 @@ a:hover{color:var(--azul-oscuro)}
 .navlinks a[aria-current="page"]::after{transform:scaleX(1)}
 @media(max-width:1024px){.navlinks{display:none}}
 
-/* Enlaces subrayados (CTA del hero, correo de contacto) */
-.linkline{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:700;color:var(--azul);border-bottom:2px solid var(--azul)}
-.linkline:hover{color:var(--azul-oscuro);border-bottom-color:var(--azul-oscuro)}
-.linkline-w{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:700;color:#fff;border-bottom:2px solid var(--amarillo)}
+/* Enlaces subrayados (CTA del hero, correo de contacto):
+   al pasar el ratón, una segunda línea barre el subrayado de izquierda a derecha */
+.linkline{display:inline-block;position:relative;font-family:'Montserrat',sans-serif;font-weight:700;color:var(--azul);border-bottom:2px solid var(--azul);transition:color .25s ease}
+.linkline::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--amarillo);transform:scaleX(0);transform-origin:right;transition:transform .35s ease}
+.linkline:hover{color:var(--azul-oscuro)}
+.linkline:hover::after{transform:scaleX(1);transform-origin:left}
+.linkline-w{display:inline-block;position:relative;font-family:'Montserrat',sans-serif;font-weight:700;color:#fff;border-bottom:2px solid var(--amarillo);transition:color .25s ease}
+.linkline-w::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .35s ease}
 .linkline-w:hover{color:var(--amarillo)}
+.linkline-w:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* Botón "Trabaja con nosotros" (header y formulario) */
-.btn-cv{background:var(--rojo);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:11px 16px;white-space:nowrap;transition:background .25s ease}
-.btn-cv:hover{background:var(--rojo-oscuro);color:#fff}
+.btn-cv{background:var(--rojo);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:11px 16px;white-space:nowrap;transition:background .25s ease,transform .2s ease,box-shadow .2s ease}
+.btn-cv:hover{background:var(--rojo-oscuro);color:#fff;transform:translateY(-2px);box-shadow:0 6px 16px rgba(189,22,56,.3)}
 @media(max-width:560px){header .btn-cv{display:none}}
 
 /* Formulario de candidatura (trabaja.html) */
@@ -67,15 +72,30 @@ a:hover{color:var(--azul-oscuro)}
 @media(max-width:540px){.fcols{grid-template-columns:1fr}}
 .fcol{display:flex;flex-direction:column;gap:12px}
 .fcol>p{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin-bottom:6px}
-.fcol a{font-size:14px;color:rgba(255,255,255,.78)}
-.fcol a:hover{color:#fff;text-decoration:underline}
+.fcol a{font-size:14px;color:rgba(255,255,255,.78);align-self:flex-start;background:linear-gradient(currentColor,currentColor) no-repeat left bottom/0 1px;padding-bottom:2px;transition:color .25s ease,background-size .3s ease}
+.fcol a:hover{color:#fff;background-size:100% 1px}
 .flegal{border-top:1px solid rgba(255,255,255,.22);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
 .flegal p,.flegal a{font-size:13px;color:rgba(255,255,255,.65)}
-.flegal a:hover{color:#fff;text-decoration:underline}
+.flegal a{background:linear-gradient(currentColor,currentColor) no-repeat left bottom/0 1px;padding-bottom:2px;transition:color .25s ease,background-size .3s ease}
+.flegal a:hover{color:#fff;background-size:100% 1px}
 
-/* Carrusel horizontal de proyectos */
-.projrow{display:grid;grid-auto-flow:column;grid-auto-columns:min(440px,82vw);gap:clamp(20px,2.5vw,32px);overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:14px;scrollbar-color:var(--azul) #E0E4EA;scrollbar-width:thin}
-.projrow>article{scroll-snap-align:start}
+/* Carrusel horizontal de proyectos: burbujas centradas que crecen al pasar por el medio */
+.projrow{display:grid;grid-auto-flow:column;grid-auto-columns:min(440px,82vw);gap:clamp(20px,2.5vw,32px);overflow-x:auto;scroll-snap-type:x mandatory;padding:14px 0 30px;scrollbar-width:none;-ms-overflow-style:none;cursor:grab;user-select:none;-webkit-user-select:none}
+.projrow.dragging{scroll-snap-type:none;cursor:grabbing}
+.projrow::-webkit-scrollbar{display:none}
+.projrow>article{scroll-snap-align:center;border-radius:26px;overflow:hidden;box-shadow:0 14px 36px rgba(38,82,142,.12);transform:scale(var(--s,1));opacity:var(--o,1);transition:transform .3s cubic-bezier(.22,.61,.36,1),opacity .3s ease,box-shadow .25s ease;will-change:transform,opacity}
+.projrow>article:hover{transform:scale(calc(var(--s,1)*1.035));box-shadow:0 18px 46px rgba(38,82,142,.22)}
+.projrow>article:first-child{scroll-snap-align:start}
+.projrow>article:last-child{scroll-snap-align:end}
+.projdots{display:flex;justify-content:center;align-items:center;gap:9px;margin-top:20px;min-height:16px}
+.projdots button{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:#C7D0DC;cursor:pointer;transform:scale(.72);transition:transform .3s ease,background .3s ease}
+.projdots button.near{transform:scale(1)}
+.projdots button.on{background:var(--azul);transform:scale(1.5)}
+.projdots button:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
+.pnbtn{width:44px;height:44px;border-radius:50%;border:1px solid #D3DAE4;background:#fff;color:var(--azul);font-size:17px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease}
+.pnbtn:hover{background:var(--azul);border-color:var(--azul);color:#fff;transform:translateY(-1px)}
+.pnbtn:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.projrow>article,.projdots button,.pnbtn{transition:none}.pnbtn:hover{transform:none}}
 
 /* Cuadrícula de proyectos (proyectos.html) */
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:clamp(24px,3vw,40px)}
@@ -111,7 +131,7 @@ a:hover{color:var(--azul-oscuro)}
 .skip:focus{top:12px}
 
 /* Selector de idioma */
-.langbtn{background:none;border:none;cursor:pointer;font:700 12px/1 'Lato',sans-serif;letter-spacing:1.5px;color:#7A8390;padding:8px 5px;border-bottom:2px solid transparent}
+.langbtn{background:none;border:none;cursor:pointer;font:700 12px/1 'Lato',sans-serif;letter-spacing:1.5px;color:#7A8390;padding:8px 5px;border-bottom:2px solid transparent;transition:color .25s ease,border-color .25s ease}
 .langbtn:hover{color:var(--azul-oscuro)}
 .langbtn[aria-pressed="true"]{color:var(--azul);border-bottom-color:var(--azul)}
 
@@ -121,4 +141,6 @@ a:hover{color:var(--azul-oscuro)}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js-anim .rv{opacity:1;transform:none;transition:none}
+  a,.navlinks a::after,.linkline::after,.linkline-w::after,.btn-cv,.fcol a,.flegal a,.langbtn{transition:none}
+  .btn-cv:hover{transform:none;box-shadow:none}
 }
