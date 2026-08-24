@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Compromiso — ECPI</title>
-<meta name="description" content="El compromiso de ECPI: rigor, coherencia y permanencia. Seis lados, una sola figura.">
+<title>Compromiso — EC Proyectos de Ingeniería</title>
+<meta name="description" content="El compromiso de EC Proyectos de Ingeniería: experiencia, rigor técnico, innovación, proximidad y compromiso. Seis lados, una sola figura.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Compromiso — ECPI">
-<meta property="og:description" content="El compromiso de ECPI: rigor, coherencia y permanencia. Seis lados, una sola figura.">
+<meta property="og:title" content="Compromiso — EC Proyectos de Ingeniería">
+<meta property="og:description" content="El compromiso de EC Proyectos de Ingeniería: experiencia, rigor técnico, innovación, proximidad y compromiso. Seis lados, una sola figura.">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,10 +19,10 @@
 
 <a class="skip" href="#main" data-i18n="skip">Ir al contenido</a>
 
-<header style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid #E4E7EC">
-  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:24px;height:68px">
+<header class="hdr">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px">
     <!-- LOGO ECPI -->
-    <a href="index.html" aria-label="ECPI — Euroconsult Proyectos de Ingeniería" style="display:inline-flex"><img src="assets/img/logo-ecpi.png" alt="" style="height:42px;width:auto;display:block"></a>
+    <a class="lgbox" href="index.html" aria-label="EC Proyectos de Ingeniería"><img class="lg-c" src="assets/img/logo-ecpi.png" alt=""></a>
     <!-- /LOGO ECPI -->
     <nav class="navlinks" aria-label="Navegación principal" data-i18n-aria="aria_nav">
       <a href="grupo.html" data-i18n="nav1">El grupo</a>
@@ -32,7 +32,7 @@
       <a href="compromiso.html" data-i18n="nav4" aria-current="page">Compromiso</a>
       <a href="contacto.html" data-i18n="nav5">Contacto</a>
     </nav>
-    <a class="btn-cv" href="trabaja.html" data-i18n="nav_cv">Trabaja con nosotros</a>
+    <a class="btn-cta" href="hablemos.html" data-i18n="nav_cta">Hablemos de tu proyecto</a>
     <div role="group" aria-label="Selección de idioma" data-i18n-aria="aria_lang" style="display:flex;align-items:center;gap:2px;flex-shrink:0">
       <button type="button" class="langbtn" data-lang="es" aria-pressed="true">ES</button>
       <span aria-hidden="true" style="color:#C6CBD3;font-size:11px">·</span>
@@ -44,7 +44,7 @@
     </div>
   </div>
 </header>
-<div aria-hidden="true" style="height:68px"></div>
+<div aria-hidden="true" style="height:84px"></div>
 
 <main id="main">
   <section style="background:var(--papel);border-bottom:1px solid #E4E7EC">
@@ -62,7 +62,7 @@
         <svg width="240" height="264" viewBox="0 0 100 110" aria-hidden="true" style="color:var(--azul);max-width:60vw"><polygon points="50,5 91,28.5 91,81.5 50,105 9,81.5 9,28.5" fill="none" stroke="currentColor" stroke-width="2.5"></polygon><polygon points="50,26 71,38 71,72 50,84 29,72 29,38" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".45"></polygon><polygon points="50,40 62,47 62,63 50,70 38,63 38,47" fill="currentColor"></polygon></svg>
       </div>
       <div class="rv">
-        <p data-i18n="s4_p1" style="font-size:17px;line-height:1.75;color:#4A4F57;max-width:600px">El monograma hexagonal de ECPI no es un adorno: simboliza la precisión técnica y la integración de servicios. Como en un hexágono, cada lado —cada disciplina, cada sede, cada equipo— sostiene a los demás y da forma a un conjunto exacto.</p>
+        <p data-i18n="s4_p1" style="font-size:17px;line-height:1.75;color:#4A4F57;max-width:600px">El monograma hexagonal de EC Proyectos de Ingeniería no es un adorno: simboliza la precisión técnica y la integración de servicios. Como en un hexágono, cada lado —cada disciplina, cada sede, cada equipo— sostiene a los demás y da forma a un conjunto exacto.</p>
         <p data-i18n="s4_p2" style="font-size:17px;line-height:1.75;color:#4A4F57;margin-top:18px;max-width:600px">Esa es nuestra forma de trabajar: rigor en el detalle, coherencia en el conjunto y una sola voz técnica ante cada proyecto.</p>
       </div>
     </div>
@@ -76,18 +76,32 @@
   </section>
 
   <section style="background:var(--blanco);padding-top:clamp(56px,8vh,90px);padding-bottom:clamp(60px,9vh,110px)">
-    <div class="wrap pri rv">
-      <div style="border-top:3px solid var(--azul);padding-top:22px">
-        <h2 data-i18n="pri1_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:var(--grafito)">Rigor</h2>
-        <p data-i18n="pri1_p" style="font-size:15.5px;line-height:1.7;color:#5A606A;margin-top:10px">Cada dato se mide, se contrasta y se firma. No entregamos lo que no podemos defender.</p>
+    <div class="wrap">
+      <div class="rv" style="max-width:760px;margin-bottom:clamp(32px,5vh,52px)">
+        <h2 data-i18n="fi_title" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(24px,2.8vw,36px);line-height:1.2;color:var(--grafito);text-wrap:pretty">Nuestra forma de entender la ingeniería</h2>
+        <p data-i18n="fi_intro" style="font-size:17px;line-height:1.75;color:#4A4F57;margin-top:16px">Trabajamos para aportar soluciones técnicas de alto valor añadido, basándonos en cinco principios.</p>
       </div>
-      <div style="border-top:3px solid var(--azul);padding-top:22px">
-        <h2 data-i18n="pri2_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:var(--grafito)">Coherencia</h2>
-        <p data-i18n="pri2_p" style="font-size:15.5px;line-height:1.7;color:#5A606A;margin-top:10px">Un mismo criterio técnico en todas las sedes, disciplinas y escalas de proyecto.</p>
-      </div>
-      <div style="border-top:3px solid var(--azul);padding-top:22px">
-        <h2 data-i18n="pri3_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:var(--grafito)">Permanencia</h2>
-        <p data-i18n="pri3_p" style="font-size:15.5px;line-height:1.7;color:#5A606A;margin-top:10px">Acompañamos la vida completa de la obra: quien proyecta con nosotros sabe que seguiremos ahí.</p>
+      <div class="pri rv">
+        <div style="border-top:3px solid var(--azul);padding-top:22px">
+          <h3 data-i18n="pri1_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:var(--grafito)">Experiencia</h3>
+          <p data-i18n="pri1_p" style="font-size:15.5px;line-height:1.7;color:#5A606A;margin-top:10px">Aplicamos el conocimiento acumulado durante décadas a cada nuevo proyecto.</p>
+        </div>
+        <div style="border-top:3px solid var(--azul);padding-top:22px">
+          <h3 data-i18n="pri2_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:var(--grafito)">Rigor técnico</h3>
+          <p data-i18n="pri2_p" style="font-size:15.5px;line-height:1.7;color:#5A606A;margin-top:10px">La calidad y la excelencia técnica constituyen la base de nuestro trabajo.</p>
+        </div>
+        <div style="border-top:3px solid var(--azul);padding-top:22px">
+          <h3 data-i18n="pri3_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:var(--grafito)">Innovación</h3>
+          <p data-i18n="pri3_p" style="font-size:15.5px;line-height:1.7;color:#5A606A;margin-top:10px">Incorporamos nuevas tecnologías, metodologías y herramientas que mejoran la eficiencia y la calidad de nuestros servicios.</p>
+        </div>
+        <div style="border-top:3px solid var(--azul);padding-top:22px">
+          <h3 data-i18n="pri4_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:var(--grafito)">Proximidad</h3>
+          <p data-i18n="pri4_p" style="font-size:15.5px;line-height:1.7;color:#5A606A;margin-top:10px">Trabajamos junto a nuestros clientes, entendiendo sus necesidades y acompañándolos durante todo el desarrollo de los proyectos.</p>
+        </div>
+        <div style="border-top:3px solid var(--azul);padding-top:22px">
+          <h3 data-i18n="pri5_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:var(--grafito)">Compromiso</h3>
+          <p data-i18n="pri5_p" style="font-size:15.5px;line-height:1.7;color:#5A606A;margin-top:10px">Asumimos cada proyecto con responsabilidad, buscando soluciones fiables, eficientes y sostenibles.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -98,7 +112,7 @@
     <div class="fcols">
       <div>
         <!-- LOGO ECPI -->
-        <img src="assets/img/logo-ecpi-blanco.png" alt="ECPI — Proyectos de Ingeniería" style="height:44px;width:auto;display:block">
+        <img src="assets/img/logo-ecpi-blanco.png" alt="EC Proyectos de Ingeniería" style="height:44px;width:auto;display:block">
         <!-- /LOGO ECPI -->
       </div>
       <nav class="fcol" aria-label="El grupo">
@@ -114,7 +128,7 @@
       </nav>
       <nav class="fcol" aria-label="Presencia">
         <p data-i18n="nav3">Presencia</p>
-        <a href="presencia.html">ECPI · <span data-i18n="hq_city3">Madrid, España</span></a>
+        <a href="presencia.html">EC Proyectos de Ingeniería · <span data-i18n="hq_city3">Madrid, España</span></a>
         <a href="presencia.html">Euroconsult América · <span data-i18n="f1_city3">Lima, Perú</span></a>
         <a href="presencia.html">Euroconsult Colombia · <span data-i18n="f2_city3">Bogotá, Colombia</span></a>
       </nav>
@@ -122,12 +136,13 @@
         <p data-i18n="nav5">Contacto</p>
         <a href="contacto.html" data-i18n="s5_title">Contacto institucional</a>
         <a href="mailto:info@ecpi.es">info@ecpi.es</a><!-- dato editable -->
+        <a href="hablemos.html" data-i18n="nav_cta">Hablemos de tu proyecto</a>
         <a href="trabaja.html" data-i18n="nav_cv">Trabaja con nosotros</a>
         <a href="index.html" data-i18n="f_inicio">Inicio</a>
       </nav>
     </div>
     <div class="flegal">
-      <p data-i18n="footer_legal">© 2026 Euroconsult Proyectos de Ingeniería. Todos los derechos reservados.</p>
+      <p data-i18n="footer_legal">© 2026 EC Proyectos de Ingeniería. Todos los derechos reservados.</p>
       <a href="legal.html" data-i18n="f_legal">Aviso legal y privacidad</a>
     </div>
   </div>
