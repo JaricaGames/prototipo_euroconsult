@@ -183,12 +183,21 @@ a:hover{color:var(--azul-oscuro)}
 .imgfill{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
 /* Portada del index: la fotografía a sangre, con el texto y la cabecera encima.
-   La sección adopta la proporción exacta del archivo (2097x941), de modo que la
-   fotografía se ve completa a cualquier ancho —nunca se recorta— y a 1905 px
-   mide 855 px de alto: la pantalla entera, sin necesidad de bajar. */
-.hero{position:relative;background:#0E1B31;display:flex;align-items:center;aspect-ratio:2097/941}
-.hero .imgfill{object-position:50% 50%}
-.hero-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,rgba(9,18,34,.6) 0%,rgba(9,18,34,.4) 42%,rgba(9,18,34,.1) 70%,rgba(9,18,34,0) 100%)}
+   La sección ocupa exactamente la altura de la ventana, sea cual sea. Como el
+   archivo tiene una proporción fija (2097x941), ajustarse en alto obliga a
+   recortar en ancho: la imagen va anclada a la derecha, así que lo que se
+   pierde es la franja de relleno de la izquierda —425 px generados— y no la
+   fotografía. El 25% vertical entra en juego solo en ventanas anchas y bajas,
+   donde el recorte pasa a ser vertical, y protege la cima del arco.
+   svh en vez de vh para que en móvil no la alargue la barra del navegador. */
+.hero{position:relative;background:#0E1B31;display:flex;align-items:center;height:100vh;height:100svh;min-height:620px}
+.hero .imgfill{object-position:100% 25%}
+/* El velo tiene que llegar más a la derecha que antes: al ajustarse la portada
+   en alto se recorta la izquierda, que es la zona oscura, y el texto acaba
+   apoyado sobre partes más claras de la foto según la ventana. El bloque de
+   texto siempre termina entre el 47% y el 66% del ancho, así que hasta ahí el
+   velo se mantiene fuerte y a partir de ahí cae para no apagar el puente. */
+.hero-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,rgba(9,18,34,.82) 0%,rgba(9,18,34,.68) 40%,rgba(9,18,34,.44) 66%,rgba(9,18,34,.12) 86%,rgba(9,18,34,0) 100%)}
 /* El ancho del texto va en vw además de en px: como la foto va a sangre, un
    límite proporcional cae siempre sobre el mismo punto de la imagen (x≈1363),
    que es donde el fondo todavía es oscuro. Con un límite fijo en px, al
@@ -207,8 +216,8 @@ a:hover{color:var(--azul-oscuro)}
   /* Aquí la banda deja de dar altura para llevar el texto encima, así que la
      fotografía pasa arriba —completa, sin recortar— y el texto baja sobre el
      fondo azul noche. */
-  .hero{display:block;aspect-ratio:auto}
-  .hero .imgfill{position:relative;height:auto;aspect-ratio:2097/941}
+  .hero{display:block;height:auto;min-height:0}
+  .hero .imgfill{position:relative;height:auto;aspect-ratio:2097/941;object-position:50% 50%}
   .hero-shade{display:none}
   .hero-copy{max-width:none;padding-top:clamp(30px,5vw,46px);padding-bottom:clamp(38px,6vw,56px)}
 }
