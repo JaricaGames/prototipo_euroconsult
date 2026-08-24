@@ -7,7 +7,7 @@
   --papel:#F5F6F8; --grafito:#2B2B2B; --blanco:#FFFFFF;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:100px}
+html{scroll-behavior:smooth;scroll-padding-top:116px}
 body{font-family:'Lato',sans-serif;color:var(--grafito);background:var(--blanco);-webkit-font-smoothing:antialiased}
 a{color:var(--azul);text-decoration:none;transition:color .25s ease}
 a:hover{color:var(--azul-oscuro)}
@@ -72,7 +72,7 @@ a:hover{color:var(--azul-oscuro)}
 .hdr-over:not(.solid) .btn-cta{color:#fff;border-color:rgba(255,255,255,.6);text-shadow:0 1px 3px rgba(4,10,20,.55)}
 .hdr-over:not(.solid) .btn-cta:hover{background:var(--rojo);color:#fff;border-color:var(--rojo);text-shadow:none}
 /* En móvil la foto es una banda baja: el velo se acorta para no comérsela */
-@media(max-width:600px){.hdr-over::before{height:112px}}
+@media(max-width:600px){.hdr-over::before{height:140px}}
 @media(prefers-reduced-motion:reduce){.hdr,.hdr-over::before,.hdr-over .lgbox img{transition:none}}
 
 /* Enlaces subrayados (CTA del hero, correo de contacto):
