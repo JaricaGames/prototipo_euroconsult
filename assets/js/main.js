@@ -700,9 +700,50 @@
     });
   }
 
+  // Selector de areas de negocio (index). Las filas son pestanas: se eligen con
+  // el raton al pasar por encima, con un clic o con las flechas del teclado. La
+  // foto y la descripcion viven en el HTML —las cinco, con su clave de idioma—,
+  // asi que aqui solo se decide cual se ensena y no hay texto que traducir.
+  function areaTabs() {
+    var sel = document.querySelector('.asel');
+    if (!sel) return;
+    var tabs = Array.prototype.slice.call(sel.querySelectorAll('.abtn'));
+    var fotos = document.querySelectorAll('.apic');
+    var descs = document.querySelectorAll('.adesc');
+    var panel = document.getElementById('apics');
+    if (!tabs.length) return;
+
+    function elegir(i, foco) {
+      tabs.forEach(function (b, k) {
+        var act = k === i;
+        b.classList.toggle('on', act);
+        b.setAttribute('aria-selected', String(act));
+        b.tabIndex = act ? 0 : -1;          // el tabulador entra una vez, no cinco
+      });
+      for (var k = 0; k < fotos.length; k++) fotos[k].classList.toggle('on', k === i);
+      for (var m = 0; m < descs.length; m++) descs[m].hidden = m !== i;
+      if (panel && tabs[i].id) panel.setAttribute('aria-labelledby', tabs[i].id);
+      if (foco) tabs[i].focus();
+    }
+
+    tabs.forEach(function (b, i) {
+      b.addEventListener('click', function () { elegir(i); });
+      b.addEventListener('mouseenter', function () { elegir(i); });
+      b.addEventListener('focus', function () { elegir(i); });
+      b.addEventListener('keydown', function (e) {
+        var n = tabs.length;
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); elegir((i + 1) % n, true); }
+        else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); elegir((i - 1 + n) % n, true); }
+        else if (e.key === 'Home') { e.preventDefault(); elegir(0, true); }
+        else if (e.key === 'End') { e.preventDefault(); elegir(n - 1, true); }
+      });
+    });
+  }
+
   function init() {
     langMenu();
     burgerMenu();
+    areaTabs();
     var saved = 'es';
     try { saved = localStorage.getItem('ecpi-lang') || 'es'; } catch (e) {}
     if (!dicts[saved]) saved = 'es';

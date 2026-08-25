@@ -118,34 +118,62 @@
   </section>
   <!-- /PUNTO DE PARTIDA -->
 
+  <!-- ÁREAS DE NEGOCIO -->
   <section id="areas" style="background:var(--papel);padding-top:clamp(48px,7vh,84px);padding-bottom:clamp(48px,7vh,84px)">
     <div class="wrap">
-      <div class="rv" style="display:flex;align-items:baseline;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,5vh,52px)">
-        <div>
-          <p data-i18n="s2_kicker" style="font-weight:700;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--grafito)">Áreas de negocio</p>
-          <h2 data-i18n="s2_title" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(24px,2.8vw,36px);line-height:1.2;color:var(--grafito);margin-top:10px;max-width:680px;text-wrap:pretty">Los sectores donde el grupo aporta su criterio técnico.</h2>
+      <div class="ahead">
+        <p class="rv" data-i18n="s2_kicker" style="font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#7A8390">Áreas de negocio</p>
+        <h2 class="rv" data-i18n="s2_title" style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:clamp(26px,2.9vw,40px);line-height:1.28;color:var(--grafito);max-width:620px;text-wrap:pretty">Los sectores donde el grupo aporta su criterio técnico.</h2>
+      </div>
+      <div class="agrid rv">
+        <div class="asel" role="tablist" aria-label="Áreas de negocio" data-i18n-aria="s2_kicker">
+          <button type="button" role="tab" id="atab1" class="abtn on" aria-selected="true" aria-controls="apics" tabindex="0">
+            <span class="abn" aria-hidden="true">01</span>
+            <span class="abt" data-i18n="an1_t">Transportes</span>
+            <span class="abf" aria-hidden="true">→</span>
+          </button>
+          <button type="button" role="tab" id="atab2" class="abtn" aria-selected="false" aria-controls="apics" tabindex="-1">
+            <span class="abn" aria-hidden="true">02</span>
+            <span class="abt" data-i18n="an2_t">Aeropuertos</span>
+            <span class="abf" aria-hidden="true">→</span>
+          </button>
+          <button type="button" role="tab" id="atab3" class="abtn" aria-selected="false" aria-controls="apics" tabindex="-1">
+            <span class="abn" aria-hidden="true">03</span>
+            <span class="abt" data-i18n="an3_t">Puertos y costas</span>
+            <span class="abf" aria-hidden="true">→</span>
+          </button>
+          <button type="button" role="tab" id="atab4" class="abtn" aria-selected="false" aria-controls="apics" tabindex="-1">
+            <span class="abn" aria-hidden="true">04</span>
+            <span class="abt" data-i18n="an4_t">Aguas</span>
+            <span class="abf" aria-hidden="true">→</span>
+          </button>
+          <button type="button" role="tab" id="atab5" class="abtn" aria-selected="false" aria-controls="apics" tabindex="-1">
+            <span class="abn" aria-hidden="true">05</span>
+            <span class="abt" data-i18n="an5_t">Edificación</span>
+            <span class="abf" aria-hidden="true">→</span>
+          </button>
+        </div>
+        <div class="apanel">
+          <div class="apics" id="apics" role="tabpanel" aria-labelledby="atab1">
+            <div class="apic on"><img src="assets/img/area-transportes.webp" alt="" loading="lazy" decoding="async"></div>
+            <div class="apic"><img src="assets/img/area-aeropuertos.webp" alt="" loading="lazy" decoding="async"></div>
+            <div class="apic"><img src="assets/img/area-puertos.webp" alt="" loading="lazy" decoding="async"></div>
+            <div class="apic"><img src="assets/img/area-aguas.webp" alt="" loading="lazy" decoding="async"></div>
+            <div class="apic"><img src="assets/img/area-edificacion.webp" alt="" loading="lazy" decoding="async"></div>
+          </div>
+          <div class="adescs">
+            <p class="adesc" data-i18n="an1_p">Carreteras y ferrocarriles con sus estructuras: trazado, puentes y viaductos, y la conservación de la infraestructura ya en servicio.</p>
+            <p class="adesc" data-i18n="an2_p" hidden>Infraestructura aeroportuaria: campos de vuelo, plataformas y la edificación asociada, con la dirección técnica de la obra.</p>
+            <p class="adesc" data-i18n="an3_p" hidden>Obra marítima y protección del litoral: muelles, diques y dragados, con los estudios de dinámica litoral que los sostienen.</p>
+            <p class="adesc" data-i18n="an4_p" hidden>Ciclo integral del agua: regulación y presas, abastecimiento y saneamiento, y obras de defensa frente a avenidas.</p>
+            <p class="adesc" data-i18n="an5_p" hidden>Edificación pública y singular: equipamientos, rehabilitación y las instalaciones que los acompañan.</p>
+          </div>
+          <p style="margin-top:18px"><a class="linkline" href="areas.html" style="font-size:12.5px;letter-spacing:1.8px;text-transform:uppercase;padding-bottom:5px"><span data-i18n="more2">Las áreas en detalle</span> →</a></p>
         </div>
       </div>
-      <ol style="list-style:none">
-        <li class="arearow rv" style="border-top:1px solid #D9DDE4;padding-top:22px;padding-bottom:22px">
-          <h3 data-i18n="an1_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(19px,2vw,24px);line-height:1.25;color:var(--grafito)">Transportes</h3>
-        </li>
-        <li class="arearow rv" style="border-top:1px solid #D9DDE4;padding-top:22px;padding-bottom:22px">
-          <h3 data-i18n="an2_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(19px,2vw,24px);line-height:1.25;color:var(--grafito)">Aeropuertos</h3>
-        </li>
-        <li class="arearow rv" style="border-top:1px solid #D9DDE4;padding-top:22px;padding-bottom:22px">
-          <h3 data-i18n="an3_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(19px,2vw,24px);line-height:1.25;color:var(--grafito)">Puertos y costas</h3>
-        </li>
-        <li class="arearow rv" style="border-top:1px solid #D9DDE4;padding-top:22px;padding-bottom:22px">
-          <h3 data-i18n="an4_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(19px,2vw,24px);line-height:1.25;color:var(--grafito)">Aguas</h3>
-        </li>
-        <li class="arearow rv" style="border-top:1px solid #D9DDE4;border-bottom:1px solid #D9DDE4;padding-top:22px;padding-bottom:22px">
-          <h3 data-i18n="an5_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(19px,2vw,24px);line-height:1.25;color:var(--grafito)">Edificación</h3>
-        </li>
-      </ol>
-      <p class="rv" style="margin-top:32px"><a class="linkline" href="areas.html" style="font-size:13px;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:5px"><span data-i18n="more2">Las áreas en detalle</span> →</a></p>
     </div>
   </section>
+  <!-- /ÁREAS DE NEGOCIO -->
 
   <section id="presencia" style="background:linear-gradient(165deg,var(--azul-oscuro) 0%,#2A5A9C 100%);padding-top:clamp(48px,7vh,84px);padding-bottom:clamp(48px,7vh,84px);color:#fff">
     <div class="wrap">

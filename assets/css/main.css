@@ -361,6 +361,50 @@ a:hover{color:var(--azul-oscuro)}
    retira al bajar y se llevaria el menu con ella. */
 .menu-abierto{overflow:hidden}
 
+/* --- Selector de areas de negocio del index -------------------------------
+   Las cinco areas son pestanas: al elegir una, su foto se descubre de arriba
+   abajo en el panel de al lado y aparece su descripcion. El panel va pegado
+   mientras se recorren las filas, para que la foto siga a la vista. */
+/* Rotulo y titular apilados a la izquierda, como en el resto del index. En el
+   lienzo iban a dos columnas, con el titular a la derecha, pero alli todas las
+   secciones repiten ese patron; aqui la seccion va sola y desentonaba. */
+.ahead{max-width:760px}
+.ahead h2{margin-top:10px}
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);margin-top:clamp(44px,7vh,72px);align-items:start}
+
+.asel{border-bottom:1px solid rgba(9,18,34,.12)}
+/* all:unset deja el boton sin apariencia de boton: es una fila de texto */
+.abtn{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:56px 1fr 40px;align-items:baseline;gap:clamp(14px,2vw,28px);width:100%;padding:clamp(18px,2.6vh,26px) 0;border-top:1px solid rgba(9,18,34,.12)}
+.abtn .abn{font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;color:#B6BDC7;transition:color .3s ease}
+.abtn .abt{font-family:'Montserrat',sans-serif;font-weight:600;font-size:clamp(22px,2.4vw,34px);line-height:1.15;color:#9AA3AF;transition:color .3s ease,transform .45s cubic-bezier(.22,.61,.36,1)}
+.abtn .abf{justify-self:end;font-size:20px;color:var(--amarillo);opacity:0;transform:translateX(-8px);transition:opacity .3s ease,transform .45s cubic-bezier(.22,.61,.36,1)}
+.abtn:hover .abt,.abtn:focus-visible .abt{color:var(--grafito)}
+.abtn.on .abt{color:var(--grafito);transform:translateX(14px)}
+.abtn.on .abn{color:var(--azul)}
+.abtn.on .abf{opacity:1;transform:none}
+.abtn:focus-visible{outline:2px solid var(--azul);outline-offset:4px}
+
+/* Las cinco fotos van apiladas y solo se recorta la elegida. La visibilidad se
+   retrasa lo que dura el barrido para que la saliente no desaparezca de golpe. */
+.apanel{position:sticky;top:120px}
+.apics{position:relative;height:clamp(320px,34vw,460px);overflow:hidden;background:#0B1526}
+.apic{position:absolute;inset:0;visibility:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.65,0,.35,1),visibility 0s linear .7s}
+.apic.on{visibility:visible;clip-path:inset(0);transition:clip-path .7s cubic-bezier(.65,0,.35,1)}
+.apic img{width:100%;height:100%;object-fit:cover;display:block}
+/* Altura minima: sin ella el panel pega un salto al cambiar de descripcion */
+.adescs{min-height:3.6em;margin-top:22px}
+.adesc{font-size:15px;font-weight:300;line-height:1.8;color:#5A606A;max-width:520px}
+
+@media(max-width:960px){
+  .agrid{grid-template-columns:1fr}
+  .apanel{position:relative;top:auto}
+  .apics{height:clamp(260px,44vw,420px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .apic{transition:none}
+  .abtn .abt,.abtn .abn,.abtn .abf{transition:none}
+}
+
 /* Entradas discretas al hacer scroll */
 .js-anim .rv{opacity:0;transform:translateY(10px);transition:opacity .45s ease,transform .45s ease}
 .js-anim .rv.on{opacity:1;transform:none}
