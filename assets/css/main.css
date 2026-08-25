@@ -125,8 +125,21 @@ a:hover{color:var(--azul-oscuro)}
 .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,40px)}
 @media(max-width:760px){.cgrid{grid-template-columns:1fr}}
 .fgrid{display:flex;justify-content:space-between;align-items:flex-start;gap:48px;flex-wrap:wrap}
-.fcols{display:grid;grid-template-columns:minmax(160px,1.2fr) repeat(4,1fr);gap:clamp(28px,4vw,48px)}
-@media(max-width:960px){.fcols{grid-template-columns:1fr 1fr}}
+/* Las columnas se miden por su contenido y no a partes iguales: repartidas por
+   igual, la mas cargada partia sus entradas en dos lineas mientras las demas
+   sobraban de ancho. Importa porque el subrayado de los enlaces se dibuja abajo
+   del todo, y en una entrada partida quedaba colgando bajo la segunda linea. */
+.fcols{display:grid;grid-template-columns:auto repeat(4,auto);justify-content:space-between;gap:clamp(28px,3vw,48px)}
+.fcols .fcol a,.fcols .fcol>p{white-space:nowrap}
+/* Se pliega antes de que la fila se quede sin ancho: las cinco columnas piden
+   888 px en el idioma mas largo, el frances, y a 1121 px de ventana quedan 1048
+   disponibles. A tres y a dos columnas cabe todo de una linea igualmente, pero
+   se les devuelve el salto por si algun texto crece. */
+@media(max-width:1120px){
+  .fcols{grid-template-columns:repeat(3,1fr);justify-content:stretch}
+  .fcols .fcol a,.fcols .fcol>p{white-space:normal}
+}
+@media(max-width:860px){.fcols{grid-template-columns:1fr 1fr}}
 @media(max-width:540px){.fcols{grid-template-columns:1fr}}
 .fcol{display:flex;flex-direction:column;gap:12px}
 .fcol>p{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin-bottom:6px}
