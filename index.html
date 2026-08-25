@@ -27,22 +27,43 @@
     <!-- /LOGO ECPI -->
     <nav class="navlinks" aria-label="Navegación principal" data-i18n-aria="aria_nav">
       <a href="grupo.html" data-i18n="nav1">El grupo</a>
+      <a href="areas.html" data-i18n="nav2">Áreas de negocio</a>
       <a href="presencia.html" data-i18n="nav3">Presencia</a>
       <a href="proyectos.html" data-i18n="navp">Proyectos</a>
-      <a href="compromiso.html" data-i18n="nav4">Compromiso</a>
       <a href="contacto.html" data-i18n="nav5">Contacto</a>
     </nav>
     <a class="btn-cta" href="hablemos.html" data-i18n="nav_cta">Hablemos de tu proyecto</a>
-    <div role="group" aria-label="Selección de idioma" data-i18n-aria="aria_lang" style="display:flex;align-items:center;gap:2px;flex-shrink:0">
-      <button type="button" class="langbtn" data-lang="es" aria-pressed="true">ES</button>
-      <span aria-hidden="true" style="color:#C6CBD3;font-size:11px">·</span>
-      <button type="button" class="langbtn" data-lang="en" aria-pressed="false">EN</button>
-      <span aria-hidden="true" style="color:#C6CBD3;font-size:11px">·</span>
-      <button type="button" class="langbtn" data-lang="fr" aria-pressed="false">FR</button>
-      <span aria-hidden="true" style="color:#C6CBD3;font-size:11px">·</span>
-      <button type="button" class="langbtn" data-lang="pt" aria-pressed="false">PT</button>
+    <!-- SELECTOR DE IDIOMA -->
+    <div class="lang">
+      <button type="button" class="lang-tr" aria-haspopup="true" aria-expanded="false" aria-controls="langmenu" aria-label="Selección de idioma" data-i18n-aria="aria_lang">
+        <img class="lang-fl" src="assets/img/flag-es.svg" alt="" width="24" height="16">
+        <span class="lang-code">ES</span>
+        <svg class="lang-car" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0h10L5 6Z" fill="currentColor"/></svg>
+      </button>
+      <ul class="lang-menu" id="langmenu" role="menu" hidden>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="true" class="langbtn" data-lang="es"><img src="assets/img/flag-es.svg" alt="" width="24" height="16">Español</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" class="langbtn" data-lang="en"><img src="assets/img/flag-en.svg" alt="" width="24" height="16">English</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" class="langbtn" data-lang="fr"><img src="assets/img/flag-fr.svg" alt="" width="24" height="16">Français</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" class="langbtn" data-lang="pt"><img src="assets/img/flag-pt.svg" alt="" width="24" height="16">Português</button></li>
+      </ul>
     </div>
+    <!-- /SELECTOR DE IDIOMA -->
+    <!-- MENÚ MÓVIL -->
+    <button type="button" class="burger" aria-label="Menú" data-i18n-aria="aria_menu" aria-expanded="false" aria-controls="menumovil">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
   </div>
+  <nav class="menumovil" id="menumovil" aria-label="Navegación principal" data-i18n-aria="aria_nav" hidden>
+    <div class="wrap">
+      <a href="grupo.html" data-i18n="nav1">El grupo</a>
+      <a href="areas.html" data-i18n="nav2">Áreas de negocio</a>
+      <a href="presencia.html" data-i18n="nav3">Presencia</a>
+      <a href="proyectos.html" data-i18n="navp">Proyectos</a>
+      <a href="contacto.html" data-i18n="nav5">Contacto</a>
+      <a class="btn-cta" href="hablemos.html" data-i18n="nav_cta">Hablemos de tu proyecto</a>
+    </div>
+  </nav>
+  <!-- /MENÚ MÓVIL -->
 </header>
 
 <main id="main">
@@ -63,11 +84,10 @@
 
   <section id="grupo" style="background:var(--azul-oscuro)">
     <div class="wrap" style="padding-top:clamp(48px,7vh,84px);padding-bottom:clamp(48px,7vh,84px)">
-      <!-- Alineado con el texto de la portada, más dos tabulaciones -->
-      <div class="rv" style="padding-left:clamp(32px,6vw,112px)">
+      <div class="rv">
         <h2 data-i18n="sg_title" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(26px,3vw,40px);line-height:1.18;color:#fff;max-width:700px;text-wrap:pretty">Somos una empresa nueva, pero no partimos de cero.</h2>
-        <p data-i18n="sg_p1" style="font-size:17px;line-height:1.75;color:rgba(255,255,255,.85);margin-top:26px;max-width:660px">EC Proyectos de Ingeniería nace en 2024 como un nuevo proyecto empresarial creado para adquirir y dar continuidad a las dos unidades productivas más importantes de Grupo Euroconsult, compañía histórica de la ingeniería española fundada en 1968.</p>
-        <p data-i18n="sg_p2" style="font-size:17px;line-height:1.75;color:rgba(255,255,255,.85);margin-top:18px;max-width:660px">Décadas de experiencia en ingeniería nos respaldan: integramos el conocimiento técnico, las capacidades especializadas y los profesionales procedentes de esas actividades, y los combinamos con una estructura empresarial más ágil, eficiente y orientada al futuro.</p>
+        <p data-i18n="sg_p1" style="font-size:17px;line-height:1.75;text-align:justify;-webkit-hyphens:auto;hyphens:auto;color:rgba(255,255,255,.85);margin-top:26px;max-width:660px">EC Proyectos de Ingeniería nace en 2024 como un nuevo proyecto empresarial creado para adquirir y dar continuidad a las dos unidades productivas más importantes de Grupo Euroconsult, compañía histórica de la ingeniería española fundada en 1968.</p>
+        <p data-i18n="sg_p2" style="font-size:17px;line-height:1.75;text-align:justify;-webkit-hyphens:auto;hyphens:auto;color:rgba(255,255,255,.85);margin-top:18px;max-width:660px">Décadas de experiencia en ingeniería nos respaldan: integramos el conocimiento técnico, las capacidades especializadas y los profesionales procedentes de esas actividades, y los combinamos con una estructura empresarial más ágil, eficiente y orientada al futuro.</p>
       </div>
     </div>
   </section>
@@ -98,6 +118,34 @@
   </section>
   <!-- /PUNTO DE PARTIDA -->
 
+  <section id="areas" style="background:var(--papel);padding-top:clamp(48px,7vh,84px);padding-bottom:clamp(48px,7vh,84px)">
+    <div class="wrap">
+      <div class="rv" style="display:flex;align-items:baseline;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,5vh,52px)">
+        <div>
+          <p data-i18n="s2_kicker" style="font-weight:700;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--grafito)">Áreas de negocio</p>
+          <h2 data-i18n="s2_title" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(24px,2.8vw,36px);line-height:1.2;color:var(--grafito);margin-top:10px;max-width:680px;text-wrap:pretty">Los sectores donde el grupo aporta su criterio técnico.</h2>
+        </div>
+      </div>
+      <ol style="list-style:none">
+        <li class="arearow rv" style="border-top:1px solid #D9DDE4;padding-top:22px;padding-bottom:22px">
+          <h3 data-i18n="an1_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(19px,2vw,24px);line-height:1.25;color:var(--grafito)">Transportes</h3>
+        </li>
+        <li class="arearow rv" style="border-top:1px solid #D9DDE4;padding-top:22px;padding-bottom:22px">
+          <h3 data-i18n="an2_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(19px,2vw,24px);line-height:1.25;color:var(--grafito)">Aeropuertos</h3>
+        </li>
+        <li class="arearow rv" style="border-top:1px solid #D9DDE4;padding-top:22px;padding-bottom:22px">
+          <h3 data-i18n="an3_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(19px,2vw,24px);line-height:1.25;color:var(--grafito)">Puertos y costas</h3>
+        </li>
+        <li class="arearow rv" style="border-top:1px solid #D9DDE4;padding-top:22px;padding-bottom:22px">
+          <h3 data-i18n="an4_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(19px,2vw,24px);line-height:1.25;color:var(--grafito)">Aguas</h3>
+        </li>
+        <li class="arearow rv" style="border-top:1px solid #D9DDE4;border-bottom:1px solid #D9DDE4;padding-top:22px;padding-bottom:22px">
+          <h3 data-i18n="an5_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(19px,2vw,24px);line-height:1.25;color:var(--grafito)">Edificación</h3>
+        </li>
+      </ol>
+      <p class="rv" style="margin-top:32px"><a class="linkline" href="areas.html" style="font-size:13px;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:5px"><span data-i18n="more2">Las áreas en detalle</span> →</a></p>
+    </div>
+  </section>
 
   <section id="presencia" style="background:linear-gradient(165deg,var(--azul-oscuro) 0%,#2A5A9C 100%);padding-top:clamp(48px,7vh,84px);padding-bottom:clamp(48px,7vh,84px);color:#fff">
     <div class="wrap">
@@ -110,7 +158,7 @@
       <div class="rv" style="display:flex;flex-wrap:wrap;align-items:center;column-gap:clamp(36px,6vw,80px);row-gap:28px;margin-top:clamp(36px,5vh,56px)">
         <img src="assets/img/logo-ecpi-blanco.png" alt="EC Proyectos de Ingeniería" style="height:48px;width:auto">
         <img src="assets/img/logo-euroconsult-america-blanco.png" alt="Euroconsult América — by ECPI" style="height:58px;width:auto">
-        <img src="assets/img/logo-euroconsult-colombia-blanco.png" alt="Euroconsult Colombia — by ECPI" style="height:58px;width:auto">
+        <img src="assets/img/logo-euroconsult-colombia-blanco.png" alt="Euroconsult Colombia — by ECPI" style="height:71px;width:auto">
       </div>
       <!-- /LOGOS SEDES -->
       <div class="stats rv" style="border-top:1px solid rgba(255,255,255,.3);margin-top:clamp(36px,5vh,56px);padding-top:36px">
@@ -170,19 +218,23 @@
     </div>
   </section>
 
-  <section id="compromiso" style="background:var(--grafito)">
-    <div class="wrap comp" style="padding-top:clamp(48px,7vh,84px);padding-bottom:clamp(48px,7vh,84px)">
-      <div class="rv" style="display:flex;justify-content:center">
-        <svg width="240" height="264" viewBox="0 0 100 110" aria-hidden="true" style="color:var(--azul-claro);max-width:60vw"><polygon points="50,5 91,28.5 91,81.5 50,105 9,81.5 9,28.5" fill="none" stroke="currentColor" stroke-width="2.5"></polygon><polygon points="50,26 71,38 71,72 50,84 29,72 29,38" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".45"></polygon><polygon points="50,40 62,47 62,63 50,70 38,63 38,47" fill="currentColor"></polygon></svg>
+  <!-- CLIENTES -->
+  <section id="clientes" style="background:var(--papel);padding-top:clamp(48px,7vh,84px);padding-bottom:clamp(48px,7vh,84px)">
+    <div class="wrap">
+      <div class="rv" style="max-width:760px;margin-bottom:clamp(32px,5vh,52px)">
+        <p data-i18n="cli_kicker" style="font-weight:700;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--grafito)">Clientes</p>
+        <h2 data-i18n="cli_title" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(24px,2.8vw,36px);line-height:1.2;color:var(--grafito);margin-top:10px;text-wrap:pretty">Administraciones y entidades públicas que confían en el grupo.</h2>
       </div>
-      <div class="rv">
-        <p data-i18n="s4_kicker" style="font-weight:700;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.85)">Compromiso</p>
-        <h2 data-i18n="s4_title" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(26px,3vw,40px);line-height:1.18;color:#fff;margin-top:16px;text-wrap:pretty">Seis lados, una sola figura.</h2>
-        <p data-i18n="s4_p1" style="font-size:17px;line-height:1.75;color:rgba(255,255,255,.82);margin-top:24px;max-width:600px">El monograma hexagonal de EC Proyectos de Ingeniería no es un adorno: simboliza la precisión técnica y la integración de servicios. Como en un hexágono, cada lado —cada disciplina, cada sede, cada equipo— sostiene a los demás y da forma a un conjunto exacto.</p>
-        <p style="margin-top:36px"><a class="linkline-w" href="compromiso.html" style="font-size:13px;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:5px"><span data-i18n="more4">Nuestra forma de trabajar</span> →</a></p>
-      </div>
+      <ul class="clientes rv">
+        <li><img src="assets/img/cliente-bogota.png" alt="Alcaldía Mayor de Bogotá"></li>
+        <li><img src="assets/img/cliente-aerocivil.png" alt="Aeronáutica Civil — Unidad Administrativa Especial"></li>
+        <li><img src="assets/img/cliente-ani.png" alt="Agencia Nacional de Infraestructura"></li>
+        <li><img src="assets/img/cliente-invias.png" alt="INVIAS — Instituto Nacional de Vías"></li>
+        <li><img src="assets/img/cliente-upit.png" alt="Unidad de Planeación de Infraestructura de Transporte"></li>
+      </ul>
     </div>
   </section>
+  <!-- /CLIENTES -->
 
   <!-- CLAIM DE CIERRE -->
   <section style="background:var(--blanco);padding-top:clamp(56px,8vh,96px);padding-bottom:clamp(56px,8vh,96px)">
@@ -221,10 +273,10 @@
         <p data-i18n="nav1">El grupo</p>
         <a href="grupo.html" data-i18n="f_quienes">Quiénes somos</a>
         <a href="grupo.html" data-i18n="f_mision">Misión y visión</a>
-        <a href="compromiso.html" data-i18n="nav4">Compromiso</a>
-      </nav>
+        </nav>
       <nav class="fcol" aria-label="Qué hacemos">
         <p data-i18n="f_hacemos">Qué hacemos</p>
+        <a href="areas.html" data-i18n="s2_kicker">Áreas de negocio</a>
         <a href="proyectos.html" data-i18n="navp">Proyectos</a>
       </nav>
       <nav class="fcol" aria-label="Presencia">

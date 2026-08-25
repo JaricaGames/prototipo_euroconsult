@@ -59,13 +59,16 @@ a:hover{color:var(--azul-oscuro)}
 .hdr-over.solid .lg-w{opacity:0}
 .hdr-over.solid .lg-c{opacity:1}
 /* La navegación va en blanco solo mientras la cabecera es transparente */
-.hdr-over:not(.solid) .navlinks a,.hdr-over:not(.solid) .langbtn{text-shadow:0 1px 3px rgba(4,10,20,.55)}
+.hdr-over:not(.solid) .navlinks a,.hdr-over:not(.solid) .lang-tr{text-shadow:0 1px 3px rgba(4,10,20,.55)}
+.hdr-over:not(.solid) .burger{color:#fff}
 .hdr-over:not(.solid) .navlinks a{color:#fff}
 .hdr-over:not(.solid) .navlinks a:hover,.hdr-over:not(.solid) .navlinks a[aria-current="page"]{color:var(--amarillo)}
 .hdr-over:not(.solid) .navlinks a::after{background:var(--amarillo)}
-.hdr-over:not(.solid) .langbtn{color:rgba(255,255,255,.75)}
-.hdr-over:not(.solid) .langbtn:hover{color:#fff}
-.hdr-over:not(.solid) .langbtn[aria-pressed="true"]{color:#fff;border-bottom-color:var(--amarillo)}
+/* El idioma sobre la portada: en blanco, con el contorno asomando en amarillo
+   como hace la navegación, y el filete de la bandera invertido */
+.hdr-over:not(.solid) .lang-tr{color:#fff}
+.hdr-over:not(.solid) .lang-tr:hover,.hdr-over:not(.solid) .lang-tr[aria-expanded="true"]{color:var(--amarillo);border-color:rgba(255,255,255,.55)}
+.hdr-over:not(.solid) .lang-fl{box-shadow:0 0 0 1px rgba(255,255,255,.5)}
 /* Sobre la portada el contorno y el texto van en blanco —el rojo sobre el cielo
    del puente se queda en 1,5:1 de contraste—, pero el relleno del hover sí es
    rojo, con el contorno fundiéndose en él como en el resto del sitio. */
@@ -96,7 +99,7 @@ a:hover{color:var(--azul-oscuro)}
 .btn-cta{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(12px,1.05vw,15px);letter-spacing:.4px;color:var(--rojo);background:none;border:1px solid var(--rojo);padding:11px 20px;white-space:nowrap;transition:background-color .3s ease,color .3s ease,border-color .3s ease}
 /* Al pasar el ratón el relleno toma el color del contorno, que así desaparece */
 .btn-cta:hover{background:var(--rojo);color:#fff;border-color:var(--rojo)}
-@media(max-width:560px){header .btn-cta{display:none}}
+@media(max-width:560px){.hdr > .wrap > .btn-cta{display:none}}
 
 /* Formulario de candidatura (trabaja.html) */
 .field{display:flex;flex-direction:column;gap:8px}
@@ -164,8 +167,7 @@ a:hover{color:var(--azul-oscuro)}
 @media(max-width:760px){.rsi{grid-template-columns:1fr}}
 .ficha{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 
-/* Principios (compromiso.html) */
-/* Principios (compromiso.html): son cinco, así que la rejilla se ajusta sola
+/* Principios (grupo.html): son cinco, así que la rejilla se ajusta sola
    —cinco en pantalla ancha, y va plegando— en vez de fijar tres columnas. */
 .pri{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:clamp(24px,2.6vw,40px)}
 @media(max-width:560px){.pri{grid-template-columns:1fr}}
@@ -238,10 +240,113 @@ a:hover{color:var(--azul-oscuro)}
 .skip{position:absolute;left:12px;top:-52px;z-index:200;background:var(--azul);color:#fff;padding:10px 18px;font:700 14px 'Lato',sans-serif}
 .skip:focus{top:12px}
 
-/* Selector de idioma */
-.langbtn{background:none;border:none;cursor:pointer;font:700 clamp(12px,1.1vw,15px)/1 'Lato',sans-serif;letter-spacing:1.6px;color:#7A8390;padding:8px 6px;border-bottom:2px solid transparent;transition:color .25s ease,border-color .25s ease}
-.langbtn:hover{color:var(--azul-oscuro)}
-.langbtn[aria-pressed="true"]{color:var(--azul);border-bottom-color:var(--azul)}
+/* Selector de idioma. En reposo no lleva caja: solo la bandera, el código del
+   idioma y un triángulo. El contorno —a escuadra, como el resto de botones del
+   sitio— aparece al acercarse, para que no compita con el botón rojo que tiene
+   al lado. El desplegable repite el filete azul superior de las fichas de
+   proyecto, y el idioma en uso se marca con el amarillo de la casa. */
+.lang{position:relative;flex-shrink:0}
+.lang-tr{display:flex;align-items:center;gap:9px;background:none;cursor:pointer;color:var(--grafito);border:1px solid transparent;padding:8px 11px;transition:color .25s ease,border-color .25s ease}
+.lang-tr:hover,.lang-tr[aria-expanded="true"]{color:var(--azul);border-color:#D3D8E0}
+.lang-code{font:700 clamp(12px,1.1vw,15px)/1 'Lato',sans-serif;letter-spacing:1.5px}
+.lang-car{width:8px;height:auto;flex-shrink:0;transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.lang-tr[aria-expanded="true"] .lang-car{transform:rotate(180deg)}
+/* Un filete de un píxel alrededor de la bandera: sin él, el blanco de Francia y
+   el amarillo de España se derraman sobre el fondo claro de la cabecera. */
+.lang-fl,.lang-menu img{width:20px;height:auto;display:block;box-shadow:0 0 0 1px rgba(43,43,43,.22)}
+
+.lang-menu{position:absolute;top:calc(100% + 13px);right:0;z-index:110;min-width:174px;list-style:none;background:#fff;border:1px solid #E4E7EC;border-top:2px solid var(--azul);padding:4px 0;box-shadow:0 18px 46px rgba(38,82,142,.16);animation:langin .22s cubic-bezier(.4,0,.2,1)}
+.lang-menu[hidden]{display:none}
+@keyframes langin{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:none}}
+/* Cada idioma se nombra en su propia lengua, así que estas cuatro filas son las
+   únicas del sitio que no se traducen al cambiar de idioma. */
+.langbtn{display:flex;align-items:center;gap:13px;width:100%;background:none;border:none;border-left:2px solid transparent;cursor:pointer;padding:11px 18px 11px 16px;text-align:left;white-space:nowrap;font:400 15px/1 'Lato',sans-serif;color:var(--grafito);transition:background-color .2s ease,color .2s ease}
+.langbtn:hover{background:var(--papel);color:var(--azul)}
+.langbtn[aria-checked="true"]{color:var(--azul);font-weight:700;border-left-color:var(--amarillo)}
+
+/* Organigrama del grupo (grupo.html). Va en listas anidadas y no en cajas
+   sueltas: asi un lector de pantalla anuncia la jerarquia —la matriz y, dentro,
+   sus dos subsidiarias— sin depender de los conectores, que son decorativos y
+   se dibujan con pseudoelementos. Las hijas no llevan 'gap': la barra
+   horizontal se forma con media linea en cada una y un hueco la partiria, asi
+   que la separacion es padding. */
+.org,.org ul{list-style:none}
+.org > li > ul{display:flex;justify-content:center;position:relative;margin-top:36px}
+.org > li > ul::before{content:"";position:absolute;top:-36px;left:50%;margin-left:-1px;width:2px;height:36px;background:var(--azul)}
+.org > li > ul > li{position:relative;flex:1 1 0;max-width:460px;padding:36px clamp(16px,4vw,60px) 0}
+.org > li > ul > li::before{content:"";position:absolute;top:0;width:50%;height:2px;background:var(--azul)}
+.org > li > ul > li:first-child::before{left:50%}
+.org > li > ul > li:last-child::before{right:50%}
+.org > li > ul > li::after{content:"";position:absolute;top:0;left:50%;margin-left:-1px;width:2px;height:36px;background:var(--azul)}
+.org > li > .orgcard{max-width:400px;margin:0 auto}
+/* Ficha contorneada entera en el azul de la marca, del mismo grosor por los
+   cuatro lados, como en el organigrama original. Sobre --papel un gris claro no
+   se recortaba, y asi ademas el contorno es el mismo azul que los conectores. */
+.orgcard{position:relative;background:#fff;border:2px solid var(--azul);padding:26px 24px 22px;text-align:center}
+/* Punta de flecha con la que muere la linea que baja a cada subsidiaria. Va en
+   la ficha y no en el <li>, que ya gasta sus dos pseudoelementos en la barra
+   horizontal y en la caida. Comparten color con la linea, asi que el solape no
+   se nota. */
+.org > li > ul > li .orgcard::before{content:"";position:absolute;top:-15px;left:50%;margin-left:-9px;width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;border-top:13px solid var(--azul)}
+/* Caja de altura fija para el logo: sin ella el filete de debajo bailaria entre
+   fichas, porque los tres logos tienen proporciones distintas */
+.orgcard-l{height:78px;display:flex;align-items:center;justify-content:center}
+.orgcard-l img{max-width:100%;width:auto;display:block}
+.orgcard-n{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(14px,1.4vw,16px);letter-spacing:.4px;color:var(--azul);border-top:2px solid var(--azul);margin-top:18px;padding-top:16px}
+.orgcard-r{font-weight:700;font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;color:#7A8390;margin-top:8px}
+.org-legend{display:flex;align-items:center;justify-content:center;gap:12px;font-size:13.5px;color:#5A606A;margin-top:clamp(32px,4vh,44px)}
+.org-legend::before{content:"";width:34px;height:2px;background:var(--azul);flex-shrink:0}
+/* Apilado no sirve el arbol: un tallo entre una hija y la siguiente se leeria
+   como que la primera es duena de la segunda. Se cambia por una espina que baja
+   de la matriz con una derivacion a cada subsidiaria, que dice lo que es. */
+@media(max-width:780px){
+  .org > li > .orgcard{max-width:none;margin:0}
+  .org > li > ul{flex-direction:column;margin-top:0;margin-left:26px;padding:26px 0 0 26px;border-left:2px solid var(--azul)}
+  .org > li > ul::before{display:none}
+  .org > li > ul > li{max-width:none;padding:0}
+  .org > li > ul > li + li{margin-top:26px}
+  .org > li > ul > li::before{content:"";top:50%;left:-26px;width:26px;height:2px;margin-top:-1px}
+  /* Aqui la linea entra por el costado, asi que la punta mira a la derecha */
+  .org > li > ul > li .orgcard::before{top:50%;left:-15px;margin-left:0;margin-top:-9px;border-left:13px solid var(--azul);border-right:0;border-top:9px solid transparent;border-bottom:9px solid transparent}
+  .org > li > ul > li:first-child::before,.org > li > ul > li:last-child::before{left:-26px;right:auto}
+  .org > li > ul > li::after{display:none}
+}
+
+/* Muro de clientes (index). Los cinco logos tienen proporciones muy dispares
+   —de 1,5:1 a 4,6:1—, asi que no se igualan por altura, que dejaria enano al
+   mas apaisado: cada uno se encaja dentro de una misma caja de 240x68 y toca el
+   lado que le corresponda. Optimamente pesan asi lo mismo. */
+.clientes{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;column-gap:clamp(34px,5.5vw,80px);row-gap:clamp(32px,4.5vh,46px);list-style:none}
+.clientes img{width:auto;height:auto;max-width:240px;max-height:68px;display:block;filter:grayscale(1);opacity:.6;transition:filter .3s ease,opacity .3s ease}
+.clientes img:hover{filter:none;opacity:1}
+/* En pantalla tactil no hay raton que pasar por encima: alli van en color desde
+   el principio, o no se verian nunca como son. */
+@media(hover:none){.clientes img{filter:none;opacity:1}}
+@media(max-width:560px){.clientes img{max-width:190px;max-height:56px}}
+
+/* Menu de movil. Por encima de 1024 px los enlaces van en la barra y ni el
+   boton ni el panel existen; por debajo, .navlinks se oculta y este los
+   sustituye. El panel cuelga del <header>, que ya va fijo arriba, asi que se
+   posiciona contra el y no hace falta repetir su altura en ningun sitio. */
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0;background:none;border:none;cursor:pointer;color:var(--grafito);flex-shrink:0}
+.burger span{display:block;width:25px;height:2px;margin:0 auto;background:currentColor;transition:transform .3s cubic-bezier(.4,0,.2,1),opacity .2s ease}
+/* Abierto, las tres barras se cruzan en aspa */
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1024px){.burger{display:flex}}
+
+.menumovil{position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid #E4E7EC;box-shadow:0 22px 46px rgba(18,26,42,.16);max-height:calc(100vh - 100px);overflow-y:auto;animation:menuin .26s cubic-bezier(.4,0,.2,1)}
+.menumovil[hidden]{display:none}
+@keyframes menuin{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.menumovil .wrap{display:flex;flex-direction:column;padding-top:6px;padding-bottom:26px}
+.menumovil a:not(.btn-cta){font-family:'Lato',sans-serif;font-weight:700;font-size:16px;letter-spacing:1.6px;text-transform:uppercase;color:var(--grafito);border-bottom:1px solid #E4E7EC;padding:19px 2px}
+.menumovil a:not(.btn-cta):hover{color:var(--azul)}
+.menumovil a[aria-current="page"]{color:var(--azul)}
+.menumovil .btn-cta{margin-top:24px;text-align:center;padding:15px 20px}
+/* Con el panel abierto se bloquea el desplazamiento: si no, la cabecera se
+   retira al bajar y se llevaria el menu con ella. */
+.menu-abierto{overflow:hidden}
 
 /* Entradas discretas al hacer scroll */
 .js-anim .rv{opacity:0;transform:translateY(10px);transition:opacity .45s ease,transform .45s ease}
@@ -249,6 +354,8 @@ a:hover{color:var(--azul-oscuro)}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js-anim .rv{opacity:1;transform:none;transition:none}
-  a,.navlinks a::after,.linkline::after,.linkline-w::after,.btn-cv,.btn-cta,.fcol a,.flegal a,.langbtn{transition:none}
+  a,.navlinks a::after,.linkline::after,.linkline-w::after,.btn-cv,.btn-cta,.fcol a,.flegal a,.langbtn,.lang-tr,.lang-car,.clientes img,.burger span{transition:none}
+  .menumovil{animation:none}
+  .lang-menu{animation:none}
   .btn-cv:hover{transform:none;box-shadow:none}
 }

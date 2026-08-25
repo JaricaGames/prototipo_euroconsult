@@ -26,22 +26,43 @@
     <!-- /LOGO ECPI -->
     <nav class="navlinks" aria-label="Navegación principal" data-i18n-aria="aria_nav">
       <a href="grupo.html" data-i18n="nav1" aria-current="page">El grupo</a>
+      <a href="areas.html" data-i18n="nav2">Áreas de negocio</a>
       <a href="presencia.html" data-i18n="nav3">Presencia</a>
       <a href="proyectos.html" data-i18n="navp">Proyectos</a>
-      <a href="compromiso.html" data-i18n="nav4">Compromiso</a>
       <a href="contacto.html" data-i18n="nav5">Contacto</a>
     </nav>
     <a class="btn-cta" href="hablemos.html" data-i18n="nav_cta">Hablemos de tu proyecto</a>
-    <div role="group" aria-label="Selección de idioma" data-i18n-aria="aria_lang" style="display:flex;align-items:center;gap:2px;flex-shrink:0">
-      <button type="button" class="langbtn" data-lang="es" aria-pressed="true">ES</button>
-      <span aria-hidden="true" style="color:#C6CBD3;font-size:11px">·</span>
-      <button type="button" class="langbtn" data-lang="en" aria-pressed="false">EN</button>
-      <span aria-hidden="true" style="color:#C6CBD3;font-size:11px">·</span>
-      <button type="button" class="langbtn" data-lang="fr" aria-pressed="false">FR</button>
-      <span aria-hidden="true" style="color:#C6CBD3;font-size:11px">·</span>
-      <button type="button" class="langbtn" data-lang="pt" aria-pressed="false">PT</button>
+    <!-- SELECTOR DE IDIOMA -->
+    <div class="lang">
+      <button type="button" class="lang-tr" aria-haspopup="true" aria-expanded="false" aria-controls="langmenu" aria-label="Selección de idioma" data-i18n-aria="aria_lang">
+        <img class="lang-fl" src="assets/img/flag-es.svg" alt="" width="24" height="16">
+        <span class="lang-code">ES</span>
+        <svg class="lang-car" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0h10L5 6Z" fill="currentColor"/></svg>
+      </button>
+      <ul class="lang-menu" id="langmenu" role="menu" hidden>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="true" class="langbtn" data-lang="es"><img src="assets/img/flag-es.svg" alt="" width="24" height="16">Español</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" class="langbtn" data-lang="en"><img src="assets/img/flag-en.svg" alt="" width="24" height="16">English</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" class="langbtn" data-lang="fr"><img src="assets/img/flag-fr.svg" alt="" width="24" height="16">Français</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" class="langbtn" data-lang="pt"><img src="assets/img/flag-pt.svg" alt="" width="24" height="16">Português</button></li>
+      </ul>
     </div>
+    <!-- /SELECTOR DE IDIOMA -->
+    <!-- MENÚ MÓVIL -->
+    <button type="button" class="burger" aria-label="Menú" data-i18n-aria="aria_menu" aria-expanded="false" aria-controls="menumovil">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
   </div>
+  <nav class="menumovil" id="menumovil" aria-label="Navegación principal" data-i18n-aria="aria_nav" hidden>
+    <div class="wrap">
+      <a href="grupo.html" data-i18n="nav1" aria-current="page">El grupo</a>
+      <a href="areas.html" data-i18n="nav2">Áreas de negocio</a>
+      <a href="presencia.html" data-i18n="nav3">Presencia</a>
+      <a href="proyectos.html" data-i18n="navp">Proyectos</a>
+      <a href="contacto.html" data-i18n="nav5">Contacto</a>
+      <a class="btn-cta" href="hablemos.html" data-i18n="nav_cta">Hablemos de tu proyecto</a>
+    </div>
+  </nav>
+  <!-- /MENÚ MÓVIL -->
 </header>
 <div aria-hidden="true" style="height:100px"></div>
 
@@ -114,6 +135,43 @@
   </section>
   <!-- /CONTINUIDAD Y RENOVACIÓN -->
 
+  <!-- ORGANIGRAMA -->
+  <section style="background:var(--papel);padding-top:clamp(60px,9vh,100px);padding-bottom:clamp(60px,9vh,100px)">
+    <div class="wrap">
+      <div class="rv" style="max-width:760px;margin-bottom:clamp(36px,5vh,58px)">
+        <p data-i18n="org_kicker" style="font-weight:700;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--grafito)">Estructura del grupo</p>
+        <h2 data-i18n="org_title" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(24px,2.8vw,36px);line-height:1.2;color:var(--grafito);margin-top:10px;text-wrap:pretty">Una matriz en España y dos subsidiarias en América.</h2>
+      </div>
+      <ul class="org rv">
+        <li>
+          <div class="orgcard">
+            <div class="orgcard-l"><img src="assets/img/logo-ecpi.png" alt="" style="height:56px"></div>
+            <p class="orgcard-n">EC Proyectos de Ingeniería</p><!-- dato editable -->
+            <p class="orgcard-r" data-i18n="org_matriz">Matriz del grupo</p>
+          </div>
+          <ul>
+            <li>
+              <div class="orgcard">
+                <div class="orgcard-l"><img src="assets/img/logo-euroconsult-america.png" alt="" style="height:48px"></div>
+                <p class="orgcard-n">EUROCONSULT AMERICA SAC</p><!-- dato editable -->
+                <p class="orgcard-r" data-i18n="org_sub1">Subsidiaria · Perú</p>
+              </div>
+            </li>
+            <li>
+              <div class="orgcard">
+                <div class="orgcard-l"><img src="assets/img/logo-euroconsult-colombia.png" alt="" style="height:58px"></div>
+                <p class="orgcard-n">ECG INGENIERIA SAS</p><!-- dato editable -->
+                <p class="orgcard-r" data-i18n="org_sub2">Subsidiaria · Colombia</p>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p class="org-legend rv" data-i18n="org_legend">Relación de propiedad</p>
+    </div>
+  </section>
+  <!-- /ORGANIGRAMA -->
+
   <section style="background:var(--azul-oscuro);padding-top:clamp(60px,9vh,100px);padding-bottom:clamp(60px,9vh,100px)">
     <div class="wrap gmv rv">
       <div style="border-top:3px solid var(--amarillo);padding-top:22px">
@@ -126,6 +184,39 @@
       </div>
     </div>
   </section>
+
+  <!-- FORMA DE ENTENDER LA INGENIERIA -->
+  <section style="background:var(--blanco);padding-top:clamp(56px,8vh,90px);padding-bottom:clamp(60px,9vh,110px)">
+    <div class="wrap">
+      <div class="rv" style="max-width:760px;margin-bottom:clamp(32px,5vh,52px)">
+        <h2 data-i18n="fi_title" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(24px,2.8vw,36px);line-height:1.2;color:var(--grafito);text-wrap:pretty">Nuestra forma de entender la ingeniería</h2>
+        <p data-i18n="fi_intro" style="font-size:17px;line-height:1.75;color:#4A4F57;margin-top:16px">Trabajamos para aportar soluciones técnicas de alto valor añadido, basándonos en cinco principios.</p>
+      </div>
+      <div class="pri rv">
+        <div style="border-top:3px solid var(--azul);padding-top:22px">
+          <h3 data-i18n="pri1_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:var(--grafito)">Experiencia</h3>
+          <p data-i18n="pri1_p" style="font-size:15.5px;line-height:1.7;color:#5A606A;margin-top:10px">Aplicamos el conocimiento acumulado durante décadas a cada nuevo proyecto.</p>
+        </div>
+        <div style="border-top:3px solid var(--azul);padding-top:22px">
+          <h3 data-i18n="pri2_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:var(--grafito)">Rigor técnico</h3>
+          <p data-i18n="pri2_p" style="font-size:15.5px;line-height:1.7;color:#5A606A;margin-top:10px">La calidad y la excelencia técnica constituyen la base de nuestro trabajo.</p>
+        </div>
+        <div style="border-top:3px solid var(--azul);padding-top:22px">
+          <h3 data-i18n="pri3_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:var(--grafito)">Innovación</h3>
+          <p data-i18n="pri3_p" style="font-size:15.5px;line-height:1.7;color:#5A606A;margin-top:10px">Incorporamos nuevas tecnologías, metodologías y herramientas que mejoran la eficiencia y la calidad de nuestros servicios.</p>
+        </div>
+        <div style="border-top:3px solid var(--azul);padding-top:22px">
+          <h3 data-i18n="pri4_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:var(--grafito)">Proximidad</h3>
+          <p data-i18n="pri4_p" style="font-size:15.5px;line-height:1.7;color:#5A606A;margin-top:10px">Trabajamos junto a nuestros clientes, entendiendo sus necesidades y acompañándolos durante todo el desarrollo de los proyectos.</p>
+        </div>
+        <div style="border-top:3px solid var(--azul);padding-top:22px">
+          <h3 data-i18n="pri5_t" style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:var(--grafito)">Compromiso</h3>
+          <p data-i18n="pri5_p" style="font-size:15.5px;line-height:1.7;color:#5A606A;margin-top:10px">Asumimos cada proyecto con responsabilidad, buscando soluciones fiables, eficientes y sostenibles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /FORMA DE ENTENDER LA INGENIERIA -->
 
   <!-- CIERRE -->
   <section style="background:var(--papel);padding-top:clamp(56px,8vh,96px);padding-bottom:clamp(56px,8vh,96px)">
@@ -153,10 +244,10 @@
         <p data-i18n="nav1">El grupo</p>
         <a href="grupo.html" data-i18n="f_quienes">Quiénes somos</a>
         <a href="grupo.html" data-i18n="f_mision">Misión y visión</a>
-        <a href="compromiso.html" data-i18n="nav4">Compromiso</a>
-      </nav>
+        </nav>
       <nav class="fcol" aria-label="Qué hacemos">
         <p data-i18n="f_hacemos">Qué hacemos</p>
+        <a href="areas.html" data-i18n="s2_kicker">Áreas de negocio</a>
         <a href="proyectos.html" data-i18n="navp">Proyectos</a>
       </nav>
       <nav class="fcol" aria-label="Presencia">

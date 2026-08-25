@@ -26,22 +26,43 @@
     <!-- /LOGO ECPI -->
     <nav class="navlinks" aria-label="Navegación principal" data-i18n-aria="aria_nav">
       <a href="grupo.html" data-i18n="nav1">El grupo</a>
+      <a href="areas.html" data-i18n="nav2">Áreas de negocio</a>
       <a href="presencia.html" data-i18n="nav3">Presencia</a>
       <a href="proyectos.html" data-i18n="navp">Proyectos</a>
-      <a href="compromiso.html" data-i18n="nav4">Compromiso</a>
       <a href="contacto.html" data-i18n="nav5">Contacto</a>
     </nav>
     <a class="btn-cta" href="hablemos.html" data-i18n="nav_cta" aria-current="page">Hablemos de tu proyecto</a>
-    <div role="group" aria-label="Selección de idioma" data-i18n-aria="aria_lang" style="display:flex;align-items:center;gap:2px;flex-shrink:0">
-      <button type="button" class="langbtn" data-lang="es" aria-pressed="true">ES</button>
-      <span aria-hidden="true" style="color:#C6CBD3;font-size:11px">·</span>
-      <button type="button" class="langbtn" data-lang="en" aria-pressed="false">EN</button>
-      <span aria-hidden="true" style="color:#C6CBD3;font-size:11px">·</span>
-      <button type="button" class="langbtn" data-lang="fr" aria-pressed="false">FR</button>
-      <span aria-hidden="true" style="color:#C6CBD3;font-size:11px">·</span>
-      <button type="button" class="langbtn" data-lang="pt" aria-pressed="false">PT</button>
+    <!-- SELECTOR DE IDIOMA -->
+    <div class="lang">
+      <button type="button" class="lang-tr" aria-haspopup="true" aria-expanded="false" aria-controls="langmenu" aria-label="Selección de idioma" data-i18n-aria="aria_lang">
+        <img class="lang-fl" src="assets/img/flag-es.svg" alt="" width="24" height="16">
+        <span class="lang-code">ES</span>
+        <svg class="lang-car" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0h10L5 6Z" fill="currentColor"/></svg>
+      </button>
+      <ul class="lang-menu" id="langmenu" role="menu" hidden>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="true" class="langbtn" data-lang="es"><img src="assets/img/flag-es.svg" alt="" width="24" height="16">Español</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" class="langbtn" data-lang="en"><img src="assets/img/flag-en.svg" alt="" width="24" height="16">English</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" class="langbtn" data-lang="fr"><img src="assets/img/flag-fr.svg" alt="" width="24" height="16">Français</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" class="langbtn" data-lang="pt"><img src="assets/img/flag-pt.svg" alt="" width="24" height="16">Português</button></li>
+      </ul>
     </div>
+    <!-- /SELECTOR DE IDIOMA -->
+    <!-- MENÚ MÓVIL -->
+    <button type="button" class="burger" aria-label="Menú" data-i18n-aria="aria_menu" aria-expanded="false" aria-controls="menumovil">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
   </div>
+  <nav class="menumovil" id="menumovil" aria-label="Navegación principal" data-i18n-aria="aria_nav" hidden>
+    <div class="wrap">
+      <a href="grupo.html" data-i18n="nav1">El grupo</a>
+      <a href="areas.html" data-i18n="nav2">Áreas de negocio</a>
+      <a href="presencia.html" data-i18n="nav3">Presencia</a>
+      <a href="proyectos.html" data-i18n="navp">Proyectos</a>
+      <a href="contacto.html" data-i18n="nav5">Contacto</a>
+      <a class="btn-cta" href="hablemos.html" data-i18n="nav_cta" aria-current="page">Hablemos de tu proyecto</a>
+    </div>
+  </nav>
+  <!-- /MENÚ MÓVIL -->
 </header>
 <div aria-hidden="true" style="height:100px"></div>
 
@@ -119,10 +140,10 @@
         <p data-i18n="nav1">El grupo</p>
         <a href="grupo.html" data-i18n="f_quienes">Quiénes somos</a>
         <a href="grupo.html" data-i18n="f_mision">Misión y visión</a>
-        <a href="compromiso.html" data-i18n="nav4">Compromiso</a>
-      </nav>
+        </nav>
       <nav class="fcol" aria-label="Qué hacemos">
         <p data-i18n="f_hacemos">Qué hacemos</p>
+        <a href="areas.html" data-i18n="s2_kicker">Áreas de negocio</a>
         <a href="proyectos.html" data-i18n="navp">Proyectos</a>
       </nav>
       <nav class="fcol" aria-label="Presencia">

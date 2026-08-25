@@ -26,22 +26,43 @@
     <!-- /LOGO ECPI -->
     <nav class="navlinks" aria-label="Navegación principal" data-i18n-aria="aria_nav">
       <a href="grupo.html" data-i18n="nav1">El grupo</a>
+      <a href="areas.html" data-i18n="nav2">Áreas de negocio</a>
       <a href="presencia.html" data-i18n="nav3" aria-current="page">Presencia</a>
       <a href="proyectos.html" data-i18n="navp">Proyectos</a>
-      <a href="compromiso.html" data-i18n="nav4">Compromiso</a>
       <a href="contacto.html" data-i18n="nav5">Contacto</a>
     </nav>
     <a class="btn-cta" href="hablemos.html" data-i18n="nav_cta">Hablemos de tu proyecto</a>
-    <div role="group" aria-label="Selección de idioma" data-i18n-aria="aria_lang" style="display:flex;align-items:center;gap:2px;flex-shrink:0">
-      <button type="button" class="langbtn" data-lang="es" aria-pressed="true">ES</button>
-      <span aria-hidden="true" style="color:#C6CBD3;font-size:11px">·</span>
-      <button type="button" class="langbtn" data-lang="en" aria-pressed="false">EN</button>
-      <span aria-hidden="true" style="color:#C6CBD3;font-size:11px">·</span>
-      <button type="button" class="langbtn" data-lang="fr" aria-pressed="false">FR</button>
-      <span aria-hidden="true" style="color:#C6CBD3;font-size:11px">·</span>
-      <button type="button" class="langbtn" data-lang="pt" aria-pressed="false">PT</button>
+    <!-- SELECTOR DE IDIOMA -->
+    <div class="lang">
+      <button type="button" class="lang-tr" aria-haspopup="true" aria-expanded="false" aria-controls="langmenu" aria-label="Selección de idioma" data-i18n-aria="aria_lang">
+        <img class="lang-fl" src="assets/img/flag-es.svg" alt="" width="24" height="16">
+        <span class="lang-code">ES</span>
+        <svg class="lang-car" viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0h10L5 6Z" fill="currentColor"/></svg>
+      </button>
+      <ul class="lang-menu" id="langmenu" role="menu" hidden>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="true" class="langbtn" data-lang="es"><img src="assets/img/flag-es.svg" alt="" width="24" height="16">Español</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" class="langbtn" data-lang="en"><img src="assets/img/flag-en.svg" alt="" width="24" height="16">English</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" class="langbtn" data-lang="fr"><img src="assets/img/flag-fr.svg" alt="" width="24" height="16">Français</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" class="langbtn" data-lang="pt"><img src="assets/img/flag-pt.svg" alt="" width="24" height="16">Português</button></li>
+      </ul>
     </div>
+    <!-- /SELECTOR DE IDIOMA -->
+    <!-- MENÚ MÓVIL -->
+    <button type="button" class="burger" aria-label="Menú" data-i18n-aria="aria_menu" aria-expanded="false" aria-controls="menumovil">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
   </div>
+  <nav class="menumovil" id="menumovil" aria-label="Navegación principal" data-i18n-aria="aria_nav" hidden>
+    <div class="wrap">
+      <a href="grupo.html" data-i18n="nav1">El grupo</a>
+      <a href="areas.html" data-i18n="nav2">Áreas de negocio</a>
+      <a href="presencia.html" data-i18n="nav3" aria-current="page">Presencia</a>
+      <a href="proyectos.html" data-i18n="navp">Proyectos</a>
+      <a href="contacto.html" data-i18n="nav5">Contacto</a>
+      <a class="btn-cta" href="hablemos.html" data-i18n="nav_cta">Hablemos de tu proyecto</a>
+    </div>
+  </nav>
+  <!-- /MENÚ MÓVIL -->
 </header>
 <div aria-hidden="true" style="height:100px"></div>
 
@@ -61,27 +82,45 @@
       <div class="sedes rv">
         <div style="border-top:3px solid var(--azul);padding-top:28px">
           <!-- LOGO ECPI -->
-          <div style="min-height:74px"><img src="assets/img/logo-ecpi.png" alt="EC Proyectos de Ingeniería" style="height:60px;width:auto;display:block"></div>
+          <div style="min-height:78px"><img src="assets/img/logo-ecpi.png" alt="EC Proyectos de Ingeniería" style="height:60px;width:auto;display:block"></div>
           <!-- /LOGO ECPI -->
           <p data-i18n="lbl_matriz" style="font-weight:700;font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--azul);margin-top:26px">Matriz</p>
           <p data-i18n="hq_city" style="font-size:16px;color:var(--grafito);margin-top:6px">Madrid, España</p><!-- dato editable -->
           <p data-i18n="sede1_p" style="font-size:14.5px;line-height:1.7;color:#5A606A;margin-top:14px">Dirección técnica y coordinación del grupo. Desde Madrid se establecen los criterios de calidad comunes a todas las sedes.</p>
+          <!-- DIRECCIÓN -->
+          <div style="border-top:1px solid #E4E7EC;margin-top:22px;padding-top:18px">
+            <p style="font-size:14.5px;line-height:1.65;color:var(--grafito)">Av. Montes de Oca, 9<br>San Sebastián de los Reyes</p><!-- dato editable -->
+            <p style="margin-top:12px"><a class="linkline" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Montes%20de%20Oca%209%2C%20San%20Sebasti%C3%A1n%20de%20los%20Reyes%2C%20Madrid%2C%20Espa%C3%B1a" target="_blank" rel="noopener" style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:4px"><span data-i18n="map_link">Ver en Google Maps</span> ↗</a></p>
+          </div>
+          <!-- /DIRECCIÓN -->
         </div>
         <div style="border-top:3px solid var(--azul);padding-top:28px">
           <!-- LOGO FILIAL -->
-          <div style="min-height:74px"><img src="assets/img/logo-euroconsult-america.png" alt="Euroconsult América — by ECPI" style="height:64px;width:auto;display:block"></div>
+          <div style="min-height:78px"><img src="assets/img/logo-euroconsult-america.png" alt="Euroconsult América — by ECPI" style="height:64px;width:auto;display:block"></div>
           <!-- /LOGO FILIAL -->
           <p data-i18n="lbl_filial" style="font-weight:700;font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--azul);margin-top:26px">Filial</p>
           <p data-i18n="f1_city" style="font-size:16px;color:var(--grafito);margin-top:6px">Lima, Perú</p><!-- dato editable -->
           <p data-i18n="sede2_p" style="font-size:14.5px;line-height:1.7;color:#5A606A;margin-top:14px">Euroconsult América atiende desde Lima los mercados de la costa del Pacífico sur, con equipos locales y respaldo de la matriz.</p>
+          <!-- DIRECCIÓN -->
+          <div style="border-top:1px solid #E4E7EC;margin-top:22px;padding-top:18px">
+            <p style="font-size:14.5px;line-height:1.65;color:var(--grafito)">Jr. San Agustín 485<br>Surquillo</p><!-- dato editable -->
+            <p style="margin-top:12px"><a class="linkline" href="https://www.google.com/maps/search/?api=1&amp;query=Jr.%20San%20Agust%C3%ADn%20485%2C%20Surquillo%2C%20Lima%2C%20Per%C3%BA" target="_blank" rel="noopener" style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:4px"><span data-i18n="map_link">Ver en Google Maps</span> ↗</a></p>
+          </div>
+          <!-- /DIRECCIÓN -->
         </div>
         <div style="border-top:3px solid var(--azul);padding-top:28px">
           <!-- LOGO FILIAL -->
-          <div style="min-height:74px"><img src="assets/img/logo-euroconsult-colombia.png" alt="Euroconsult Colombia — by ECPI" style="height:64px;width:auto;display:block"></div>
+          <div style="min-height:78px"><img src="assets/img/logo-euroconsult-colombia.png" alt="Euroconsult Colombia — by ECPI" style="height:78px;width:auto;display:block"></div>
           <!-- /LOGO FILIAL -->
           <p data-i18n="lbl_filial2" style="font-weight:700;font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--azul);margin-top:26px">Filial</p>
           <p data-i18n="f2_city" style="font-size:16px;color:var(--grafito);margin-top:6px">Bogotá, Colombia</p><!-- dato editable -->
           <p data-i18n="sede3_p" style="font-size:14.5px;line-height:1.7;color:#5A606A;margin-top:14px">Euroconsult Colombia opera desde Bogotá para el mercado andino y centroamericano, con la misma exigencia técnica del grupo.</p>
+          <!-- DIRECCIÓN -->
+          <div style="border-top:1px solid #E4E7EC;margin-top:22px;padding-top:18px">
+            <p style="font-size:14.5px;line-height:1.65;color:var(--grafito)">Edificio North Point 2<br>Av. Carrera 7 # 156-78, Of. 701</p><!-- dato editable -->
+            <p style="margin-top:12px"><a class="linkline" href="https://www.google.com/maps/search/?api=1&amp;query=Edificio%20North%20Point%202%2C%20Avenida%20Carrera%207%20%23%20156-78%2C%20Bogot%C3%A1%2C%20Colombia" target="_blank" rel="noopener" style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding-bottom:4px"><span data-i18n="map_link">Ver en Google Maps</span> ↗</a></p>
+          </div>
+          <!-- /DIRECCIÓN -->
         </div>
       </div>
       <div class="stats rv" style="border-top:1px solid #D9DDE4;margin-top:clamp(48px,7vh,72px);padding-top:36px">
@@ -110,10 +149,10 @@
         <p data-i18n="nav1">El grupo</p>
         <a href="grupo.html" data-i18n="f_quienes">Quiénes somos</a>
         <a href="grupo.html" data-i18n="f_mision">Misión y visión</a>
-        <a href="compromiso.html" data-i18n="nav4">Compromiso</a>
-      </nav>
+        </nav>
       <nav class="fcol" aria-label="Qué hacemos">
         <p data-i18n="f_hacemos">Qué hacemos</p>
+        <a href="areas.html" data-i18n="s2_kicker">Áreas de negocio</a>
         <a href="proyectos.html" data-i18n="navp">Proyectos</a>
       </nav>
       <nav class="fcol" aria-label="Presencia">

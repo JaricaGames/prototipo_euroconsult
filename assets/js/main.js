@@ -8,7 +8,7 @@
       meta_title: "EC Proyectos de Ingeniería",
       meta_desc: "EC Proyectos de Ingeniería nace en 2024 para dar continuidad a las dos unidades productivas más importantes de Grupo Euroconsult. Más de 50 años de experiencia, con sedes en España, Perú y Colombia.",
       skip: "Ir al contenido", aria_nav: "Navegación principal", aria_lang: "Selección de idioma",
-      nav1: "El grupo", nav2: "Áreas", nav3: "Presencia", navp: "Proyectos", nav4: "Compromiso", nav5: "Contacto",
+      nav1: "El grupo", nav2: "Áreas de negocio", nav3: "Presencia", navp: "Proyectos", nav4: "Compromiso", nav5: "Contacto",
       aria_proj: "Proyectos del grupo", aria_prev: "Proyecto anterior", aria_next: "Proyecto siguiente",
       sp_kicker: "Proyectos", sp_title: "Cada obra explica el reto, la solución y el impacto.",
       p1_kicker: "Proyecto destacado / Infraestructura aeroportuaria",
@@ -18,7 +18,7 @@
       p1_ubi: "Popayán, Cauca", p1_sector: "Transporte", p1_tipo: "Aeroportuaria",
       p_next: "Próximos proyectos", view_p: "Ver proyecto", back_p: "Todos los proyectos",
       reto_t: "El reto", sol_t: "La solución", imp_t: "El impacto",
-      t_grupo: "El grupo — EC Proyectos de Ingeniería", t_areas: "Áreas de actuación — EC Proyectos de Ingeniería", t_presencia: "Presencia internacional — EC Proyectos de Ingeniería",
+      t_grupo: "El grupo — EC Proyectos de Ingeniería", t_areas: "Áreas de negocio — EC Proyectos de Ingeniería", t_presencia: "Presencia internacional — EC Proyectos de Ingeniería",
       t_proyectos: "Proyectos — EC Proyectos de Ingeniería", t_compromiso: "Compromiso — EC Proyectos de Ingeniería", t_contacto: "Contacto — EC Proyectos de Ingeniería",
       hito_k: "Trayectoria",
       hito1_t: "1968 — Grupo Euroconsult", hito1_p: "Nace en Madrid la compañía histórica de la ingeniería española de cuyas actividades procede hoy EC Proyectos de Ingeniería.",
@@ -58,7 +58,7 @@
       mis_p: "Aportar certeza técnica a quienes planifican, construyen y gestionan infraestructuras, mediante servicios de ingeniería rigurosos, independientes e integrados.",
       vis_t: "Visión",
       vis_p: "Consolidarnos como grupo de referencia en consultoría de ingeniería entre Europa y América, reconocidos por la precisión de nuestro trabajo y la permanencia de nuestros compromisos.",
-      s2_kicker: "Áreas de actuación", s2_title: "Disciplinas que se integran en un mismo criterio técnico.",
+      s2_kicker: "Áreas de negocio", s2_title: "Los sectores donde el grupo aporta su criterio técnico.",
       a1_t: "Ingeniería civil e infraestructuras",
       a1_p: "Proyectos y estudios de carreteras, estructuras, obras hidráulicas y transporte, desde la planificación hasta el diseño de detalle.",
       a2_t: "Supervisión y control de obra",
@@ -75,6 +75,18 @@
       hq_city: "Madrid, España", f1_city: "Lima, Perú", f2_city: "Bogotá, Colombia",
       hq_city2: "Madrid, España", f1_city2: "Lima, Perú", f2_city2: "Bogotá, Colombia",
       f1_city3: "Lima, Perú", f2_city3: "Bogotá, Colombia",
+      map_link: "Ver en Google Maps",
+      aria_menu: "Menú",
+      an_intro: "Trabajamos sobre la infraestructura que sostiene la actividad de un territorio, desde los estudios previos hasta la puesta en servicio.",
+      an_cta: "¿Tu proyecto encaja en alguna de estas áreas?",
+      an1_t: "Transportes", an1_p: "Carreteras y ferrocarriles con sus estructuras: trazado, puentes y viaductos, y la conservación de la infraestructura ya en servicio.",
+      an2_t: "Aeropuertos", an2_p: "Infraestructura aeroportuaria: campos de vuelo, plataformas y la edificación asociada, con la dirección técnica de la obra.",
+      an3_t: "Puertos y costas", an3_p: "Obra marítima y protección del litoral: muelles, diques y dragados, con los estudios de dinámica litoral que los sostienen.",
+      an4_t: "Aguas", an4_p: "Ciclo integral del agua: regulación y presas, abastecimiento y saneamiento, y obras de defensa frente a avenidas.",
+      an5_t: "Edificación", an5_p: "Edificación pública y singular: equipamientos, rehabilitación y las instalaciones que los acompañan.",
+      cli_kicker: "Clientes", cli_title: "Administraciones y entidades públicas que confían en el grupo.",
+      org_kicker: "Estructura del grupo", org_title: "Una matriz en España y dos subsidiarias en América.", org_matriz: "Matriz del grupo",
+      org_sub1: "Subsidiaria · Perú", org_sub2: "Subsidiaria · Colombia", org_legend: "Relación de propiedad",
       st1: "Sedes", st2: "Continentes", st3: "Áreas de actuación",
       s4_kicker: "Compromiso", s4_title: "Seis lados, una sola figura.",
       s4_p1: "El monograma hexagonal de EC Proyectos de Ingeniería no es un adorno: simboliza la precisión técnica y la integración de servicios. Como en un hexágono, cada lado —cada disciplina, cada sede, cada equipo— sostiene a los demás y da forma a un conjunto exacto.",
@@ -132,7 +144,7 @@
       meta_title: "EC Proyectos de Ingeniería | Engineering company",
       meta_desc: "EC Proyectos de Ingeniería was founded in 2024 to carry forward the two most important production units of Grupo Euroconsult. More than 50 years of experience, with offices in Spain, Peru and Colombia.",
       skip: "Skip to content", aria_nav: "Main navigation", aria_lang: "Language selection",
-      nav1: "The group", nav2: "Practice", nav3: "Presence", navp: "Projects", nav4: "Commitment", nav5: "Contact",
+      nav1: "The group", nav2: "Business areas", nav3: "Presence", navp: "Projects", nav4: "Commitment", nav5: "Contact",
       aria_proj: "Group projects", aria_prev: "Previous project", aria_next: "Next project",
       sp_kicker: "Projects", sp_title: "Every work explains the challenge, the solution and the impact.",
       p1_kicker: "Featured project / Airport infrastructure",
@@ -142,7 +154,7 @@
       p1_ubi: "Popayán, Cauca", p1_sector: "Transport", p1_tipo: "Airport",
       p_next: "Upcoming projects", view_p: "View project", back_p: "All projects",
       reto_t: "The challenge", sol_t: "The solution", imp_t: "The impact",
-      t_grupo: "The group — EC Proyectos de Ingeniería", t_areas: "Areas of practice — EC Proyectos de Ingeniería", t_presencia: "International presence — EC Proyectos de Ingeniería",
+      t_grupo: "The group — EC Proyectos de Ingeniería", t_areas: "Business areas — EC Proyectos de Ingeniería", t_presencia: "International presence — EC Proyectos de Ingeniería",
       t_proyectos: "Projects — EC Proyectos de Ingeniería", t_compromiso: "Commitment — EC Proyectos de Ingeniería", t_contacto: "Contact — EC Proyectos de Ingeniería",
       hito_k: "History",
       hito1_t: "1968 — Grupo Euroconsult", hito1_p: "The landmark Spanish engineering firm from whose activities EC Proyectos de Ingeniería derives is founded in Madrid.",
@@ -182,7 +194,7 @@
       mis_p: "To provide technical certainty to those who plan, build and manage infrastructure, through rigorous, independent and integrated engineering services.",
       vis_t: "Vision",
       vis_p: "To consolidate our position as a reference engineering consultancy group between Europe and the Americas, recognised for the precision of our work and the permanence of our commitments.",
-      s2_kicker: "Areas of practice", s2_title: "Disciplines integrated under a single technical standard.",
+      s2_kicker: "Business areas", s2_title: "The sectors where the group brings its technical judgement.",
       a1_t: "Civil engineering and infrastructure",
       a1_p: "Design and studies for roads, structures, hydraulic works and transport, from planning through to detailed design.",
       a2_t: "Site supervision and works control",
@@ -199,6 +211,18 @@
       hq_city: "Madrid, Spain", f1_city: "Lima, Peru", f2_city: "Bogotá, Colombia",
       hq_city2: "Madrid, Spain", f1_city2: "Lima, Peru", f2_city2: "Bogotá, Colombia",
       f1_city3: "Lima, Peru", f2_city3: "Bogotá, Colombia",
+      map_link: "View on Google Maps",
+      aria_menu: "Menu",
+      an_intro: "We work on the infrastructure that sustains a region, from preliminary studies through to commissioning.",
+      an_cta: "Does your project fall within one of these areas?",
+      an1_t: "Transport", an1_p: "Roads and railways with their structures: alignment, bridges and viaducts, and the upkeep of infrastructure already in service.",
+      an2_t: "Airports", an2_p: "Airport infrastructure: airfields, aprons and associated buildings, with technical supervision of the works.",
+      an3_t: "Ports and coasts", an3_p: "Marine works and coastal protection: quays, breakwaters and dredging, backed by coastal dynamics studies.",
+      an4_t: "Water", an4_p: "The full water cycle: regulation and dams, supply and sanitation, and flood defence works.",
+      an5_t: "Building", an5_p: "Public and landmark building: facilities, refurbishment and the services that go with them.",
+      cli_kicker: "Clients", cli_title: "Public authorities and agencies that trust the group.",
+      org_kicker: "Group structure", org_title: "One parent company in Spain and two subsidiaries in the Americas.", org_matriz: "Group parent company",
+      org_sub1: "Subsidiary · Peru", org_sub2: "Subsidiary · Colombia", org_legend: "Ownership relationship",
       st1: "Offices", st2: "Continents", st3: "Areas of practice",
       s4_kicker: "Commitment", s4_title: "Six sides, a single figure.",
       s4_p1: "The EC Proyectos de Ingeniería hexagonal monogram is not an ornament: it stands for technical precision and the integration of services. As in a hexagon, each side — each discipline, each office, each team — supports the others and shapes an exact whole.",
@@ -258,7 +282,7 @@
       meta_title: "EC Proyectos de Ingeniería | Groupe d'ingénierie",
       meta_desc: "EC Proyectos de Ingeniería naît en 2024 pour assurer la continuité des deux unités de production les plus importantes du Grupo Euroconsult. Plus de 50 ans d'expérience, avec des implantations en Espagne, au Pérou et en Colombie.",
       skip: "Aller au contenu", aria_nav: "Navigation principale", aria_lang: "Choix de la langue",
-      nav1: "Le groupe", nav2: "Domaines", nav3: "Présence", navp: "Projets", nav4: "Engagement", nav5: "Contact",
+      nav1: "Le groupe", nav2: "Domaines d'activité", nav3: "Présence", navp: "Projets", nav4: "Engagement", nav5: "Contact",
       aria_proj: "Projets du groupe", aria_prev: "Projet précédent", aria_next: "Projet suivant",
       sp_kicker: "Projets", sp_title: "Chaque ouvrage explique le défi, la solution et l'impact.",
       p1_kicker: "Projet phare / Infrastructure aéroportuaire",
@@ -268,7 +292,7 @@
       p1_ubi: "Popayán, Cauca", p1_sector: "Transport", p1_tipo: "Aéroportuaire",
       p_next: "Prochains projets", view_p: "Voir le projet", back_p: "Tous les projets",
       reto_t: "Le défi", sol_t: "La solution", imp_t: "L'impact",
-      t_grupo: "Le groupe — EC Proyectos de Ingeniería", t_areas: "Domaines d'intervention — EC Proyectos de Ingeniería", t_presencia: "Présence internationale — EC Proyectos de Ingeniería",
+      t_grupo: "Le groupe — EC Proyectos de Ingeniería", t_areas: "Domaines d'activité — EC Proyectos de Ingeniería", t_presencia: "Présence internationale — EC Proyectos de Ingeniería",
       t_proyectos: "Projets — EC Proyectos de Ingeniería", t_compromiso: "Engagement — EC Proyectos de Ingeniería", t_contacto: "Contact — EC Proyectos de Ingeniería",
       hito_k: "Trajectoire",
       hito1_t: "1968 — Grupo Euroconsult", hito1_p: "Naît à Madrid la société historique de l'ingénierie espagnole dont proviennent les activités d'EC Proyectos de Ingeniería.",
@@ -308,7 +332,7 @@
       mis_p: "Apporter de la certitude technique à ceux qui planifient, construisent et exploitent les infrastructures, grâce à des services d'ingénierie rigoureux, indépendants et intégrés.",
       vis_t: "Vision",
       vis_p: "Devenir le groupe de conseil en ingénierie de référence entre l'Europe et l'Amérique, reconnu pour la précision de son travail et la constance de ses engagements.",
-      s2_kicker: "Domaines d'intervention", s2_title: "Des disciplines intégrées sous une même exigence technique.",
+      s2_kicker: "Domaines d'activité", s2_title: "Les secteurs où le groupe apporte son expertise technique.",
       a1_t: "Génie civil et infrastructures",
       a1_p: "Études et projets de routes, d'ouvrages d'art, d'hydraulique et de transport, de la planification à la conception détaillée.",
       a2_t: "Supervision et contrôle de travaux",
@@ -325,6 +349,18 @@
       hq_city: "Madrid, Espagne", f1_city: "Lima, Pérou", f2_city: "Bogota, Colombie",
       hq_city2: "Madrid, Espagne", f1_city2: "Lima, Pérou", f2_city2: "Bogota, Colombie",
       f1_city3: "Lima, Pérou", f2_city3: "Bogota, Colombie",
+      map_link: "Voir sur Google Maps",
+      aria_menu: "Menu",
+      an_intro: "Nous intervenons sur l'infrastructure qui soutient l'activité d'un territoire, des études préalables à la mise en service.",
+      an_cta: "Votre projet relève-t-il de l'un de ces domaines ?",
+      an1_t: "Transports", an1_p: "Routes et voies ferrées et leurs ouvrages : tracé, ponts et viaducs, et l'entretien de l'infrastructure en service.",
+      an2_t: "Aéroports", an2_p: "Infrastructure aéroportuaire : pistes, aires de trafic et bâtiments associés, avec la direction technique des travaux.",
+      an3_t: "Ports et littoral", an3_p: "Travaux maritimes et protection du littoral : quais, digues et dragages, appuyés sur les études de dynamique littorale.",
+      an4_t: "Eau", an4_p: "Cycle intégral de l'eau : régulation et barrages, adduction et assainissement, et ouvrages de défense contre les crues.",
+      an5_t: "Bâtiment", an5_p: "Bâtiment public et singulier : équipements, réhabilitation et les installations qui les accompagnent.",
+      cli_kicker: "Clients", cli_title: "Administrations et organismes publics qui font confiance au groupe.",
+      org_kicker: "Structure du groupe", org_title: "Une maison mère en Espagne et deux filiales en Amérique.", org_matriz: "Maison mère du groupe",
+      org_sub1: "Filiale · Pérou", org_sub2: "Filiale · Colombie", org_legend: "Lien de propriété",
       st1: "Sièges", st2: "Continents", st3: "Domaines d'intervention",
       s4_kicker: "Engagement", s4_title: "Six côtés, une seule figure.",
       s4_p1: "Le monogramme hexagonal d'EC Proyectos de Ingeniería n'est pas un ornement : il symbolise la précision technique et l'intégration des services. Comme dans un hexagone, chaque côté — chaque discipline, chaque siège, chaque équipe — soutient les autres et dessine un ensemble exact.",
@@ -384,7 +420,7 @@
       meta_title: "EC Proyectos de Ingeniería | Grupo de engenharia",
       meta_desc: "A EC Proyectos de Ingeniería nasce em 2024 para dar continuidade às duas unidades produtivas mais importantes do Grupo Euroconsult. Mais de 50 anos de experiência, com sedes em Espanha, Peru e Colômbia.",
       skip: "Ir para o conteúdo", aria_nav: "Navegação principal", aria_lang: "Seleção de idioma",
-      nav1: "O grupo", nav2: "Áreas de atuação", nav3: "Presença", navp: "Projetos", nav4: "Compromisso", nav5: "Contacto",
+      nav1: "O grupo", nav2: "Áreas de negócio", nav3: "Presença", navp: "Projetos", nav4: "Compromisso", nav5: "Contacto",
       aria_proj: "Projetos do grupo", aria_prev: "Projeto anterior", aria_next: "Projeto seguinte",
       sp_kicker: "Projetos", sp_title: "Cada obra explica o desafio, a solução e o impacto.",
       p1_kicker: "Projeto em destaque / Infraestrutura aeroportuária",
@@ -394,7 +430,7 @@
       p1_ubi: "Popayán, Cauca", p1_sector: "Transportes", p1_tipo: "Aeroportuária",
       p_next: "Próximos projetos", view_p: "Ver projeto", back_p: "Todos os projetos",
       reto_t: "O desafio", sol_t: "A solução", imp_t: "O impacto",
-      t_grupo: "O grupo — EC Proyectos de Ingeniería", t_areas: "Áreas de atuação — EC Proyectos de Ingeniería", t_presencia: "Presença internacional — EC Proyectos de Ingeniería",
+      t_grupo: "O grupo — EC Proyectos de Ingeniería", t_areas: "Áreas de negócio — EC Proyectos de Ingeniería", t_presencia: "Presença internacional — EC Proyectos de Ingeniería",
       t_proyectos: "Projetos — EC Proyectos de Ingeniería", t_compromiso: "Compromisso — EC Proyectos de Ingeniería", t_contacto: "Contacto — EC Proyectos de Ingeniería",
       hito_k: "Trajetória",
       hito1_t: "1968 — Grupo Euroconsult", hito1_p: "Nasce em Madrid a empresa histórica da engenharia espanhola de cujas atividades provém hoje a EC Proyectos de Ingeniería.",
@@ -434,7 +470,7 @@
       mis_p: "Proporcionar certeza técnica a quem planeia, constrói e gere infraestruturas, através de serviços de engenharia rigorosos, independentes e integrados.",
       vis_t: "Visão",
       vis_p: "Consolidar-nos como grupo de referência em consultoria de engenharia entre a Europa e a América, reconhecidos pela precisão do nosso trabalho e pela permanência dos nossos compromissos.",
-      s2_kicker: "Áreas de atuação", s2_title: "Disciplinas integradas num mesmo critério técnico.",
+      s2_kicker: "Áreas de negócio", s2_title: "Os setores onde o grupo aplica o seu critério técnico.",
       a1_t: "Engenharia civil e infraestruturas",
       a1_p: "Projetos e estudos de estradas, estruturas, obras hidráulicas e transportes, do planeamento ao projeto de execução.",
       a2_t: "Fiscalização e controlo de obra",
@@ -451,6 +487,18 @@
       hq_city: "Madrid, Espanha", f1_city: "Lima, Peru", f2_city: "Bogotá, Colômbia",
       hq_city2: "Madrid, Espanha", f1_city2: "Lima, Peru", f2_city2: "Bogotá, Colômbia",
       f1_city3: "Lima, Peru", f2_city3: "Bogotá, Colômbia",
+      map_link: "Ver no Google Maps",
+      aria_menu: "Menu",
+      an_intro: "Trabalhamos sobre a infraestrutura que sustenta a atividade de um território, dos estudos prévios até à entrada em serviço.",
+      an_cta: "O seu projeto enquadra-se numa destas áreas?",
+      an1_t: "Transportes", an1_p: "Estradas e ferrovias com as suas estruturas: traçado, pontes e viadutos, e a conservação da infraestrutura em serviço.",
+      an2_t: "Aeroportos", an2_p: "Infraestrutura aeroportuária: campos de voo, plataformas e a edificação associada, com a direção técnica da obra.",
+      an3_t: "Portos e costas", an3_p: "Obra marítima e proteção do litoral: cais, molhes e dragagens, com os estudos de dinâmica litoral que os sustentam.",
+      an4_t: "Águas", an4_p: "Ciclo integral da água: regulação e barragens, abastecimento e saneamento, e obras de defesa contra cheias.",
+      an5_t: "Edificação", an5_p: "Edificação pública e singular: equipamentos, reabilitação e as instalações que as acompanham.",
+      cli_kicker: "Clientes", cli_title: "Administrações e entidades públicas que confiam no grupo.",
+      org_kicker: "Estrutura do grupo", org_title: "Uma matriz em Espanha e duas subsidiárias na América.", org_matriz: "Matriz do grupo",
+      org_sub1: "Subsidiária · Peru", org_sub2: "Subsidiária · Colômbia", org_legend: "Relação de propriedade",
       st1: "Sedes", st2: "Continentes", st3: "Áreas de atuação",
       s4_kicker: "Compromisso", s4_title: "Seis lados, uma única figura.",
       s4_p1: "O monograma hexagonal da EC Proyectos de Ingeniería não é um ornamento: simboliza a precisão técnica e a integração de serviços. Como num hexágono, cada lado — cada disciplina, cada sede, cada equipa — sustenta os restantes e dá forma a um conjunto exato.",
@@ -536,18 +584,125 @@
       if (d[k]) el.setAttribute('alt', d[k]);
     });
     document.querySelectorAll('.langbtn').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+      b.setAttribute('aria-checked', String(b.getAttribute('data-lang') === lang));
     });
+    // La pastilla cerrada toma la bandera y el código de la opción marcada
+    var act = document.querySelector('.langbtn[data-lang="' + lang + '"]');
+    var tr = document.querySelector('.lang-tr');
+    if (act && tr) {
+      var fl = tr.querySelector('.lang-fl'), src = act.querySelector('img');
+      if (fl && src) fl.setAttribute('src', src.getAttribute('src'));
+      var cd = tr.querySelector('.lang-code');
+      if (cd) cd.textContent = lang.toUpperCase();
+    }
     try { localStorage.setItem('ecpi-lang', lang); } catch (e) {}
     window.ECPI_LANG = lang;
     // Aviso para scripts de página (proyectos.html, proyecto.html) que generan contenido
     try { document.dispatchEvent(new CustomEvent('ecpi:lang', { detail: { lang: lang, dict: d } })); } catch (e) {}
   }
 
-  function init() {
-    document.querySelectorAll('.langbtn').forEach(function (b) {
-      b.addEventListener('click', function () { apply(b.getAttribute('data-lang')); });
+  // Desplegable de idioma. Se abre con la pastilla y se cierra al elegir, con
+  // Escape, al tocar fuera o al desplazar la página —la cabecera se retira al
+  // bajar y el menú se iría con ella—. Las flechas recorren las cuatro opciones.
+  function langMenu() {
+    var tr = document.querySelector('.lang-tr');
+    var menu = document.getElementById('langmenu');
+    if (!tr || !menu) return;
+    var opts = Array.prototype.slice.call(menu.querySelectorAll('.langbtn'));
+
+    function open(focus) {
+      menu.hidden = false;
+      tr.setAttribute('aria-expanded', 'true');
+      if (focus === 'last') opts[opts.length - 1].focus();
+      else if (focus) (menu.querySelector('.langbtn[aria-checked="true"]') || opts[0]).focus();
+    }
+    function close(back) {
+      if (menu.hidden) return;
+      menu.hidden = true;
+      tr.setAttribute('aria-expanded', 'false');
+      if (back) tr.focus();
+    }
+    function move(from, step) {
+      var i = opts.indexOf(from) + step;
+      if (i < 0) i = opts.length - 1;
+      if (i >= opts.length) i = 0;
+      opts[i].focus();
+    }
+
+    tr.addEventListener('click', function () {
+      if (menu.hidden) open(false); else close(false);
     });
+    tr.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); open(true); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); open('last'); }
+      else if (e.key === 'Escape') close(false);
+    });
+    opts.forEach(function (b) {
+      b.addEventListener('click', function () {
+        apply(b.getAttribute('data-lang'));
+        close(true);
+      });
+      b.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown') { e.preventDefault(); move(b, 1); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); move(b, -1); }
+        else if (e.key === 'Home') { e.preventDefault(); opts[0].focus(); }
+        else if (e.key === 'End') { e.preventDefault(); opts[opts.length - 1].focus(); }
+        else if (e.key === 'Escape') { e.preventDefault(); close(true); }
+        else if (e.key === 'Tab') close(false);
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!tr.contains(e.target) && !menu.contains(e.target)) close(false);
+    });
+    window.addEventListener('scroll', function () { close(false); }, { passive: true });
+  }
+
+  // Menu de movil. Mientras esta abierto se bloquea el desplazamiento del
+  // documento: la cabecera se retira al bajar y se llevaria el panel con ella.
+  // En el index eso obliga ademas a volverla opaca, porque sobre la portada va
+  // transparente y el panel blanco colgaria de la nada.
+  function burgerMenu() {
+    var b = document.querySelector('.burger');
+    var panel = document.getElementById('menumovil');
+    var hdr = document.querySelector('.hdr');
+    if (!b || !panel) return;
+
+    function abrir() {
+      panel.hidden = false;
+      b.setAttribute('aria-expanded', 'true');
+      document.documentElement.classList.add('menu-abierto');
+      if (hdr) hdr.classList.add('solid');
+    }
+    function cerrar(volver) {
+      if (panel.hidden) return;
+      panel.hidden = true;
+      b.setAttribute('aria-expanded', 'false');
+      document.documentElement.classList.remove('menu-abierto');
+      // El fondo de la cabecera vuelve a depender de donde este la pagina
+      if (hdr) hdr.classList.toggle('solid', (window.scrollY || 0) > 100);
+      if (volver) b.focus();
+    }
+
+    b.addEventListener('click', function () {
+      if (panel.hidden) abrir(); else cerrar(false);
+    });
+    // Al elegir destino se cierra: si el enlace es un ancla de la misma pagina,
+    // sin esto el panel se quedaria tapando aquello a lo que se ha saltado.
+    panel.addEventListener('click', function (e) {
+      if (e.target.closest && e.target.closest('a')) cerrar(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') cerrar(true);
+    });
+    // Al ensanchar, los enlaces vuelven a la barra y el panel sobra
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 1024) cerrar(false);
+    });
+  }
+
+  function init() {
+    langMenu();
+    burgerMenu();
     var saved = 'es';
     try { saved = localStorage.getItem('ecpi-lang') || 'es'; } catch (e) {}
     if (!dicts[saved]) saved = 'es';
