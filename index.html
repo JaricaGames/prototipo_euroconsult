@@ -446,6 +446,24 @@
     }
     animateTo(left);
   }
+  /* Las flechas avanzan una tarjeta desde la posicion actual, en vez de
+     "centrar la siguiente". Centrar no valia: goTo() recorta al recorrido
+     disponible y en pantalla ancha las dos primeras y las dos ultimas
+     tarjetas caen en la misma posicion, asi que la flecha no movia nada. */
+  function paso() {
+    var cs = cards();
+    return cs.length > 1 ? Math.max(1, cs[1].offsetLeft - cs[0].offsetLeft) : row.clientWidth;
+  }
+  function desplazar(dir) {
+    var left = row.scrollLeft + dir * paso();
+    if (reduce) {
+      cancelSettle();
+      row.scrollLeft = Math.max(0, Math.min(row.scrollWidth - row.clientWidth, left));
+      snapBack();
+      return;
+    }
+    animateTo(left);
+  }
   function buildDots() {
     var wrap = document.getElementById('projdots');
     if (!wrap) return;
@@ -489,8 +507,8 @@
     window.addEventListener('resize', onScroll);
     var prev = document.getElementById('projprev');
     var next = document.getElementById('projnext');
-    if (prev) prev.addEventListener('click', function () { goTo(nearestIndex() - 1); });
-    if (next) next.addEventListener('click', function () { goTo(nearestIndex() + 1); });
+    if (prev) prev.addEventListener('click', function () { desplazar(-1); });
+    if (next) next.addEventListener('click', function () { desplazar(1); });
 
     /* Arrastre con el ratón (el táctil ya hace scroll nativo). Al soltar,
        se asienta siempre con una tarjeta en el centro del visor. El imán
