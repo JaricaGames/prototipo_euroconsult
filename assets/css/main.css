@@ -5,6 +5,9 @@
   --amarillo:#EECA1D; --amarillo-claro:#F2D64E; --amarillo-oscuro:#C7A70F;
   --rojo:#E5234A; --rojo-claro:#EB5271; --rojo-oscuro:#BD1638;
   --papel:#F5F6F8; --grafito:#2B2B2B; --blanco:#FFFFFF;
+  /* --papel casi no se separa del blanco. --gris es el fondo para las
+     secciones que deben leerse como un bloque aparte de sus vecinas. */
+  --gris:#E8EAEE;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:116px}
@@ -151,7 +154,12 @@ a:hover{color:var(--azul-oscuro)}
 .flegal a:hover{color:#fff;background-size:100% 1px}
 
 /* Carrusel horizontal de proyectos: burbujas centradas que crecen al pasar por el medio */
-.projrow{display:grid;grid-auto-flow:column;grid-auto-columns:min(440px,82vw);gap:clamp(20px,2.5vw,32px);overflow-x:auto;scroll-snap-type:x mandatory;padding:14px 0 30px;scrollbar-width:none;-ms-overflow-style:none;cursor:grab;user-select:none;-webkit-user-select:none}
+/* El visor recorta por su caja de relleno. Como la tarjeta crece al pasar
+   por encima y lleva sombra ancha, sin pasillo lateral la primera salia
+   cortada por la izquierda. El pasillo mide lo que el margen de .wrap y se
+   compensa con margen negativo, para que en reposo las tarjetas sigan
+   alineadas con el titulo de la seccion; scroll-padding mantiene el iman. */
+.projrow{--pasillo:clamp(16px,3vw,36px);display:grid;grid-auto-flow:column;grid-auto-columns:min(440px,82vw);gap:clamp(20px,2.5vw,32px);overflow-x:auto;scroll-snap-type:x mandatory;padding:14px var(--pasillo) 30px;margin-left:calc(-1 * var(--pasillo));margin-right:calc(-1 * var(--pasillo));scroll-padding-left:var(--pasillo);scroll-padding-right:var(--pasillo);scrollbar-width:none;-ms-overflow-style:none;cursor:grab;user-select:none;-webkit-user-select:none}
 .projrow.dragging{scroll-snap-type:none;cursor:grabbing}
 .projrow::-webkit-scrollbar{display:none}
 .projrow>article{scroll-snap-align:center;cursor:pointer;border-radius:26px;overflow:hidden;box-shadow:0 14px 36px rgba(38,82,142,.12);transform:scale(var(--s,1));opacity:var(--o,1);transition:transform .3s cubic-bezier(.22,.61,.36,1),opacity .3s ease,box-shadow .25s ease;will-change:transform,opacity}
@@ -178,7 +186,11 @@ a:hover{color:var(--azul-oscuro)}
 /* Detalle de proyecto (proyecto.html) */
 .rsi{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,44px)}
 @media(max-width:760px){.rsi{grid-template-columns:1fr}}
-.ficha{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+/* La ficha tiene tres casillas fijas y dos que solo aparecen si el
+   proyecto trae cliente e importe, asi que la rejilla se ajusta sola. */
+.ficha{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px 24px}
+/* `hidden` tiene que poder con display:grid y display:flex. */
+[hidden]{display:none !important}
 
 /* Principios (grupo.html): son cinco, así que la rejilla se ajusta sola
    —cinco en pantalla ancha, y va plegando— en vez de fijar tres columnas. */

@@ -13,9 +13,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Lato:wght@300;400;700&family=Sacramento&display=swap">
-<link rel="stylesheet" href="assets/css/main.css?v=20260826">
+<link rel="stylesheet" href="assets/css/main.css?v=20260902c">
 </head>
-<body data-title-key="t_proyectos">
+<body data-title-key="t_proyectos" data-desc-key="d_proyecto">
 
 <a class="skip" href="#main" data-i18n="skip">Ir al contenido</a>
 
@@ -93,6 +93,14 @@
           <p data-i18n="lbl_tipo" style="font-weight:700;font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:#7A8390">Tipología</p>
           <p id="pj-tipo" style="font-size:14px;color:var(--grafito);margin-top:5px">Aeroportuaria</p>
         </div>
+        <div id="pj-cliente-box" hidden>
+          <p data-i18n="lbl_cliente" style="font-weight:700;font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:#7A8390">Cliente</p>
+          <p id="pj-cliente" style="font-size:14px;color:var(--grafito);margin-top:5px"></p>
+        </div>
+        <div id="pj-monto-box" hidden>
+          <p data-i18n="lbl_monto" style="font-weight:700;font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:#7A8390">Importe</p>
+          <p id="pj-monto" style="font-size:14px;color:var(--grafito);margin-top:5px"></p>
+        </div>
       </div>
       <div class="rsi" style="margin-top:clamp(36px,5vh,52px)">
         <div style="border-top:3px solid var(--azul);padding-top:20px">
@@ -151,8 +159,8 @@
   </div>
 </footer>
 
-<script src="assets/js/projects-data.js?v=20260826"></script>
-<script src="assets/js/main.js?v=20260826"></script>
+<script src="assets/js/projects-data.js?v=20260902b"></script>
+<script src="assets/js/main.js?v=20260902b"></script>
 <script>
 (function () {
   'use strict';
@@ -168,9 +176,18 @@
     var t = p[lang] || p.es;
     document.title = t.title + ' — EC Proyectos de Ingeniería';
     function set(elId, v) { var el = document.getElementById(elId); if (el) el.textContent = v; }
+    function box(elId, v) { var el = document.getElementById(elId); if (el) el.hidden = !v; }
     set('pj-kicker', t.kicker); set('pj-title', t.title);
     set('pj-ubi', t.ubi); set('pj-sector', t.sector); set('pj-tipo', t.tipo);
-    set('pj-reto', t.reto); set('pj-sol', t.sol); set('pj-imp', t.imp);
+    // Cliente e importe vienen de la presentación de Perú y no los tiene todo
+    // el mundo: cada casilla se esconde si el proyecto no trae el dato.
+    set('pj-cliente', p.cliente || ''); box('pj-cliente-box', p.cliente);
+    set('pj-monto', t.monto || ''); box('pj-monto-box', t.monto);
+    set('pj-reto', t.reto || ''); set('pj-sol', t.sol || ''); set('pj-imp', t.imp || '');
+    // El reto, la solución y el impacto son un relato que no está en todas las
+    // fichas. Sin ninguno de los tres, el bloque entero desaparece.
+    var rsi = document.querySelector('.rsi');
+    if (rsi) rsi.hidden = !(t.reto || t.sol || t.imp);
     var media = document.getElementById('pj-media');
     if (media) {
       media.innerHTML = p.img
