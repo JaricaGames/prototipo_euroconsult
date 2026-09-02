@@ -59,6 +59,7 @@ window.ECPI_PROJECTS = [
   },
   {
     id: "hospital-maria-auxiliadora",
+    img: "assets/img/proj-hospital-maria-auxiliadora.webp",
     cliente: "Gobierno Regional de Amazonas",
     es: { kicker: "Infraestructura hospitalaria", title: "Mejoramiento del Hospital María Auxiliadora", ubi: "Amazonas (Perú)", sector: "Edificación", tipo: "Sanitaria", monto: "1.330.259,00 soles" },
     en: { kicker: "Hospital infrastructure", title: "Upgrade of the María Auxiliadora Hospital", ubi: "Amazonas (Peru)", sector: "Building", tipo: "Healthcare", monto: "1,330,259.00 soles" },
@@ -75,6 +76,8 @@ window.ECPI_PROJECTS = [
   },
   {
     id: "huallanca-caraz",
+    destacado: true, // sale en el carrusel de la portada
+    img: "assets/img/proj-huallanca-caraz.webp",
     cliente: "Provías Nacional – MTC",
     es: { kicker: "Infraestructura vial", title: "Mejoramiento de la carretera Huallanca – Caraz", ubi: "Áncash (Perú)", sector: "Transporte", tipo: "Carreteras", monto: "2.746.306,86 soles; obra: 489.733.111,65 soles" },
     en: { kicker: "Road infrastructure", title: "Upgrade of the Huallanca – Caraz road", ubi: "Áncash (Peru)", sector: "Transport", tipo: "Roads", monto: "2,746,306.86 soles; works: 489,733,111.65 soles" },
@@ -107,6 +110,8 @@ window.ECPI_PROJECTS = [
   },
   {
     id: "diez-puentes-reemplazo",
+    destacado: true, // sale en el carrusel de la portada
+    img: "assets/img/proj-diez-puentes-reemplazo.webp",
     cliente: "Provías Nacional – MTC",
     es: { kicker: "Infraestructura de puentes", title: "Construcción de 10 puentes por reemplazo en Sullana, Aguas Verdes y El Alamor", ubi: "Piura y Tumbes (Perú)", sector: "Transporte", tipo: "Puentes", monto: "7.040.312,28 soles" },
     en: { kicker: "Bridge infrastructure", title: "Construction of 10 replacement bridges in Sullana, Aguas Verdes and El Alamor", ubi: "Piura and Tumbes (Peru)", sector: "Transport", tipo: "Bridges", monto: "7,040,312.28 soles" },
@@ -115,7 +120,6 @@ window.ECPI_PROJECTS = [
   },
   {
     id: "villa-rica-puerto-bermudez",
-    destacado: true, // sale en el carrusel de la portada
     cliente: "Provías Nacional – MTC",
     es: { kicker: "Infraestructura vial", title: "Mejoramiento de la carretera Villa Rica – Puerto Bermúdez", ubi: "Pasco (Perú)", sector: "Transporte", tipo: "Carreteras", monto: "5.379.711,95 soles; obra: 916.129.982,77 soles" },
     en: { kicker: "Road infrastructure", title: "Upgrade of the Villa Rica – Puerto Bermúdez road", ubi: "Pasco (Peru)", sector: "Transport", tipo: "Roads", monto: "5,379,711.95 soles; works: 916,129,982.77 soles" },
@@ -124,6 +128,7 @@ window.ECPI_PROJECTS = [
   },
   {
     id: "costa-verde-callao",
+    img: "assets/img/proj-costa-verde-callao.webp",
     destacado: true, // sale en el carrusel de la portada
     cliente: "Gobierno Regional del Callao",
     es: { kicker: "Infraestructura vial urbana", title: "Construcción de la vía Costa Verde, tramo Callao", ubi: "Callao (Perú)", sector: "Transporte", tipo: "Vía urbana", monto: "5.405.787,09 soles; obra: 313.155.462,27 soles" },
@@ -173,6 +178,7 @@ window.ECPI_PROJECTS = [
   },
   {
     id: "sede-minagri",
+    img: "assets/img/proj-sede-minagri.webp",
     cliente: "MINAGRI",
     es: { kicker: "Edificación institucional", title: "Mejoramiento e implementación de la nueva sede del MINAGRI", ubi: "Lima (Perú)", sector: "Edificación", tipo: "Institucional", monto: "2.746.804,35 soles" },
     en: { kicker: "Institutional building", title: "Refurbishment and fit-out of the new MINAGRI headquarters", ubi: "Lima (Peru)", sector: "Building", tipo: "Institutional", monto: "2,746,804.35 soles" },
@@ -197,6 +203,8 @@ window.ECPI_PROJECTS = [
   },
   {
     id: "sede-sunat",
+    destacado: true, // sale en el carrusel de la portada
+    img: "assets/img/proj-sede-sunat.webp",
     cliente: "SUNAT",
     es: { kicker: "Edificación institucional", title: "Expediente técnico y ejecución de la nueva sede de la SUNAT", ubi: "Perú", sector: "Edificación", tipo: "Institucional", monto: "9.442.506,98 soles" },
     en: { kicker: "Institutional building", title: "Detailed design and construction of the new SUNAT headquarters", ubi: "Peru", sector: "Building", tipo: "Institutional", monto: "9,442,506.98 soles" },
@@ -221,7 +229,6 @@ window.ECPI_PROJECTS = [
   },
   {
     id: "panamericanos-2019",
-    destacado: true, // sale en el carrusel de la portada
     cliente: "Proyecto Especial Panamericanos / MINEDU",
     es: { kicker: "Infraestructura deportiva", title: "Supervisión del plan maestro de los XVIII Juegos Panamericanos 2019", ubi: "Lima (Perú)", sector: "Edificación", tipo: "Deportiva", monto: "989.339,39 soles" },
     en: { kicker: "Sports infrastructure", title: "Supervision of the master plan for the XVIII Pan American Games 2019", ubi: "Lima (Peru)", sector: "Building", tipo: "Sports", monto: "989,339.39 soles" },
@@ -238,7 +245,6 @@ window.ECPI_PROJECTS = [
   },
   {
     id: "autopista-del-sol-nino",
-    destacado: true, // sale en el carrusel de la portada
     cliente: "OSITRAN",
     es: { kicker: "Concesiones viales", title: "Rehabilitación por ocurrencia del fenómeno de El Niño en la Autopista del Sol, tramo Trujillo – Sullana", ubi: "La Libertad, Lambayeque y Piura (Perú)", sector: "Transporte", tipo: "Autopistas", monto: "26.782.020,10 soles" },
     en: { kicker: "Road concessions", title: "Rehabilitation after the El Niño phenomenon on the Autopista del Sol, Trujillo – Sullana section", ubi: "La Libertad, Lambayeque and Piura (Peru)", sector: "Transport", tipo: "Motorways", monto: "26,782,020.10 soles" },
@@ -247,6 +253,7 @@ window.ECPI_PROJECTS = [
   },
   {
     id: "base-aeronaval-callao",
+    img: "assets/img/proj-base-aeronaval-callao.webp",
     destacado: true, // sale en el carrusel de la portada
     cliente: "Marina de Guerra del Perú",
     es: { kicker: "Infraestructura militar", title: "Construcción de la nueva base aeronaval del Callao", ubi: "Callao (Perú)", sector: "Edificación", tipo: "Militar", monto: "6.173.102,80 soles" },
