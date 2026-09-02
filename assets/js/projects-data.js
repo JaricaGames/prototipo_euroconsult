@@ -20,28 +20,6 @@
    conviene que las revise un traductor. */
 window.ECPI_PROJECTS = [
   {
-    id: "popayan", // <!-- dato editable -->
-    destacado: true, // true = sale en el carrusel de la portada (tope: ECPI_HOME_MAX)
-    img: "assets/img/proj-popayan.webp",
-    imgPos: "50% 23%", // encuadre de la foto (object-position), opcional
-    es: { kicker: "Infraestructura aeroportuaria", title: "Torre de Control — Aeropuerto Guillermo León Valencia", ubi: "Popayán, Cauca (Colombia)", sector: "Transporte", tipo: "Aeroportuaria",
-      reto: "Dotar al aeropuerto de una torre de control moderna, integrada en la operación diaria de un aeródromo en servicio.",
-      sol: "Ingeniería y supervisión técnica del conjunto, coordinando disciplinas estructurales, de instalaciones y de navegación aérea.",
-      imp: "Una infraestructura que ordena y asegura la operación aérea de Popayán y su región." },
-    en: { kicker: "Airport infrastructure", title: "Control Tower — Guillermo León Valencia Airport", ubi: "Popayán, Cauca (Colombia)", sector: "Transport", tipo: "Airport",
-      reto: "To provide the airport with a modern control tower, integrated into the daily operation of an airfield in service.",
-      sol: "Engineering and technical supervision of the whole, coordinating structural, systems and air-navigation disciplines.",
-      imp: "An infrastructure that organises and secures air operations for Popayán and its region." },
-    fr: { kicker: "Infrastructure aéroportuaire", title: "Tour de contrôle — Aéroport Guillermo León Valencia", ubi: "Popayán, Cauca (Colombie)", sector: "Transport", tipo: "Aéroportuaire",
-      reto: "Doter l'aéroport d'une tour de contrôle moderne, intégrée à l'exploitation quotidienne d'un aérodrome en service.",
-      sol: "Ingénierie et supervision technique de l'ensemble, en coordonnant structures, installations et navigation aérienne.",
-      imp: "Une infrastructure qui ordonne et sécurise l'exploitation aérienne de Popayán et de sa région." },
-    pt: { kicker: "Infraestrutura aeroportuária", title: "Torre de Controlo — Aeroporto Guillermo León Valencia", ubi: "Popayán, Cauca (Colômbia)", sector: "Transportes", tipo: "Aeroportuária",
-      reto: "Dotar o aeroporto de uma torre de controlo moderna, integrada na operação diária de um aeródromo em serviço.",
-      sol: "Engenharia e supervisão técnica do conjunto, coordenando estruturas, instalações e navegação aérea.",
-      imp: "Uma infraestrutura que organiza e assegura a operação aérea de Popayán e da sua região." }
-  },
-  {
     id: "puente-verde-huampani",
     cliente: "Provías Nacional – MTC",
     es: { kicker: "Infraestructura de puentes", title: "Rehabilitación de los puentes Verde, Huampaní y Huáncar", ubi: "Perú", sector: "Transporte", tipo: "Puentes", monto: "23.914.250,72 soles (expediente técnico aprobado)" },
@@ -178,6 +156,7 @@ window.ECPI_PROJECTS = [
   },
   {
     id: "sede-minagri",
+    destacado: true, // sale en el carrusel de la portada
     img: "assets/img/proj-sede-minagri.webp",
     cliente: "MINAGRI",
     es: { kicker: "Edificación institucional", title: "Mejoramiento e implementación de la nueva sede del MINAGRI", ubi: "Lima (Perú)", sector: "Edificación", tipo: "Institucional", monto: "2.746.804,35 soles" },
