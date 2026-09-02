@@ -5,9 +5,13 @@
   --amarillo:#EECA1D; --amarillo-claro:#F2D64E; --amarillo-oscuro:#C7A70F;
   --rojo:#E5234A; --rojo-claro:#EB5271; --rojo-oscuro:#BD1638;
   --papel:#F5F6F8; --grafito:#2B2B2B; --blanco:#FFFFFF;
-  /* --papel casi no se separa del blanco. --gris es el fondo para las
-     secciones que deben leerse como un bloque aparte de sus vecinas. */
-  --gris:#E8EAEE;
+  /* --papel casi no se separa del blanco. --azul-suave es el fondo de las
+     secciones que deben leerse como un bloque aparte de sus vecinas: un
+     azul muy claro derivado del azul de marca, el mismo en todo el sitio.
+     Contraste comprobado: el cuerpo de texto queda en 5,41:1 y el rotulo
+     azul en 4,84:1, los dos por encima de AA. --linea-azul es el
+     separador que le corresponde. */
+  --azul-suave:#E6EEF8; --linea-azul:#C9D8EB;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:116px}
