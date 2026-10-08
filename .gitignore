@@ -141,3 +141,6 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Material de origen (presentaciones) que no forma parte del sitio
+Nueva carpeta/
