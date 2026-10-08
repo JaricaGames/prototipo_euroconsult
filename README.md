@@ -22,8 +22,8 @@ euroconsult_web2/
     ├── js/main.js          Cambio de idioma (ES/EN/FR/PT) y animaciones de entrada
     ├── js/projects-data.js Datos de proyectos (4 idiomas); alimenta cuadrícula y detalle
     └── img/
-        ├── grupo-bg.webp       Fondo de la sección «El grupo» (puente)
-        └── proj-popayan.webp   Foto del proyecto Torre de Control Popayán
+        ├── area-*.webp         Fotos de las cinco áreas de negocio (ver «Imágenes»)
+        └── proj-*.webp         Fotos de proyectos (Perú y Colombia)
 ```
 
 ## Ver en local
@@ -64,6 +64,7 @@ Todas las rutas del sitio son relativas, así que funciona igual en un subdirect
 - **Idiomas**: los textos de los cuatro idiomas están en `assets/js/main.js` (objeto `dicts`). El HTML contiene la versión en español como contenido por defecto (visible también sin JavaScript). Si se cambia un texto, conviene cambiarlo en ambos sitios para el español.
 - **Logos**: logotipos oficiales en `assets/img` (`logo-ecpi.png`, `logo-ecpi-blanco.png` para el footer azul, `logo-euroconsult-america.png` y `logo-euroconsult-colombia.png`, más las versiones `-blanco` de las filiales para fondos oscuros), generados a partir de los maestros de `Web\Inicial\logos`. Los puntos de inserción siguen marcados con comentarios `<!-- LOGO ECPI -->` y `<!-- LOGO FILIAL -->`. El favicon (`assets/img/favicon.png` y `apple-touch-icon.png`) sale del sello `ECPi_Sello01.png`.
 - **Datos editables** (ciudades, cifras, correo de contacto): marcados con `<!-- dato editable -->` en `index.html`.
-- **Proyectos**: para añadir un proyecto basta con añadir una entrada en `assets/js/projects-data.js` (con sus cuatro idiomas y, opcionalmente, `img`); aparecerá automáticamente en `proyectos.html` y tendrá su página de detalle en `proyecto.html?id=<id>`. Los proyectos sin `img` muestran un marcador de posición hexagonal.
+- **Imágenes de las áreas** (`area-*.webp`): son fotos propias de las filiales (Carrera 68 en Bogotá, aeropuerto de Neiva, Costa Verde en el Callao y sede del MINAGRI en Lima) salvo la de Aguas, que es la presa del río Montoro (Ciudad Real) en dominio público, tomada de Wikimedia Commons; el enlace al original está en un comentario HTML junto a la imagen en `index.html` y `areas.html`. Si se cambia una foto, conviene cambiar también el nombre del archivo: las imágenes no llevan `?v=` y el navegador puede seguir mostrando la antigua.
+- **Proyectos**: para añadir un proyecto basta con añadir una entrada en `assets/js/projects-data.js` (con sus cuatro idiomas y, opcionalmente, `img`); aparecerá automáticamente en `proyectos.html` y tendrá su página de detalle en `proyecto.html?id=<id>`. Los proyectos sin `img` muestran un marcador de posición hexagonal. Los de Perú salen de la presentación de Euroconsult América y los de Colombia de la web de la filial (euroconsult.com.co); la cabecera del archivo detalla la procedencia de cada dato.
 - **Navegación móvil**: por diseño, el menú de enlaces se oculta por debajo de 1024 px (la navegación se hace por scroll); el selector de idioma sigue visible.
 - **Página legal** (`legal.html`): los datos societarios (razón social, CIF, domicilio, datos registrales, plazo de conservación de candidaturas) están entre corchetes y marcados con `<!-- dato editable -->`. El texto es una base para el prototipo: conviene revisarlo con asesoría jurídica antes de la publicación definitiva. Su contenido está solo en español.

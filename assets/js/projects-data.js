@@ -17,8 +17,179 @@
    a propósito: la página de detalle oculta ese bloque cuando falta. Rellénalos
    proyecto a proyecto cuando haya información real; no hay que inventarlos.
    Las versiones EN/FR/PT de los títulos son traducción automática del español:
-   conviene que las revise un traductor. */
+   conviene que las revise un traductor.
+
+   PROCEDENCIA DE LOS DATOS DE COLOMBIA
+   Los proyectos de Colombia salen de la web de la filial, euroconsult.com.co
+   (sección «Proyectos», consultada el 8 de octubre de 2026): cliente, ubicación,
+   tipo, fechas, alcance y descripción de cada ficha. `reto`, `sol` e `imp` se
+   han redactado solo con lo que dicen esas fichas; las fotos proj-*.webp de
+   Colombia son las mismas de esa web. No hay importes en las fichas, así que
+   `monto` se omite. Se han traído 7 de los 12 proyectos publicados; los otros
+   cinco (vías regionales Pueblo Rico – Riosucio, vías terciarias de Magdalena,
+   puente La Nevera en Orocué, aeropuerto El Edén de Armenia y gestión vial en
+   Antioquia) pueden añadirse de la misma fuente. */
 window.ECPI_PROJECTS = [
+  {
+    id: "huallanca-caraz",
+    destacado: true, // sale en el carrusel de la portada
+    img: "assets/img/proj-huallanca-caraz.webp",
+    cliente: "Provías Nacional – MTC",
+    es: { kicker: "Infraestructura vial", title: "Mejoramiento de la carretera Huallanca – Caraz", ubi: "Áncash (Perú)", sector: "Transporte", tipo: "Carreteras", monto: "2.746.306,86 soles; obra: 489.733.111,65 soles" },
+    en: { kicker: "Road infrastructure", title: "Upgrade of the Huallanca – Caraz road", ubi: "Áncash (Peru)", sector: "Transport", tipo: "Roads", monto: "2,746,306.86 soles; works: 489,733,111.65 soles" },
+    fr: { kicker: "Infrastructure routière", title: "Amélioration de la route Huallanca – Caraz", ubi: "Áncash (Pérou)", sector: "Transport", tipo: "Routes", monto: "2 746 306,86 soles ; travaux : 489 733 111,65 soles" },
+    pt: { kicker: "Infraestrutura rodoviária", title: "Melhoramento da estrada Huallanca – Caraz", ubi: "Áncash (Peru)", sector: "Transportes", tipo: "Estradas", monto: "2.746.306,86 soles; obra: 489.733.111,65 soles" }
+  },
+  {
+    id: "transmilenio-carrera-68",
+    destacado: true, // sale en el carrusel de la portada
+    img: "assets/img/proj-transmilenio-carrera-68.webp",
+    cliente: "Instituto de Desarrollo Urbano – IDU (Bogotá D.C.)",
+    es: { kicker: "Movilidad urbana", title: "Adecuación de la Troncal TransMilenio de la Avenida 68 (Carrera 68), Grupo 7", ubi: "Bogotá D.C. (Colombia)", sector: "Transporte", tipo: "Transporte urbano / BRT",
+      reto: "Adaptar al sistema TransMilenio un tramo de 3,05 km de la Carrera 68, entre la Calle 66 y la Carrera 65A, dentro de una troncal de 17 km, manteniendo la actividad de una de las avenidas más transitadas de Bogotá.",
+      sol: "Junto al Consorcio Bulevar: carriles mixtos y carriles BRT, tres estaciones, puente vehicular, puentes peatonales y rampas, 2.900 m de ciclorruta con cicloestaciones y bicipuente, más de 80.000 m² de espacio público y renovación de las redes hidráulicas y de servicios.",
+      imp: "Una movilidad más sostenible, segura y eficiente para las localidades de Barrios Unidos, Engativá y Suba, con más de 10 UPZ beneficiadas. Obra en ejecución hasta octubre de 2026, con mantenimiento posterior hasta 2031." },
+    en: { kicker: "Urban mobility", title: "Adaptation of the Avenida 68 (Carrera 68) TransMilenio trunk line, Group 7", ubi: "Bogotá D.C. (Colombia)", sector: "Transport", tipo: "Urban transport / BRT",
+      reto: "To adapt a 3.05 km section of Carrera 68, between Calle 66 and Carrera 65A, to the TransMilenio system as part of a 17 km trunk line, while keeping one of Bogotá's busiest avenues in operation.",
+      sol: "Together with Consorcio Bulevar: mixed-traffic and BRT lanes, three stations, a road bridge, footbridges and ramps, 2,900 m of cycle path with cycle stations and a cycle bridge, over 80,000 m² of public space and the renewal of water and utility networks.",
+      imp: "More sustainable, safer and more efficient mobility for the districts of Barrios Unidos, Engativá and Suba, benefiting more than 10 planning zones. Works under way until October 2026, followed by maintenance until 2031." },
+    fr: { kicker: "Mobilité urbaine", title: "Adaptation du tronc TransMilenio de l'Avenida 68 (Carrera 68), groupe 7", ubi: "Bogotá D.C. (Colombie)", sector: "Transport", tipo: "Transport urbain / BRT",
+      reto: "Adapter au système TransMilenio un tronçon de 3,05 km de la Carrera 68, entre la Calle 66 et la Carrera 65A, au sein d'un axe de 17 km, tout en maintenant l'activité de l'une des avenues les plus fréquentées de Bogotá.",
+      sol: "Avec le Consorcio Bulevar : voies mixtes et voies BRT, trois stations, un pont routier, des passerelles piétonnes et des rampes, 2 900 m de piste cyclable avec stations vélo et passerelle cyclable, plus de 80 000 m² d'espace public et renouvellement des réseaux hydrauliques et de services.",
+      imp: "Une mobilité plus durable, plus sûre et plus efficace pour les localités de Barrios Unidos, Engativá et Suba, avec plus de 10 zones de planification bénéficiaires. Travaux en cours jusqu'en octobre 2026, suivis d'une maintenance jusqu'en 2031." },
+    pt: { kicker: "Mobilidade urbana", title: "Adequação do eixo TransMilenio da Avenida 68 (Carrera 68), Grupo 7", ubi: "Bogotá D.C. (Colômbia)", sector: "Transportes", tipo: "Transporte urbano / BRT",
+      reto: "Adaptar ao sistema TransMilenio um troço de 3,05 km da Carrera 68, entre a Calle 66 e a Carrera 65A, dentro de um eixo de 17 km, mantendo a atividade de uma das avenidas mais movimentadas de Bogotá.",
+      sol: "Em conjunto com o Consorcio Bulevar: faixas mistas e faixas BRT, três estações, ponte rodoviária, pontes pedonais e rampas, 2.900 m de ciclovia com cicloestações e ponte ciclável, mais de 80.000 m² de espaço público e renovação das redes hidráulicas e de serviços.",
+      imp: "Uma mobilidade mais sustentável, segura e eficiente para as localidades de Barrios Unidos, Engativá e Suba, com mais de 10 zonas de planeamento beneficiadas. Obra em execução até outubro de 2026, com manutenção posterior até 2031." }
+  },
+  {
+    id: "torre-control-popayan",
+    destacado: true, // sale en el carrusel de la portada
+    img: "assets/img/proj-torre-control-popayan.webp",
+    cliente: "Aeronáutica Civil de Colombia",
+    es: { kicker: "Infraestructura aeroportuaria", title: "Construcción de la Torre de Control del Aeropuerto Guillermo León Valencia de Popayán", ubi: "Popayán, Cauca (Colombia)", sector: "Transporte", tipo: "Aeroportuaria",
+      reto: "Levantar una nueva torre de control en un aeropuerto en servicio, con montaje especializado en altura y estrictos protocolos de seguridad industrial.",
+      sol: "Construcción y supervisión técnica rigurosa del conjunto, desde la estructura hasta el montaje de la cabina, bajo contrato con la Aeronáutica Civil.",
+      imp: "Una infraestructura aeronáutica estratégica que refuerza la conectividad aérea y el desarrollo regional del Cauca. Iniciada en 2024, en desarrollo." },
+    en: { kicker: "Airport infrastructure", title: "Construction of the control tower at Guillermo León Valencia Airport, Popayán", ubi: "Popayán, Cauca (Colombia)", sector: "Transport", tipo: "Airport",
+      reto: "To build a new control tower at an airport in operation, with specialised work at height and strict industrial-safety protocols.",
+      sol: "Construction and rigorous technical supervision of the whole, from the structure to the assembly of the cab, under contract to Colombia's civil aviation authority.",
+      imp: "A strategic piece of air-navigation infrastructure that strengthens air connectivity and regional development in Cauca. Started in 2024, under way." },
+    fr: { kicker: "Infrastructure aéroportuaire", title: "Construction de la tour de contrôle de l'aéroport Guillermo León Valencia de Popayán", ubi: "Popayán, Cauca (Colombie)", sector: "Transport", tipo: "Aéroportuaire",
+      reto: "Ériger une nouvelle tour de contrôle dans un aéroport en exploitation, avec un montage spécialisé en hauteur et de stricts protocoles de sécurité industrielle.",
+      sol: "Construction et supervision technique rigoureuse de l'ensemble, de la structure au montage de la vigie, sous contrat avec l'Aeronáutica Civil de Colombie.",
+      imp: "Une infrastructure aéronautique stratégique qui renforce la connectivité aérienne et le développement régional du Cauca. Lancée en 2024, en cours." },
+    pt: { kicker: "Infraestrutura aeroportuária", title: "Construção da torre de controlo do Aeroporto Guillermo León Valencia de Popayán", ubi: "Popayán, Cauca (Colômbia)", sector: "Transportes", tipo: "Aeroportuária",
+      reto: "Erguer uma nova torre de controlo num aeroporto em funcionamento, com montagem especializada em altura e rigorosos protocolos de segurança industrial.",
+      sol: "Construção e supervisão técnica rigorosa do conjunto, da estrutura à montagem da cabina, sob contrato com a Aeronáutica Civil da Colômbia.",
+      imp: "Uma infraestrutura aeronáutica estratégica que reforça a conectividade aérea e o desenvolvimento regional do Cauca. Iniciada em 2024, em desenvolvimento." }
+  },
+  {
+    id: "quibdo-pereira",
+    img: "assets/img/proj-quibdo-pereira.webp",
+    cliente: "INVIAS – Instituto Nacional de Vías",
+    es: { kicker: "Infraestructura vial", title: "Interventoría integral del corredor vial Quibdó – Pereira, Transversal Central del Pacífico", ubi: "Chocó y Risaralda (Colombia)", sector: "Transporte", tipo: "Carreteras",
+      reto: "Garantizar la seguridad, la calidad y el cumplimiento normativo de las obras en una vía estratégica que conecta el Pacífico con el centro del país.",
+      sol: "Interventoría técnica, administrativa, financiera, jurídica y ambiental de las obras de construcción, mejoramiento, rehabilitación, mantenimiento y atención de puntos críticos, en un plazo de 19 meses y 22 días (diciembre de 2024 – julio de 2026).",
+      imp: "Más de 54.000 habitantes beneficiados y un impulso al desarrollo económico, turístico y social de la región." },
+    en: { kicker: "Road infrastructure", title: "Comprehensive supervision of the Quibdó – Pereira road corridor, Central Pacific Transversal", ubi: "Chocó and Risaralda (Colombia)", sector: "Transport", tipo: "Roads",
+      reto: "To guarantee the safety, quality and regulatory compliance of the works on a strategic road linking the Pacific coast with the centre of the country.",
+      sol: "Technical, administrative, financial, legal and environmental supervision of the construction, upgrading, rehabilitation, maintenance and critical-point works, over 19 months and 22 days (December 2024 – July 2026).",
+      imp: "More than 54,000 inhabitants benefited and a boost to the economic, tourist and social development of the region." },
+    fr: { kicker: "Infrastructure routière", title: "Supervision intégrale du corridor routier Quibdó – Pereira, Transversale centrale du Pacifique", ubi: "Chocó et Risaralda (Colombie)", sector: "Transport", tipo: "Routes",
+      reto: "Garantir la sécurité, la qualité et la conformité réglementaire des travaux sur un axe stratégique reliant le Pacifique au centre du pays.",
+      sol: "Supervision technique, administrative, financière, juridique et environnementale des travaux de construction, d'amélioration, de réhabilitation, d'entretien et de traitement des points critiques, sur 19 mois et 22 jours (décembre 2024 – juillet 2026).",
+      imp: "Plus de 54 000 habitants bénéficiaires et un élan pour le développement économique, touristique et social de la région." },
+    pt: { kicker: "Infraestrutura rodoviária", title: "Fiscalização integral do corredor rodoviário Quibdó – Pereira, Transversal Central do Pacífico", ubi: "Chocó e Risaralda (Colômbia)", sector: "Transportes", tipo: "Estradas",
+      reto: "Garantir a segurança, a qualidade e o cumprimento normativo das obras numa via estratégica que liga o Pacífico ao centro do país.",
+      sol: "Fiscalização técnica, administrativa, financeira, jurídica e ambiental das obras de construção, melhoramento, reabilitação, manutenção e atenção a pontos críticos, num prazo de 19 meses e 22 dias (dezembro de 2024 – julho de 2026).",
+      imp: "Mais de 54.000 habitantes beneficiados e um impulso ao desenvolvimento económico, turístico e social da região." }
+  },
+  {
+    id: "aeropuertos-ibague-neiva",
+    img: "assets/img/proj-aeropuertos-ibague-neiva.webp",
+    cliente: "Unidad Administrativa Especial de Aeronáutica Civil",
+    es: { kicker: "Infraestructura aeroportuaria", title: "Interventoría integral al mantenimiento de los aeropuertos de Ibagué y Neiva", ubi: "Tolima y Huila (Colombia)", sector: "Transporte", tipo: "Aeroportuaria",
+      reto: "Asegurar la calidad, la seguridad y el cumplimiento normativo de las obras de mantenimiento en dos terminales en operación.",
+      sol: "Supervisión técnica, administrativa y ambiental del mantenimiento de la infraestructura física lado tierra y de los sistemas aeroportuarios de ambos aeropuertos, durante 19 meses (marzo de 2025 – julio de 2026).",
+      imp: "Dos aeropuertos regionales con infraestructura y sistemas en mejores condiciones de servicio para pasajeros y personal operativo." },
+    en: { kicker: "Airport infrastructure", title: "Comprehensive supervision of maintenance works at Ibagué and Neiva airports", ubi: "Tolima and Huila (Colombia)", sector: "Transport", tipo: "Airport",
+      reto: "To ensure the quality, safety and regulatory compliance of maintenance works at two terminals in operation.",
+      sol: "Technical, administrative and environmental supervision of the maintenance of landside facilities and airport systems at both airports, over 19 months (March 2025 – July 2026).",
+      imp: "Two regional airports with facilities and systems in better operating condition for passengers and operational staff." },
+    fr: { kicker: "Infrastructure aéroportuaire", title: "Supervision intégrale de la maintenance des aéroports d'Ibagué et de Neiva", ubi: "Tolima et Huila (Colombie)", sector: "Transport", tipo: "Aéroportuaire",
+      reto: "Assurer la qualité, la sécurité et la conformité réglementaire des travaux de maintenance dans deux aérogares en exploitation.",
+      sol: "Supervision technique, administrative et environnementale de la maintenance des infrastructures côté ville et des systèmes aéroportuaires des deux aéroports, pendant 19 mois (mars 2025 – juillet 2026).",
+      imp: "Deux aéroports régionaux dont les installations et les systèmes offrent de meilleures conditions de service aux passagers et au personnel d'exploitation." },
+    pt: { kicker: "Infraestrutura aeroportuária", title: "Fiscalização integral da manutenção dos aeroportos de Ibagué e Neiva", ubi: "Tolima e Huila (Colômbia)", sector: "Transportes", tipo: "Aeroportuária",
+      reto: "Assegurar a qualidade, a segurança e o cumprimento normativo das obras de manutenção em dois terminais em operação.",
+      sol: "Supervisão técnica, administrativa e ambiental da manutenção da infraestrutura física do lado terra e dos sistemas aeroportuários de ambos os aeroportos, durante 19 meses (março de 2025 – julho de 2026).",
+      imp: "Dois aeroportos regionais com infraestruturas e sistemas em melhores condições de serviço para passageiros e pessoal operacional." }
+  },
+  {
+    id: "aeropuerto-el-pindo",
+    destacado: true, // sale en el carrusel de la portada
+    img: "assets/img/proj-aeropuerto-el-pindo.webp",
+    cliente: "Unidad Administrativa Especial de Aeronáutica Civil",
+    es: { kicker: "Infraestructura aeroportuaria", title: "Interventoría integral del mantenimiento y rehabilitación de la pista del Aeropuerto El Pindo de Montelíbano", ubi: "Montelíbano, Córdoba (Colombia)", sector: "Transporte", tipo: "Aeroportuaria",
+      reto: "Devolver a la pista, la calle de rodaje, la plataforma y las zonas de seguridad unas condiciones que garanticen una operación aérea fiable, segura y eficiente.",
+      sol: "Revisión y aprobación de los estudios y diseños (pavimentos, geometría, señalización y plan de adaptación de la guía ambiental) e interventoría integral de la rehabilitación, con supervisión técnica, administrativa y ambiental. Inicio en enero de 2025.",
+      imp: "Mayor seguridad operacional y confort en despegues y aterrizajes, con un efecto directo en la conectividad aérea de la región." },
+    en: { kicker: "Airport infrastructure", title: "Comprehensive supervision of the runway maintenance and rehabilitation at El Pindo Airport, Montelíbano", ubi: "Montelíbano, Córdoba (Colombia)", sector: "Transport", tipo: "Airport",
+      reto: "To restore the runway, taxiway, apron and safety areas to a condition that guarantees reliable, safe and efficient air operations.",
+      sol: "Review and approval of the studies and designs (pavements, geometry, markings and the environmental-guide adaptation plan) and comprehensive supervision of the rehabilitation, with technical, administrative and environmental oversight. Started in January 2025.",
+      imp: "Greater operational safety and comfort on take-off and landing, with a direct effect on the region's air connectivity." },
+    fr: { kicker: "Infrastructure aéroportuaire", title: "Supervision intégrale de l'entretien et de la réhabilitation de la piste de l'aéroport El Pindo de Montelíbano", ubi: "Montelíbano, Córdoba (Colombie)", sector: "Transport", tipo: "Aéroportuaire",
+      reto: "Rendre à la piste, à la voie de circulation, à l'aire de trafic et aux zones de sécurité des conditions garantissant une exploitation aérienne fiable, sûre et efficace.",
+      sol: "Révision et approbation des études et conceptions (chaussées, géométrie, signalisation et plan d'adaptation du guide environnemental) et supervision intégrale de la réhabilitation, avec suivi technique, administratif et environnemental. Démarrage en janvier 2025.",
+      imp: "Une sécurité opérationnelle et un confort accrus au décollage et à l'atterrissage, avec un effet direct sur la connectivité aérienne de la région." },
+    pt: { kicker: "Infraestrutura aeroportuária", title: "Fiscalização integral da manutenção e reabilitação da pista do Aeroporto El Pindo de Montelíbano", ubi: "Montelíbano, Córdoba (Colômbia)", sector: "Transportes", tipo: "Aeroportuária",
+      reto: "Devolver à pista, ao caminho de circulação, à plataforma e às zonas de segurança condições que garantam uma operação aérea fiável, segura e eficiente.",
+      sol: "Revisão e aprovação dos estudos e projetos (pavimentos, geometria, sinalização e plano de adaptação do guia ambiental) e fiscalização integral da reabilitação, com supervisão técnica, administrativa e ambiental. Início em janeiro de 2025.",
+      imp: "Maior segurança operacional e conforto nas descolagens e aterragens, com efeito direto na conectividade aérea da região." }
+  },
+  {
+    id: "transversal-casanare",
+    img: "assets/img/proj-transversal-casanare.webp",
+    cliente: "INVIAS – Instituto Nacional de Vías",
+    es: { kicker: "Infraestructura vial", title: "Construcción de la Transversal del Casanare, sector Orocué", ubi: "Orocué, Casanare (Colombia)", sector: "Transporte", tipo: "Carreteras",
+      reto: "Dotar al departamento del Casanare de una vía clave para su movilidad y competitividad, en un entorno llanero de comunidades dispersas.",
+      sol: "Ejecución de las obras viales con supervisión y control técnico orientados a la calidad, la seguridad y la sostenibilidad, acompañados de programas sociales con la comunidad local. Obra en curso.",
+      imp: "Mejor calidad de vida para más de 13.800 personas, generación de empleo y fortalecimiento del tejido social de la región." },
+    en: { kicker: "Road infrastructure", title: "Construction of the Transversal del Casanare, Orocué section", ubi: "Orocué, Casanare (Colombia)", sector: "Transport", tipo: "Roads",
+      reto: "To give the department of Casanare a key road for its mobility and competitiveness, in a plains landscape of scattered communities.",
+      sol: "Execution of the road works with technical supervision and control focused on quality, safety and sustainability, together with social programmes for the local community. Works under way.",
+      imp: "A better quality of life for more than 13,800 people, job creation and a stronger social fabric in the region." },
+    fr: { kicker: "Infrastructure routière", title: "Construction de la Transversale du Casanare, secteur d'Orocué", ubi: "Orocué, Casanare (Colombie)", sector: "Transport", tipo: "Routes",
+      reto: "Doter le département du Casanare d'un axe clé pour sa mobilité et sa compétitivité, dans un paysage de plaines aux communautés dispersées.",
+      sol: "Exécution des travaux routiers avec une supervision et un contrôle techniques axés sur la qualité, la sécurité et la durabilité, accompagnés de programmes sociaux avec la communauté locale. Travaux en cours.",
+      imp: "Une meilleure qualité de vie pour plus de 13 800 personnes, la création d'emplois et le renforcement du tissu social de la région." },
+    pt: { kicker: "Infraestrutura rodoviária", title: "Construção da Transversal do Casanare, setor de Orocué", ubi: "Orocué, Casanare (Colômbia)", sector: "Transportes", tipo: "Estradas",
+      reto: "Dotar o departamento de Casanare de uma via fundamental para a sua mobilidade e competitividade, numa paisagem de planícies com comunidades dispersas.",
+      sol: "Execução das obras rodoviárias com supervisão e controlo técnico orientados para a qualidade, a segurança e a sustentabilidade, acompanhados de programas sociais com a comunidade local. Obra em curso.",
+      imp: "Melhor qualidade de vida para mais de 13.800 pessoas, criação de emprego e reforço do tecido social da região." }
+  },
+  {
+    id: "mantenimiento-vial-tolima",
+    img: "assets/img/proj-mantenimiento-vial-tolima.webp",
+    cliente: "INVIAS – Instituto Nacional de Vías",
+    es: { kicker: "Conservación vial", title: "Administración vial de las carreteras nacionales de la Dirección Territorial Tolima (Grupo AMV 2, Lote 2)", ubi: "Fresno, Mariquita y Honda, Tolima (Colombia)", sector: "Transporte", tipo: "Conservación de carreteras",
+      reto: "Garantizar la conservación, el mantenimiento y la atención integral de la red vial nacional en el norte del Tolima, con respuesta inmediata ante emergencias.",
+      sol: "Consultoría especializada en administración vial desde julio de 2024: limpieza de cunetas, poda, inspecciones técnicas de puentes y mantenimiento preventivo de los tramos críticos.",
+      imp: "Más de 116.000 personas beneficiadas por una movilidad más segura y eficiente, con efecto en el desarrollo económico y territorial de la región." },
+    en: { kicker: "Road maintenance", title: "Road administration of the national roads of the Tolima Territorial Directorate (Group AMV 2, Lot 2)", ubi: "Fresno, Mariquita and Honda, Tolima (Colombia)", sector: "Transport", tipo: "Road maintenance",
+      reto: "To guarantee the upkeep, maintenance and comprehensive care of the national road network in northern Tolima, with immediate response to emergencies.",
+      sol: "Specialised road-administration consultancy since July 2024: ditch cleaning, pruning, technical bridge inspections and preventive maintenance of critical sections.",
+      imp: "More than 116,000 people benefiting from safer and more efficient mobility, with an effect on the region's economic and territorial development." },
+    fr: { kicker: "Entretien routier", title: "Administration routière des routes nationales de la Direction territoriale du Tolima (groupe AMV 2, lot 2)", ubi: "Fresno, Mariquita et Honda, Tolima (Colombie)", sector: "Transport", tipo: "Entretien des routes",
+      reto: "Garantir la conservation, l'entretien et la prise en charge intégrale du réseau routier national dans le nord du Tolima, avec une réponse immédiate aux urgences.",
+      sol: "Conseil spécialisé en administration routière depuis juillet 2024 : curage des fossés, élagage, inspections techniques des ponts et entretien préventif des tronçons critiques.",
+      imp: "Plus de 116 000 personnes bénéficiant d'une mobilité plus sûre et plus efficace, avec un effet sur le développement économique et territorial de la région." },
+    pt: { kicker: "Conservação rodoviária", title: "Administração viária das estradas nacionais da Direção Territorial do Tolima (Grupo AMV 2, Lote 2)", ubi: "Fresno, Mariquita e Honda, Tolima (Colômbia)", sector: "Transportes", tipo: "Conservação de estradas",
+      reto: "Garantir a conservação, a manutenção e a atenção integral da rede rodoviária nacional no norte do Tolima, com resposta imediata a emergências.",
+      sol: "Consultoria especializada em administração viária desde julho de 2024: limpeza de valetas, poda, inspeções técnicas de pontes e manutenção preventiva dos troços críticos.",
+      imp: "Mais de 116.000 pessoas beneficiadas por uma mobilidade mais segura e eficiente, com efeito no desenvolvimento económico e territorial da região." }
+  },
   {
     id: "puente-verde-huampani",
     cliente: "Provías Nacional – MTC",
@@ -51,16 +222,6 @@ window.ECPI_PROJECTS = [
     en: { kicker: "Road infrastructure", title: "Commissioning report for the Gallinazos road-safety works, Panamericana Norte km 26+050 – 26+777", ubi: "Lima (Peru)", sector: "Transport", tipo: "Roads" },
     fr: { kicker: "Infrastructure routière", title: "Rapport de mise au point de l'IVN Gallinazos, Panamericana Norte km 26+050 – 26+777", ubi: "Lima (Pérou)", sector: "Transport", tipo: "Routes" },
     pt: { kicker: "Infraestrutura rodoviária", title: "Relatório de afinação do IVN Gallinazos, Panamericana Norte km 26+050 – 26+777", ubi: "Lima (Peru)", sector: "Transportes", tipo: "Estradas" }
-  },
-  {
-    id: "huallanca-caraz",
-    destacado: true, // sale en el carrusel de la portada
-    img: "assets/img/proj-huallanca-caraz.webp",
-    cliente: "Provías Nacional – MTC",
-    es: { kicker: "Infraestructura vial", title: "Mejoramiento de la carretera Huallanca – Caraz", ubi: "Áncash (Perú)", sector: "Transporte", tipo: "Carreteras", monto: "2.746.306,86 soles; obra: 489.733.111,65 soles" },
-    en: { kicker: "Road infrastructure", title: "Upgrade of the Huallanca – Caraz road", ubi: "Áncash (Peru)", sector: "Transport", tipo: "Roads", monto: "2,746,306.86 soles; works: 489,733,111.65 soles" },
-    fr: { kicker: "Infrastructure routière", title: "Amélioration de la route Huallanca – Caraz", ubi: "Áncash (Pérou)", sector: "Transport", tipo: "Routes", monto: "2 746 306,86 soles ; travaux : 489 733 111,65 soles" },
-    pt: { kicker: "Infraestrutura rodoviária", title: "Melhoramento da estrada Huallanca – Caraz", ubi: "Áncash (Peru)", sector: "Transportes", tipo: "Estradas", monto: "2.746.306,86 soles; obra: 489.733.111,65 soles" }
   },
   {
     id: "puente-salitral-chamorro",
@@ -107,7 +268,6 @@ window.ECPI_PROJECTS = [
   {
     id: "costa-verde-callao",
     img: "assets/img/proj-costa-verde-callao.webp",
-    destacado: true, // sale en el carrusel de la portada
     cliente: "Gobierno Regional del Callao",
     es: { kicker: "Infraestructura vial urbana", title: "Construcción de la vía Costa Verde, tramo Callao", ubi: "Callao (Perú)", sector: "Transporte", tipo: "Vía urbana", monto: "5.405.787,09 soles; obra: 313.155.462,27 soles" },
     en: { kicker: "Urban road infrastructure", title: "Construction of the Costa Verde expressway, Callao section", ubi: "Callao (Peru)", sector: "Transport", tipo: "Urban road", monto: "5,405,787.09 soles; works: 313,155,462.27 soles" },
@@ -156,7 +316,6 @@ window.ECPI_PROJECTS = [
   },
   {
     id: "sede-minagri",
-    destacado: true, // sale en el carrusel de la portada
     img: "assets/img/proj-sede-minagri.webp",
     cliente: "MINAGRI",
     es: { kicker: "Edificación institucional", title: "Mejoramiento e implementación de la nueva sede del MINAGRI", ubi: "Lima (Perú)", sector: "Edificación", tipo: "Institucional", monto: "2.746.804,35 soles" },
@@ -233,7 +392,6 @@ window.ECPI_PROJECTS = [
   {
     id: "base-aeronaval-callao",
     img: "assets/img/proj-base-aeronaval-callao.webp",
-    destacado: true, // sale en el carrusel de la portada
     cliente: "Marina de Guerra del Perú",
     es: { kicker: "Infraestructura militar", title: "Construcción de la nueva base aeronaval del Callao", ubi: "Callao (Perú)", sector: "Edificación", tipo: "Militar", monto: "6.173.102,80 soles" },
     en: { kicker: "Military infrastructure", title: "Construction of the new Callao naval air base", ubi: "Callao (Peru)", sector: "Building", tipo: "Military", monto: "6,173,102.80 soles" },
